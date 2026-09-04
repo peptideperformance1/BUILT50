@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BUILT50 | Strength • Science • Performance</title>
+
+  <meta name="description" content="BUILT50 is about training smarter, getting stronger, and performing for the long haul. Training, research, recovery, nutrition and real-world performance.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #090909;
+      --panel: #111111;
+      --panel-light: #181818;
+      --copper: #d7782c;
+      --copper-light: #f09a4b;
+      --white: #f4f4f4;
+      --gray: #a7a7a7;
+      --border: #292929;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 9, 9, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--copper);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a:hover {
+      color: var(--copper-light);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        radial-gradient(circle at top, rgba(215,120,44,.15), transparent 40%),
+        linear-gradient(to bottom, #0b0b0b, #090909);
+    }
+
+    .hero-inner {
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: var(--copper);
+      font-weight: 800;
+      letter-spacing: 4px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(70px, 13vw, 145px);
+      line-height: .85;
+      font-weight: 1000;
+      letter-spacing: -7px;
+    }
+
+    h1 span {
+      color: var(--copper);
+    }
+
+    .tagline {
+      margin-top: 24px;
+      font-size: clamp(18px, 3vw, 27px);
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .hero-line {
+      width: 90px;
+      height: 4px;
+      background: var(--copper);
+      margin: 28px auto;
+    }
+
+    .hero h2 {
+      font-size: clamp(28px, 5vw, 48px);
+      line-height: 1.1;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .hero h2 span {
+      color: var(--copper-light);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 25px auto 0;
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 4px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--copper);
+      color: #090909;
+    }
+
+    .btn-primary:hover {
+      background: var(--copper-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid #444;
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--copper);
+      color: var(--copper-light);
+    }
+
+    /* MAIN CONTENT */
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 90px 22px;
+    }
+
+    .section-heading {
+      margin-bottom: 38px;
+    }
+
+    .section-heading small {
+      color: var(--copper);
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1;
+      margin-top: 10px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+      margin-top: 14px;
+      max-width: 650px;
+    }
+
+    /* CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 260px;
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.07), transparent 45%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      border-color: var(--copper);
+      transform: translateY(-4px);
+    }
+
+    .number {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      color: rgba(215,120,44,.12);
+      font-size: 85px;
+      font-weight: 1000;
+    }
+
+    .card-label {
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .card h3 {
+      font-size: 30px;
+      margin: 12px 0;
+    }
+
+    .card p {
+      color: var(--gray);
+      max-width: 450px;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 25px;
+      color: var(--copper-light);
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    /* MANIFESTO */
+
+    .manifesto {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .manifesto-inner {
+      max-width: 950px;
+      margin: auto;
+      padding: 95px 22px;
+      text-align: center;
+    }
+
+    .manifesto h2 {
+      font-size: clamp(34px, 6vw, 60px);
+      line-height: 1.05;
+    }
+
+    .manifesto h2 span {
+      color: var(--copper);
+    }
+
+    .manifesto p {
+      color: var(--gray);
+      max-width: 720px;
+      margin: 25px auto 0;
+      font-size: 18px;
+    }
+
+    /* COMING SOON */
+
+    .coming-soon {
+      color: #777;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-top: 20px;
+      text-transform: uppercase;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 1000;
+    }
+
+    .footer-logo span {
+      color: var(--copper);
+    }
+
+    footer p {
+      color: #666;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav {
+        justify-content: center;
+      }
+
+      h1 {
+        letter-spacing: -4px;
+      }
+
+      .hero {
+        min-height: 82vh;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 65px 18px;
+      }
+
+      .card {
+        min-height: 230px;
+        padding: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#" class="logo">BUILT<span>50</span></a>
+
+    <nav class="nav-links">
+      <a href="#train">TRAIN</a>
+      <a href="#lab">THE LAB</a>
+      <a href="#blog">BLOG</a>
+      <a href="#community">COMMUNITY</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+      <div class="eyebrow">
+        STRENGTH • SCIENCE • PERFORMANCE
+      </div>
+
+      <h1>BUILT<span>50</span></h1>
+
+      <div class="tagline">
+        BUILT FOR WHAT'S NEXT.
+      </div>
+
+      <div class="hero-line"></div>
+
+      <h2>
+        Getting older is mandatory.<br>
+        <span>Getting weaker isn't.</span>
+      </h2>
+
+      <p>
+        Training, research, recovery, nutrition and real-world
+        performance for people who aren't done yet.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#train" class="btn btn-primary">ENTER BUILT50</a>
+        <a href="#lab" class="btn btn-secondary">EXPLORE THE LAB</a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <div class="section-heading">
+      <small>THE BUILT50 NETWORK</small>
+      <h2>TRAIN HARDER. THINK SMARTER.</h2>
+      <p>
+        No magic. No motivational fluff. Just training,
+        research and useful information for people who still
+        have work to do.
+      </p>
+    </div>
+
+
+    <div class="cards">
+
+      <article class="card" id="train">
+        <div class="number">01</div>
+        <div class="card-label">TRAIN</div>
+        <h3>Training</h3>
+        <p>
+          Bodybuilding, strength, workouts and real-world training
+          built around progress — not ego.
+        </p>
+        <div class="coming-soon">Coming Soon</div>
+      </article>
+
+
+      <article class="card" id="lab">
+        <div class="number">02</div>
+        <div class="card-label">LEARN</div>
+        <h3>The Lab</h3>
+        <p>
+          Research, performance science and complicated topics
+          broken down into language normal people can actually use.
+        </p>
+        <div class="coming-soon">Coming Soon</div>
+      </article>
+
+
+      <article class="card" id="blog">
+        <div class="number">03</div>
+        <div class="card-label">READ</div>
+        <h3>Built50 Blog</h3>
+        <p>
+          Training, gym culture, research, recovery, nutrition
+          and everything that comes with refusing to slow down.
+        </p>
+        <div class="coming-soon">Coming Soon</div>
+      </article>
+
+
+      <article class="card" id="community">
+        <div class="number">04</div>
+        <div class="card-label">CONNECT</div>
+        <h3>Community</h3>
+        <p>
+          A place for lifters, researchers and people chasing
+          better performance to talk, learn and share.
+        </p>
+        <div class="coming-soon">Coming Soon</div>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section class="manifesto">
+
+    <div class="manifesto-inner">
+
+      <h2>
+        50 ISN'T THE FINISH LINE.<br>
+        <span>IT'S ANOTHER STARTING LINE.</span>
+      </h2>
+
+      <p>
+        BUILT50 is for people who believe experience should make
+        you smarter — not softer. We're here to train, learn,
+        question, improve and keep building.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    BUILT<span>50</span>
+  </div>
+
+  <p>
+    STRENGTH • SCIENCE • PERFORMANCE
+  </p>
+
+  <p>
+    © 2026 BUILT50. All rights reserved.
+  </p>
+
+</footer>
+
+</body>
+</html>
