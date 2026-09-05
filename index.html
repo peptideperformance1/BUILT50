@@ -79,7 +79,24 @@
       font-weight: bold;
       letter-spacing: 1px;
     }
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 38px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 9px;
+}
 
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--white);
+  margin: 4px 0;
+  transition: .2s ease;
+}
     .nav-links a:hover {
       color: var(--copper-light);
     }
@@ -451,15 +468,47 @@
 }
     @media (max-width: 750px) {
 
-      .nav-links {
-        display: none;
-      }
-
       .nav {
-        justify-content: center;
-      }
+  position: relative;
+  justify-content: space-between;
+}
 
-      h1 {
+.menu-toggle {
+  display: block;
+}
+
+.nav-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 18px;
+  right: 18px;
+  flex-direction: column;
+  gap: 0;
+  background: #111111;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.5);
+}
+.nav-links.open {
+  display: flex;
+}
+
+.nav-links a {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-links a:last-child {
+  border-bottom: 0;
+}
+
+.nav-links .community-btn {
+  margin: 8px 0 0;
+  text-align: center;
+}
+        h1 {
         letter-spacing: -4px;
       }
 
@@ -676,6 +725,21 @@
   </p>
 
 </footer>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
 
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
 </body>
 </html>
