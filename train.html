@@ -315,13 +315,31 @@
     }
 
     @media (max-width: 850px) {
-      .nav-links {
-        display: none;
-      }
+    .nav {
+  position: relative;
+  justify-content: space-between;
+}
 
-      .nav {
-        justify-content: center;
-      }
+.menu-toggle {
+  display: block;
+}
+
+.nav-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 18px;
+  right: 18px;
+  flex-direction: column;
+  gap: 0;
+  background: #111111;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.5);
+}
+
+  
 
       .cards {
         grid-template-columns: 1fr;
