@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Lab | BUILT50</title>
+
+  <meta name="description" content="The BUILT50 Lab breaks down performance science, recovery, nutrition and research into practical information you can actually use.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #090909;
+      --panel: #111111;
+      --panel-light: #181818;
+      --copper: #d7782c;
+      --copper-light: #f09a4b;
+      --white: #f4f4f4;
+      --gray: #a7a7a7;
+      --border: #292929;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 9, 9, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--copper);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      align-items: center;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--copper-light);
+    }
+
+    .community-btn {
+      background: var(--copper);
+      color: #090909 !important;
+      padding: 9px 14px;
+      border-radius: 4px;
+      transition: .2s ease;
+    }
+
+    .community-btn:hover {
+      background: var(--copper-light);
+      transform: translateY(-1px);
+    }
+
+    .page-hero {
+      padding: 110px 22px 75px;
+      background:
+        radial-gradient(circle at top left, rgba(215,120,44,.15), transparent 38%),
+        linear-gradient(to bottom, #0b0b0b, #090909);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--copper);
+      font-weight: 800;
+      letter-spacing: 4px;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(58px, 10vw, 105px);
+      line-height: .9;
+      font-weight: 1000;
+      letter-spacing: -5px;
+    }
+
+    .page-hero p {
+      color: var(--gray);
+      font-size: 19px;
+      max-width: 720px;
+      margin-top: 25px;
+    }
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 80px 22px;
+    }
+
+    .section-heading small {
+      color: var(--copper);
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(34px, 5vw, 50px);
+      line-height: 1;
+      margin-top: 10px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+      max-width: 700px;
+      margin-top: 15px;
+    }
+
+    .cards {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.07), transparent 45%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 30px;
+      min-height: 245px;
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      border-color: var(--copper);
+      transform: translateY(-4px);
+    }
+
+    .card-label {
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .card h3 {
+      font-size: 26px;
+      margin: 12px 0;
+    }
+
+    .card p {
+      color: var(--gray);
+    }
+
+    .coming-soon {
+      color: #777;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-top: 22px;
+      text-transform: uppercase;
+    }
+
+    .principles {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .principles-inner {
+      max-width: 1000px;
+      margin: auto;
+      padding: 80px 22px;
+    }
+
+    .principles h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .principles h2 span {
+      color: var(--copper);
+    }
+
+    .principles p {
+      color: var(--gray);
+      font-size: 18px;
+      max-width: 780px;
+    }
+
+    .community-callout {
+      max-width: 1150px;
+      margin: 80px auto;
+      padding: 0 22px;
+    }
+
+    .community-box {
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.12), transparent 45%),
+        var(--panel);
+      border-radius: 8px;
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .community-box h3 {
+      font-size: 30px;
+    }
+
+    .community-box p {
+      color: var(--gray);
+      margin-top: 8px;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--copper);
+      color: #090909;
+      padding: 13px 20px;
+      border-radius: 4px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--copper-light);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 55px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 1000;
+    }
+
+    .footer-logo span {
+      color: var(--copper);
+    }
+
+    footer p {
+      color: #666;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav {
+        justify-content: center;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .community-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a href="index.html" class="logo">
+      BUILT<span>50</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="train.html">TRAIN</a>
+      <a href="lab.html" class="active">THE LAB</a>
+      <a href="blog.html">BLOG</a>
+      <a href="resources.html">RESOURCES</a>
+      <a href="community.html" class="community-btn">JOIN COMMUNITY</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+
+    <div class="page-hero-inner">
+
+      <div class="eyebrow">
+        BUILT50 PERFORMANCE LAB
+      </div>
+
+      <h1>QUESTION EVERYTHING.</h1>
+
+      <p>
+        Performance science, recovery, nutrition and research explained
+        without the hype, jargon or miracle claims.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <div class="section-heading">
+
+      <small>THE LAB</small>
+
+      <h2>LEARN WHAT ACTUALLY MATTERS.</h2>
+
+      <p>
+        Research changes. Trends come and go. The goal here is to break
+        complicated topics down into useful information you can understand,
+        question and apply.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <article class="card">
+
+        <div class="card-label">RECOVERY</div>
+
+        <h3>Recovery & Longevity</h3>
+
+        <p>
+          Sleep, fatigue, joint health, recovery strategies and the things
+          that matter more as training years add up.
+        </p>
+
+        <div class="coming-soon">Coming Soon</div>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="card-label">NUTRITION</div>
+
+        <h3>Performance Nutrition</h3>
+
+        <p>
+          Protein, calories, supplements, body composition and practical
+          nutrition without turning every meal into a spreadsheet.
+        </p>
+
+        <div class="coming-soon">Coming Soon</div>
+
+      </article>
+
+
+      <article class="card">
+
+        <div class="card-label">RESEARCH</div>
+
+        <h3>Research Explained</h3>
+
+        <p>
+          Studies, emerging performance topics and complicated science
+          translated into normal language.
+        </p>
+
+        <div class="coming-soon">Coming Soon</div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section class="principles">
+
+    <div class="principles-inner">
+
+      <h2>
+        INFORMATION ISN'T MAGIC.<br>
+        <span>UNDERSTANDING IT MATTERS.</span>
+      </h2>
+
+      <p>
+        BUILT50 isn't interested in selling every new trend as the answer.
+        The Lab exists to look at the evidence, separate useful information
+        from noise and help people make better-informed decisions.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="community-callout">
+
+    <div class="community-box">
+
+      <div>
+
+        <h3>Want to talk shop?</h3>
+
+        <p>
+          Join the BUILT50 community to discuss training, recovery,
+          research, progress and everything that comes with the lifestyle.
+        </p>
+
+      </div>
+
+      <a href="community.html" class="btn">
+        JOIN COMMUNITY
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    BUILT<span>50</span>
+  </div>
+
+  <p>
+    STRENGTH • SCIENCE • PERFORMANCE
+  </p>
+
+  <p>
+    © 2026 BUILT50. All rights reserved.
+  </p>
+
+</footer>
+
+</body>
+</html>
