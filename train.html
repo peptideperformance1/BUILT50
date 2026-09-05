@@ -365,9 +365,7 @@
     <a href="index.html" class="logo">
       BUILT<span>50</span>
     </a>
-<button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
-  ☰
-</button>
+
     <nav class="nav-links" id="navLinks">
       <a href="train.html" class="active">TRAIN</a>
       <a href="lab.html">THE LAB</a>
@@ -521,6 +519,21 @@
   <p>© 2026 BUILT50. All rights reserved.</p>
 
 </footer>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelector('.nav-links');
 
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
 </body>
 </html>
