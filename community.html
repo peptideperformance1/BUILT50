@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Community | BUILT50</title>
+
+  <meta name="description" content="Join the BUILT50 community for training, progress, recovery, performance science and real gym talk.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #090909;
+      --panel: #111111;
+      --panel-light: #181818;
+      --copper: #d7782c;
+      --copper-light: #f09a4b;
+      --white: #f4f4f4;
+      --gray: #a7a7a7;
+      --border: #292929;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 9, 9, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--copper);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      align-items: center;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--copper-light);
+    }
+
+    .community-btn {
+      background: var(--copper);
+      color: #090909 !important;
+      padding: 9px 14px;
+      border-radius: 4px;
+      transition: .2s ease;
+    }
+
+    .community-btn:hover {
+      background: var(--copper-light);
+      transform: translateY(-1px);
+    }
+
+    .page-hero {
+      padding: 110px 22px 85px;
+      background:
+        radial-gradient(circle at top left, rgba(215,120,44,.18), transparent 40%),
+        linear-gradient(to bottom, #0b0b0b, #090909);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--copper);
+      font-weight: 800;
+      letter-spacing: 4px;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(58px, 10vw, 105px);
+      line-height: .9;
+      font-weight: 1000;
+      letter-spacing: -5px;
+    }
+
+    .page-hero p {
+      color: var(--gray);
+      font-size: 19px;
+      max-width: 720px;
+      margin-top: 25px;
+    }
+
+    .hero-join {
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--copper);
+      color: #090909;
+      padding: 14px 22px;
+      border-radius: 4px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: .2s ease;
+    }
+
+    .btn:hover {
+      background: var(--copper-light);
+      transform: translateY(-2px);
+    }
+
+    .section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 80px 22px;
+    }
+
+    .section-heading small {
+      color: var(--copper);
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(34px, 5vw, 50px);
+      line-height: 1;
+      margin-top: 10px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+      max-width: 720px;
+      margin-top: 15px;
+    }
+
+    .community-grid {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .community-card {
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.07), transparent 45%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+      min-height: 235px;
+      transition: .25s ease;
+    }
+
+    .community-card:hover {
+      border-color: var(--copper);
+      transform: translateY(-4px);
+    }
+
+    .community-label {
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .community-card h3 {
+      font-size: 28px;
+      margin: 12px 0;
+    }
+
+    .community-card p {
+      color: var(--gray);
+      max-width: 470px;
+    }
+
+    .manifesto {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .manifesto-inner {
+      max-width: 1000px;
+      margin: auto;
+      padding: 85px 22px;
+      text-align: center;
+    }
+
+    .manifesto h2 {
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.05;
+    }
+
+    .manifesto h2 span {
+      color: var(--copper);
+    }
+
+    .manifesto p {
+      color: var(--gray);
+      font-size: 18px;
+      max-width: 760px;
+      margin: 24px auto 0;
+    }
+
+    .join-section {
+      max-width: 950px;
+      margin: auto;
+      padding: 85px 22px;
+      text-align: center;
+    }
+
+    .join-box {
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top, rgba(215,120,44,.14), transparent 55%),
+        var(--panel);
+      border-radius: 8px;
+      padding: 55px 30px;
+    }
+
+    .join-box small {
+      color: var(--copper);
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .join-box h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1;
+      margin-top: 12px;
+    }
+
+    .join-box p {
+      color: var(--gray);
+      max-width: 650px;
+      margin: 18px auto 28px;
+    }
+
+    .fine-print {
+      color: #666;
+      font-size: 11px;
+      margin-top: 18px;
+      letter-spacing: .5px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 55px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 1000;
+    }
+
+    .footer-logo span {
+      color: var(--copper);
+    }
+
+    footer p {
+      color: #666;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav {
+        justify-content: center;
+      }
+
+      .community-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a href="index.html" class="logo">
+      BUILT<span>50</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="train.html">TRAIN</a>
+      <a href="lab.html">THE LAB</a>
+      <a href="blog.html">BLOG</a>
+      <a href="resources.html">RESOURCES</a>
+      <a href="community.html" class="community-btn active">JOIN COMMUNITY</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+
+    <div class="page-hero-inner">
+
+      <div class="eyebrow">
+        BUILT50 COMMUNITY
+      </div>
+
+      <h1>DON'T BUILD ALONE.</h1>
+
+      <p>
+        Training is individual. Progress doesn't have to be.
+        Join people who still care about getting stronger, learning,
+        improving and having a little fun along the way.
+      </p>
+
+      <div class="hero-join">
+        <a href="#" class="btn">
+          ENTER THE COMMUNITY
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <div class="section-heading">
+
+      <small>INSIDE BUILT50</small>
+
+      <h2>MORE THAN ANOTHER FITNESS FEED.</h2>
+
+      <p>
+        Social media is great for finding people. Community is where
+        the real conversations happen.
+      </p>
+
+    </div>
+
+
+    <div class="community-grid">
+
+      <article class="community-card">
+
+        <div class="community-label">
+          TRAINING
+        </div>
+
+        <h3>Talk Training</h3>
+
+        <p>
+          Workouts, programming, exercise selection, strength,
+          bodybuilding and the everyday reality of trying to improve.
+        </p>
+
+      </article>
+
+
+      <article class="community-card">
+
+        <div class="community-label">
+          PROGRESS
+        </div>
+
+        <h3>Share the Wins</h3>
+
+        <p>
+          PRs, progress photos, milestones, transformations and the
+          little victories that keep people moving forward.
+        </p>
+
+      </article>
+
+
+      <article class="community-card">
+
+        <div class="community-label">
+          THE LAB
+        </div>
+
+        <h3>Discuss the Research</h3>
+
+        <p>
+          Performance science, recovery, nutrition and research topics
+          without pretending every headline has the final answer.
+        </p>
+
+      </article>
+
+
+      <article class="community-card">
+
+        <div class="community-label">
+          GYM LIFE
+        </div>
+
+        <h3>Keep It Human</h3>
+
+        <p>
+          Gym stories, questions, humor, rants and the conversations
+          that don't need a fifteen-minute educational video.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section class="manifesto">
+
+    <div class="manifesto-inner">
+
+      <h2>
+        DIFFERENT AGES.<br>
+        <span>SAME MINDSET.</span>
+      </h2>
+
+      <p>
+        BUILT50 started with the idea that another birthday shouldn't
+        automatically mean weaker, slower or finished. You don't have to
+        be 50 to belong here. You just need to still have something
+        you're building.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="join-section">
+
+    <div class="join-box">
+
+      <small>
+        JOIN BUILT50
+      </small>
+
+      <h2>
+        COME HANG OUT.
+      </h2>
+
+      <p>
+        Join the BUILT50 Discord for training discussion, progress,
+        research, gym life and updates from the community.
+      </p>
+
+      <a href="#" class="btn">
+        JOIN THE DISCORD
+      </a>
+
+      <div class="fine-print">
+        Free to join. Respect the community. Bring something to the conversation.
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    BUILT<span>50</span>
+  </div>
+
+  <p>
+    STRENGTH • SCIENCE • PERFORMANCE
+  </p>
+
+  <p>
+    © 2026 BUILT50. All rights reserved.
+  </p>
+
+</footer>
+
+</body>
+</html>
