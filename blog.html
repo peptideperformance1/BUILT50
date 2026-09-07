@@ -1,744 +1,1435 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Blog | BUILT50</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="BUILT50 articles on training, recovery, performance, gym culture and staying strong for the long haul.">
+<title>BUILT50 Blog | Training, Recovery, Nutrition & Real Life</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta name="description"
+content="The BUILT50 Blog covers training, recovery, nutrition, mindset and real-life performance with practical information for the long haul.">
 
-    :root {
-      --black: #090909;
-      --panel: #111111;
-      --panel-light: #181818;
-      --copper: #d7782c;
-      --copper-light: #f09a4b;
-      --white: #f4f4f4;
-      --gray: #a7a7a7;
-      --border: #292929;
-    }
+<style>
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(9, 9, 9, 0.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .logo span {
-      color: var(--copper);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      align-items: center;
-    }
-.menu-toggle {
-  display: none;
-  width: 42px;
-  height: 38px;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 9px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.menu-toggle span {
-  display: block;
-  height: 2px;
-  background: var(--white);
-  margin: 4px 0;
-  transition: .2s ease;
-}
-    .nav-links a:hover,
-    .nav-links .active {
-      color: var(--copper-light);
-    }
-
-    .community-btn {
-      background: var(--copper);
-      color: #090909 !important;
-      padding: 9px 14px;
-      border-radius: 4px;
-      transition: .2s ease;
-    }
-
-    .community-btn:hover {
-      background: var(--copper-light);
-      transform: translateY(-1px);
-    }
-
-    .page-hero {
-      padding: 105px 22px 70px;
-      background:
-        radial-gradient(circle at top left, rgba(215,120,44,.15), transparent 38%),
-        linear-gradient(to bottom, #0b0b0b, #090909);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .page-hero-inner {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .eyebrow {
-      color: var(--copper);
-      font-weight: 800;
-      letter-spacing: 4px;
-      font-size: 13px;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: clamp(58px, 10vw, 105px);
-      line-height: .9;
-      font-weight: 1000;
-      letter-spacing: -5px;
-    }
-
-    .page-hero p {
-      color: var(--gray);
-      font-size: 19px;
-      max-width: 720px;
-      margin-top: 25px;
-    }
-
-    .section {
-      max-width: 1150px;
-      margin: auto;
-      padding: 75px 22px;
-    }
-
-    .section-heading small {
-      color: var(--copper);
-      font-weight: bold;
-      letter-spacing: 3px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(34px, 5vw, 50px);
-      line-height: 1;
-      margin-top: 10px;
-    }
-
-    .section-heading p {
-      color: var(--gray);
-      max-width: 700px;
-      margin-top: 15px;
-    }
-
-    .featured {
-      margin-top: 38px;
-      background:
-        linear-gradient(135deg, rgba(215,120,44,.13), transparent 55%),
-        var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 42px;
-      display: grid;
-      grid-template-columns: 1.5fr .75fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .featured-label {
-      color: var(--copper);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 3px;
-    }
-
-    .featured h3 {
-      font-size: clamp(32px, 5vw, 48px);
-      line-height: 1.05;
-      margin: 12px 0 18px;
-    }
-
-    .featured p {
-      color: var(--gray);
-      font-size: 17px;
-      max-width: 680px;
-    }
-
-    .read-link {
-      display: inline-block;
-      margin-top: 24px;
-      color: var(--copper-light);
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .featured-side {
-      border-left: 1px solid var(--border);
-      padding-left: 35px;
-    }
-
-    .featured-side strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
-
-    .featured-side span {
-      color: var(--gray);
-      font-size: 13px;
-    }
-
-    .articles {
-      margin-top: 35px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .article-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 28px;
-      min-height: 225px;
-      transition: .25s ease;
-    }
-
-    .article-card:hover {
-      border-color: var(--copper);
-      transform: translateY(-4px);
-    }
-
-    .article-tag {
-      color: var(--copper);
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    .article-card h3 {
-      font-size: 24px;
-      line-height: 1.15;
-      margin: 12px 0;
-    }
-
-    .article-card p {
-      color: var(--gray);
-      font-size: 15px;
-    }
-
-    .coming-soon {
-      color: #777;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-top: 20px;
-      text-transform: uppercase;
-    }
-.read-more {
-  display: inline-block;
-  margin-top: 22px;
-  color: var(--copper-light);
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: .2s ease;
+:root {
+    --black: #090909;
+    --panel: #111111;
+    --panel-light: #181818;
+    --copper: #d7782c;
+    --copper-light: #f09a4b;
+    --white: #f4f4f4;
+    --gray: #a7a7a7;
+    --border: #292929;
 }
 
-.read-more:hover {
-  color: var(--white);
-  transform: translateX(4px);
-}
-    
-    .categories {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--panel);
-    }
-
-    .categories-inner {
-      max-width: 1150px;
-      margin: auto;
-      padding: 65px 22px;
-    }
-
-    .category-links {
-      margin-top: 28px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .category-links a {
-      border: 1px solid #3a3a3a;
-      padding: 10px 16px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .category-links a:hover {
-      border-color: var(--copper);
-      color: var(--copper-light);
-    }
-
-    .community-callout {
-      max-width: 1150px;
-      margin: 75px auto;
-      padding: 0 22px;
-    }
-
-    .community-box {
-      border: 1px solid var(--border);
-      background:
-        linear-gradient(135deg, rgba(215,120,44,.12), transparent 45%),
-        var(--panel);
-      border-radius: 8px;
-      padding: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .community-box h3 {
-      font-size: 30px;
-    }
-
-    .community-box p {
-      color: var(--gray);
-      margin-top: 8px;
-      max-width: 600px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--copper);
-      color: #090909;
-      padding: 13px 20px;
-      border-radius: 4px;
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      background: var(--copper-light);
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 55px 20px;
-      text-align: center;
-    }
-
-    .footer-logo {
-      font-size: 28px;
-      font-weight: 1000;
-    }
-
-    .footer-logo span {
-      color: var(--copper);
-    }
-
-    footer p {
-      color: #666;
-      font-size: 12px;
-      margin-top: 12px;
-    }
-
-    @media (max-width: 850px) {
-     .nav {
-  position: relative;
-  justify-content: space-between;
+html {
+    scroll-behavior: smooth;
 }
 
-.menu-toggle {
-  display: block;
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(9,9,9,.97);
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 22px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--copper);
 }
 
 .nav-links {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 18px;
-  right: 18px;
-  flex-direction: column;
-  gap: 0;
-  background: #111111;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 10px;
-  box-shadow: 0 18px 40px rgba(0,0,0,.5);
-}
-.nav-links.open {
-  display: flex;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 .nav-links a {
-  padding: 14px 12px;
-  border-bottom: 1px solid var(--border);
+    transition: .2s;
 }
 
-.nav-links a:last-child {
-  border-bottom: 0;
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--copper-light);
 }
 
-.nav-links .community-btn {
-  margin: 8px 0 0;
-  text-align: center;
+.community-btn {
+    background: var(--copper);
+    color: #090909 !important;
+
+    padding: 10px 16px;
+    border-radius: 4px;
 }
-      .featured {
-        grid-template-columns: 1fr;
-      }
 
-      .featured-side {
-        border-left: none;
-        border-top: 1px solid var(--border);
-        padding-left: 0;
-        padding-top: 25px;
-      }
+.community-btn:hover {
+    background: var(--copper-light);
+}
 
-      .articles {
-        grid-template-columns: 1fr;
-      }
 
-      .community-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+/* =========================
+   HAMBURGER
+========================= */
 
-      h1 {
-        letter-spacing: -3px;
-      }
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    background: var(--white);
+    margin: 5px 0;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 520px;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.04)
+        ),
+        url("blog-hero.png");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-overlay {
+    min-height: 520px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.blog-intro {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 58px 22px 30px;
+}
+
+.blog-intro small {
+    color: var(--copper);
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.blog-intro h1 {
+    margin-top: 10px;
+
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: .95;
+    letter-spacing: -2px;
+}
+
+.blog-intro h1 span {
+    color: var(--copper);
+}
+
+.blog-intro p {
+    max-width: 760px;
+
+    margin-top: 20px;
+
+    color: var(--gray);
+    font-size: 17px;
+}
+
+
+/* =========================
+   FEATURED ARTICLE
+========================= */
+
+.featured-wrap {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 25px 22px 70px;
+}
+
+.featured-card {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background: var(--panel);
+
+    transition: .25s ease;
+}
+
+.featured-card:hover {
+    border-color: var(--copper);
+    transform: translateY(-3px);
+}
+
+.featured-image {
+    min-height: 420px;
+    overflow: hidden;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition: transform .35s ease;
+}
+
+.featured-card:hover .featured-image img {
+    transform: scale(1.035);
+}
+
+.featured-content {
+    padding: 42px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-label {
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.featured-content h2 {
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: .95;
+    letter-spacing: -2px;
+}
+
+.featured-content p {
+    margin-top: 18px;
+
+    color: var(--gray);
+    font-size: 16px;
+}
+
+.card-link {
+    display: inline-block;
+
+    margin-top: 22px;
+    padding: 11px 16px;
+
+    border: 1px solid var(--copper);
+    border-radius: 4px;
+
+    color: var(--copper-light);
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transition: .2s ease;
+
+    width: fit-content;
+}
+
+.card-link:hover {
+    background: var(--copper);
+    color: #090909;
+}
+
+
+/* =========================
+   LATEST
+========================= */
+
+.latest-section {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 15px 22px 80px;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading small {
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    margin-top: 8px;
+
+    font-size: clamp(34px, 5vw, 50px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.article-card {
+    overflow: hidden;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    transition: .25s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--copper);
+}
+
+.article-image {
+    height: 230px;
+    overflow: hidden;
+
+    background: #161616;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    transition: transform .35s ease;
+}
+
+.article-card:hover .article-image img {
+    transform: scale(1.04);
+}
+
+.article-content {
+    padding: 23px;
+}
+
+.article-category {
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 8px;
+}
+
+.article-content h3 {
+    font-size: 24px;
+    line-height: 1.08;
+}
+
+.article-content p {
+    margin-top: 12px;
+
+    color: var(--gray);
+    font-size: 14px;
+
+    min-height: 64px;
+}
+
+
+/* =========================
+   CATEGORY STRIP
+========================= */
+
+.category-strip {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(215,120,44,.12),
+            rgba(255,255,255,.02),
+            rgba(215,120,44,.08)
+        );
+}
+
+.category-inner {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    padding: 28px 22px;
+}
+
+.category-item {
+    text-align: center;
+    padding: 10px;
+
+    border-right: 1px solid var(--border);
+}
+
+.category-item:last-child {
+    border-right: 0;
+}
+
+.category-item strong {
+    display: block;
+
+    color: var(--white);
+
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.category-item span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--gray);
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   PRINCIPLE
+========================= */
+
+.principle-wrap {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 80px 22px;
+}
+
+.principle {
+    padding: 42px;
+
+    border: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at left,
+            rgba(215,120,44,.2),
+            transparent 50%
+        ),
+        var(--panel);
+}
+
+.principle small {
+    display: block;
+
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.principle-content {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+
+    gap: 40px;
+    align-items: center;
+}
+
+.principle h2 {
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: .95;
+
+    letter-spacing: -2px;
+}
+
+.principle h2 span {
+    color: var(--copper);
+}
+
+.principle p {
+    color: var(--gray);
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   COMMUNITY
+========================= */
+
+.community-callout {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(215,120,44,.13),
+            transparent 55%
+        );
+}
+
+.community-inner {
+    max-width: 900px;
+    margin: auto;
+
+    padding: 75px 22px;
+
+    text-align: center;
+}
+
+.community-inner small {
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+.community-inner h2 {
+    margin-top: 10px;
+
+    font-size: clamp(35px, 5vw, 56px);
+    line-height: 1;
+}
+
+.community-inner p {
+    max-width: 620px;
+
+    margin: 18px auto 25px;
+
+    color: var(--gray);
+}
+
+.join-button {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    background: var(--copper);
+    color: #090909;
+
+    border-radius: 4px;
+
+    font-weight: 900;
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+}
+
+.join-button:hover {
+    background: var(--copper-light);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 55px 20px;
+
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: var(--copper);
+}
+
+footer p {
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .nav {
+        position: relative;
     }
-  </style>
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 18px;
+        right: 18px;
+
+        flex-direction: column;
+        gap: 0;
+
+        background: #111111;
+
+        border: 1px solid var(--border);
+        border-radius: 6px;
+
+        padding: 10px;
+
+        box-shadow: 0 18px 40px rgba(0,0,0,.5);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 14px 12px;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: 0;
+    }
+
+    .nav-links .community-btn {
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    .hero,
+    .hero-overlay {
+        min-height: 320px;
+    }
+
+    .featured-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        min-height: 340px;
+    }
+
+    .featured-content {
+        padding: 30px;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-image {
+        height: 350px;
+    }
+
+    .category-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .category-item:last-child {
+        grid-column: 1 / -1;
+        border-bottom: 0;
+    }
+
+    .principle-content {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .hero,
+    .hero-overlay {
+        min-height: 235px;
+    }
+
+    .featured-image {
+        min-height: 280px;
+    }
+
+    .article-image {
+        height: 290px;
+    }
+
+    .category-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .category-item {
+        grid-column: auto !important;
+        border-bottom: 1px solid var(--border) !important;
+    }
+
+    .category-item:last-child {
+        border-bottom: 0 !important;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+HEADER
+========================= -->
+
 <header>
-  <div class="nav">
 
-    <a href="index.html" class="logo">
-      BUILT<span>50</span>
-    </a>
+<div class="nav">
 
-    <button class="menu-toggle" id="menuToggle"
-      aria-label="Open navigation"
-      aria-expanded="false"
-      aria-controls="navLinks">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<a href="index.html" class="logo">
+BUILT<span>50</span>
+</a>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="train.html">TRAIN</a>
-      <a href="lab.html">THE LAB</a>
-      <a href="blog.html" class="active">BLOG</a>
-      <a href="resources.html">RESOURCES</a>
-      <a href="community.html" class="community-btn">JOIN COMMUNITY</a>
-    </nav>
 
-  </div>
+<button
+class="menu-toggle"
+id="menuToggle"
+aria-label="Open navigation"
+aria-expanded="false"
+aria-controls="navLinks">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+
+<nav class="nav-links" id="navLinks">
+
+<a href="train.html">
+TRAIN
+</a>
+
+<a href="lab.html">
+THE LAB
+</a>
+
+<a href="blog.html" class="active">
+BLOG
+</a>
+
+<a href="resources.html">
+RESOURCES
+</a>
+
+<a href="community.html" class="community-btn">
+JOIN COMMUNITY
+</a>
+
+</nav>
+
+</div>
+
 </header>
 
-<main>
-
-  <section class="page-hero">
-    <div class="page-hero-inner">
-
-      <div class="eyebrow">
-        BUILT50 BLOG
-      </div>
-
-      <h1>STILL BUILDING.</h1>
-
-      <p>
-        Training, recovery, performance, gym culture and the lessons
-        that come from refusing to coast.
-      </p>
-
-    </div>
-  </section>
 
 
-  <section class="section">
+<!-- =========================
+HERO
+========================= -->
 
-    <div class="section-heading">
+<section class="hero">
 
-      <small>FEATURED</small>
+<div class="hero-overlay"></div>
 
-      <h2>THIS WEEK AT BUILT50.</h2>
-
-      <p>
-        One featured piece stays front and center. New content rotates in,
-        older content moves into the archive, and the page stays clean.
-      </p>
-
-    </div>
+</section>
 
 
-    <article class="featured">
 
-      <div>
+<!-- =========================
+INTRO
+========================= -->
 
-        <div class="featured-label">
-          TRAINING • FEATURED
-        </div>
+<section class="blog-intro">
 
-        <h3>
-  <a href="training-after-50.html">Training After 50: What Actually Needs to Change?</a>
+<small>
+BUILT50 BLOG
+</small>
+
+<h1>
+REAL TOPICS.<br>
+<span>REAL PROGRESS.</span>
+</h1>
+
+<p>
+Training, nutrition, recovery, research, mindset and the reality
+of continuing to improve as the years add up.
+
+No fake perfection.
+
+Just practical ideas worth using.
+</p>
+
+</section>
+
+
+
+<!-- =========================
+FEATURED ARTICLE
+========================= -->
+
+<section class="featured-wrap">
+
+<article class="featured-card">
+
+<div class="featured-image">
+
+<img
+src="exercise-bench-press.jpg"
+alt="Training after 50 featured article">
+
+</div>
+
+
+<div class="featured-content">
+
+<div class="featured-label">
+FEATURED • TRAINING
+</div>
+
+<h2>
+Training After 50:
+What Actually Needs to Change?
+</h2>
+
+<p>
+Getting older doesn't mean you have to stop training hard.
+
+It means understanding recovery, exercise selection, volume
+and how to keep progressing without confusing destruction
+with productive training.
+</p>
+
+<a
+href="training-after-50.html"
+class="card-link">
+
+READ FEATURE →
+
+</a>
+
+</div>
+
+</article>
+
+</section>
+
+
+
+<!-- =========================
+LATEST ARTICLES
+========================= -->
+
+<section class="latest-section">
+
+<div class="section-heading">
+
+<small>
+LATEST FROM BUILT50
+</small>
+
+<h2>
+KEEP LEARNING.
+</h2>
+
+</div>
+
+
+<div class="article-grid">
+
+
+<!-- ARTICLE 1 -->
+
+<article class="article-card">
+
+<div class="article-image">
+
+<img
+src="exercise-chest-supported-row.jpg"
+alt="Recovery after 50">
+
+</div>
+
+<div class="article-content">
+
+<div class="article-category">
+RECOVERY
+</div>
+
+<h3>
+Recovery After 50
 </h3>
 
-        <p>
-          Getting older doesn't mean training soft. It means understanding
-          recovery, exercise selection, volume and what your body is actually
-          telling you.
-        </p>
+<p>
+You can still train hard.
 
-        <a href="training-after-50.html" class="read-more">READ ARTICLE →</a>
+The key is learning how to recover smart enough to keep
+coming back ready to perform.
+</p>
 
-      </div>
+<a
+href="recovery-after-50.html"
+class="card-link">
 
+READ ARTICLE →
 
-      <div class="featured-side">
+</a>
 
-        <strong>BUILT50 FEATURE</strong>
+</div>
 
-        <span>
-          Practical training ideas for people who still want strength,
-          muscle and progress after the easy years are gone.
-        </span>
+</article>
 
-      </div>
 
-    </article>
 
-  </section>
+<!-- ARTICLE 2 -->
 
+<article class="article-card">
 
-  <section class="section">
+<div class="article-image">
 
-    <div class="section-heading">
+<img
+src="exercise-squat.jpg"
+alt="Protein after 50">
 
-      <small>LATEST</small>
+</div>
 
-      <h2>RECENT FROM BUILT50.</h2>
+<div class="article-content">
 
-    </div>
+<div class="article-category">
+NUTRITION
+</div>
 
+<h3>
+Protein After 50
+</h3>
 
-    <div class="articles">
+<p>
+How much do you actually need?
 
-      <article class="article-card">
+A practical look at protein intake, muscle retention and
+what the research supports.
+</p>
 
-        <div class="article-tag">
-          TRAINING
-        </div>
+<a
+href="protein-after-50.html"
+class="card-link">
 
-        <h3>
-          Stop Training Like You're 25.
-        </h3>
+READ ARTICLE →
 
-        <p>
-          Not because you're old — because you've hopefully learned
-          something since then.
-        </p>
+</a>
 
-        <div class="coming-soon">
-          Coming Soon
-        </div>
+</div>
 
-      </article>
+</article>
 
 
-      <article class="article-card">
 
-        <div class="article-tag">
-          RECOVERY
-        </div>
+<!-- ARTICLE 3 -->
 
-        <h3>
-          Recovery Isn't Being Lazy.
-        </h3>
+<article class="article-card">
 
-        <p>
-          Sometimes the smartest thing you can do for your next workout
-          happens outside the gym.
-        </p>
+<div class="article-image">
 
-        <div class="coming-soon">
-          Coming Soon
-        </div>
+<img
+src="exercise-dumbbell-curl.jpg"
+alt="Creatine after 45">
 
-      </article>
+</div>
 
+<div class="article-content">
 
-      <article class="article-card">
+<div class="article-category">
+SCIENCE
+</div>
 
-        <div class="article-tag">
-          GYM LIFE
-        </div>
+<h3>
+Creatine After 45
+</h3>
 
-        <h3>
-          The Gym Has Enough Cologne.
-        </h3>
+<p>
+One of the most studied performance supplements deserves
+a closer look as training age and actual age increase.
+</p>
 
-        <p>
-          A completely serious investigation into one of modern
-          gym culture's greatest crimes.
-        </p>
+<a
+href="creatine-after-45.html"
+class="card-link">
 
-        <div class="coming-soon">
-          Coming Soon
-        </div>
+READ ARTICLE →
 
-      </article>
+</a>
 
-    </div>
+</div>
 
-  </section>
+</article>
 
 
-  <section class="categories">
 
-    <div class="categories-inner">
+<!-- ARTICLE 4 -->
 
-      <div class="section-heading">
+<article class="article-card">
 
-        <small>EXPLORE</small>
+<div class="article-image">
 
-        <h2>BROWSE BY TOPIC.</h2>
+<img
+src="exercise-lateral-raise.jpg"
+alt="BUILT50 research explained">
 
-      </div>
+</div>
 
+<div class="article-content">
 
-      <div class="category-links">
+<div class="article-category">
+RESEARCH
+</div>
 
-        <a href="train.html">TRAINING</a>
+<h3>
+Research Explained
+</h3>
 
-        <a href="lab.html">PERFORMANCE SCIENCE</a>
+<p>
+One headline or one study doesn't settle a question.
 
-        <a href="#">RECOVERY</a>
+Learn how to look at evidence without getting lost in the hype.
+</p>
 
-        <a href="#">NUTRITION</a>
+<a
+href="research-explained.html"
+class="card-link">
 
-        <a href="#">GYM CULTURE</a>
+READ GUIDE →
 
-        <a href="#">LONGEVITY</a>
+</a>
 
-      </div>
+</div>
 
-    </div>
+</article>
 
-  </section>
 
 
-  <section class="community-callout">
+<!-- ARTICLE 5 -->
 
-    <div class="community-box">
+<article class="article-card">
 
-      <div>
+<div class="article-image">
 
-        <h3>
-          Read it. Question it. Talk about it.
-        </h3>
+<img
+src="exercise-plank.jpg"
+alt="BUILT50 strength and muscle program">
 
-        <p>
-          Join the BUILT50 community for training talk, progress,
-          research and the occasional gym rant.
-        </p>
+</div>
 
-      </div>
+<div class="article-content">
 
-      <a href="community.html" class="btn">
-        JOIN COMMUNITY
-      </a>
+<div class="article-category">
+TRAINING
+</div>
 
-    </div>
+<h3>
+4-Day Strength & Muscle
+</h3>
 
-  </section>
+<p>
+Four focused training days designed around strength,
+muscle and enough recovery to keep the program moving.
+</p>
 
-</main>
+<a
+href="built50-4-day-strength-muscle.html"
+class="card-link">
 
+VIEW PROGRAM →
+
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- ARTICLE 6 -->
+
+<article class="article-card">
+
+<div class="article-image">
+
+<img
+src="exercise-bench-press.jpg"
+alt="BUILT50 exercise library">
+
+</div>
+
+<div class="article-content">
+
+<div class="article-category">
+EXERCISES
+</div>
+
+<h3>
+Exercise Library
+</h3>
+
+<p>
+A visual library of practical movements for strength,
+muscle and better training.
+</p>
+
+<a
+href="exercise-library.html"
+class="card-link">
+
+EXPLORE LIBRARY →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+CATEGORIES
+========================= -->
+
+<section class="category-strip">
+
+<div class="category-inner">
+
+<div class="category-item">
+
+<strong>
+TRAINING
+</strong>
+
+<span>
+Programs & exercises.
+</span>
+
+</div>
+
+
+<div class="category-item">
+
+<strong>
+NUTRITION
+</strong>
+
+<span>
+Fuel the work.
+</span>
+
+</div>
+
+
+<div class="category-item">
+
+<strong>
+RECOVERY
+</strong>
+
+<span>
+Come back ready.
+</span>
+
+</div>
+
+
+<div class="category-item">
+
+<strong>
+SCIENCE
+</strong>
+
+<span>
+Evidence over hype.
+</span>
+
+</div>
+
+
+<div class="category-item">
+
+<strong>
+REAL LIFE
+</strong>
+
+<span>
+The stuff between workouts.
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+PRINCIPLE
+========================= -->
+
+<section class="principle-wrap">
+
+<div class="principle">
+
+<small>
+BUILT50 PRINCIPLE
+</small>
+
+<div class="principle-content">
+
+<h2>
+MORE INFORMATION<br>
+ISN'T THE GOAL.
+
+<br>
+
+<span>
+BETTER INFORMATION IS.
+</span>
+</h2>
+
+
+<p>
+The internet isn't short on fitness opinions.
+
+BUILT50 is about filtering the noise, questioning the hype
+and finding useful ideas you can actually apply to training,
+recovery and life.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+COMMUNITY
+========================= -->
+
+<section class="community-callout">
+
+<div class="community-inner">
+
+<small>
+BUILT50 COMMUNITY
+</small>
+
+<h2>
+THE CONVERSATION CONTINUES.
+</h2>
+
+<p>
+Read something useful?
+
+Bring it into the community, share what you're working on
+and learn from people still trying to get better.
+</p>
+
+<a
+href="community.html"
+class="join-button">
+
+JOIN THE COMMUNITY
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer>
 
-  <div class="footer-logo">
-    BUILT<span>50</span>
-  </div>
+<div class="footer-logo">
+BUILT<span>50</span>
+</div>
 
-  <p>
-    STRENGTH • SCIENCE • PERFORMANCE
-  </p>
+<p>
+STRENGTH • SCIENCE • PERFORMANCE
+</p>
 
-  <p>
-    © 2026 BUILT50. All rights reserved.
-  </p>
+<p>
+© 2026 BUILT50. ALL RIGHTS RESERVED.
+</p>
 
 </footer>
+
+
+
+<!-- =========================
+MOBILE MENU
+========================= -->
+
 <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
 
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen);
-  });
+const menuToggle =
+document.getElementById('menuToggle');
 
-  navLinks.querySelectorAll('a').forEach(link => {
+const navLinks =
+document.getElementById('navLinks');
+
+
+menuToggle.addEventListener('click', () => {
+
+    const isOpen =
+    navLinks.classList.toggle('open');
+
+    menuToggle.setAttribute(
+        'aria-expanded',
+        isOpen
+    );
+
+});
+
+
+navLinks
+.querySelectorAll('a')
+.forEach(link => {
+
     link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+
+        navLinks.classList.remove('open');
+
+        menuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+
     });
-  });
+
+});
+
 </script>
+
 </body>
+
 </html>
