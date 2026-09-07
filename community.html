@@ -1,611 +1,1168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Community | BUILT50</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Join the BUILT50 community for training, progress, recovery, performance science and real gym talk.">
+<title>Community | BUILT50</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta name="description"
+content="Join the BUILT50 community — real people sharing training, progress, questions, experience and support for the long haul.">
 
-    :root {
-      --black: #090909;
-      --panel: #111111;
-      --panel-light: #181818;
-      --copper: #d7782c;
-      --copper-light: #f09a4b;
-      --white: #f4f4f4;
-      --gray: #a7a7a7;
-      --border: #292929;
-    }
+<style>
 
-    html {
-      scroll-behavior: smooth;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
+:root {
+    --black: #090909;
+    --panel: #111111;
+    --panel-light: #181818;
+    --copper: #d7782c;
+    --copper-light: #f09a4b;
+    --white: #f4f4f4;
+    --gray: #a7a7a7;
+    --border: #292929;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(9, 9, 9, 0.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    .logo {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
 
-    .logo span {
-      color: var(--copper);
-    }
+/* =========================
+   HEADER
+========================= */
 
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      align-items: center;
-    }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(9,9,9,.97);
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 22px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--copper);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    transition: .2s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--copper-light);
+}
+
+.community-btn {
+    background: var(--copper);
+    color: #090909 !important;
+
+    padding: 10px 16px;
+    border-radius: 4px;
+}
+
+.community-btn:hover {
+    background: var(--copper-light);
+}
+
+
+/* =========================
+   HAMBURGER
+========================= */
+
 .menu-toggle {
-  display: none;
-  width: 42px;
-  height: 38px;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 9px;
+    display: none;
+    background: transparent;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
 }
 
 .menu-toggle span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--white);
-  margin: 4px 0;
-  transition: .2s ease;
+    display: block;
+    width: 23px;
+    height: 2px;
+    background: var(--white);
+    margin: 5px 0;
 }
-    .nav-links a:hover,
-    .nav-links .active {
-      color: var(--copper-light);
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 520px;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.04)
+        ),
+        url("community-hero.png");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-overlay {
+    min-height: 520px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.community-intro {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 58px 22px 30px;
+}
+
+.community-intro small {
+    color: var(--copper);
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.community-intro h1 {
+    margin-top: 10px;
+
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: .95;
+    letter-spacing: -2px;
+}
+
+.community-intro h1 span {
+    color: var(--copper);
+}
+
+.community-intro p {
+    max-width: 760px;
+
+    margin-top: 20px;
+
+    color: var(--gray);
+    font-size: 17px;
+}
+
+
+/* =========================
+   COMMUNITY CARDS
+========================= */
+
+.community-section {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 25px 22px 80px;
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.community-card {
+    padding: 28px 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(215,120,44,.08),
+            transparent 45%
+        ),
+        var(--panel);
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    transition: .25s ease;
+}
+
+.community-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--copper);
+}
+
+.card-number {
+    color: var(--copper);
+
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+.community-card h2 {
+    font-size: 22px;
+    line-height: 1.05;
+
+    margin-bottom: 12px;
+}
+
+.community-card p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+
+/* =========================
+   COMMUNITY STRIP
+========================= */
+
+.community-strip {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(215,120,44,.12),
+            rgba(255,255,255,.02),
+            rgba(215,120,44,.08)
+        );
+}
+
+.strip-inner {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 28px 22px;
+}
+
+.strip-item {
+    padding: 10px;
+    text-align: center;
+
+    border-right: 1px solid var(--border);
+}
+
+.strip-item:last-child {
+    border-right: 0;
+}
+
+.strip-item strong {
+    display: block;
+
+    color: var(--white);
+
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.strip-item span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--gray);
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   WHAT THIS IS
+========================= */
+
+.about-wrap {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 80px 22px 30px;
+}
+
+.about-community {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+
+    gap: 42px;
+    align-items: center;
+
+    padding: 42px;
+
+    border: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at left,
+            rgba(215,120,44,.2),
+            transparent 50%
+        ),
+        var(--panel);
+}
+
+.about-community small {
+    display: block;
+
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.about-community h2 {
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: .95;
+
+    letter-spacing: -2px;
+}
+
+.about-community h2 span {
+    color: var(--copper);
+}
+
+.about-community p {
+    color: var(--gray);
+    font-size: 16px;
+}
+
+.about-community p + p {
+    margin-top: 15px;
+}
+
+
+/* =========================
+   PRINCIPLE
+========================= */
+
+.principle-wrap {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 50px 22px 80px;
+}
+
+.principle {
+    padding: 42px;
+
+    border: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at right,
+            rgba(215,120,44,.18),
+            transparent 48%
+        ),
+        var(--panel);
+}
+
+.principle small {
+    display: block;
+
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.principle-content {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+
+    gap: 40px;
+    align-items: center;
+}
+
+.principle h2 {
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: .95;
+
+    letter-spacing: -2px;
+}
+
+.principle h2 span {
+    color: var(--copper);
+}
+
+.principle p {
+    color: var(--gray);
+    font-size: 16px;
+}
+
+
+/* =========================
+   JOIN CTA
+========================= */
+
+.join-section {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(215,120,44,.16),
+            transparent 55%
+        );
+}
+
+.join-inner {
+    max-width: 920px;
+    margin: auto;
+
+    padding: 85px 22px;
+
+    text-align: center;
+}
+
+.join-inner small {
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.join-inner h2 {
+    margin-top: 10px;
+
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: .95;
+    letter-spacing: -2px;
+}
+
+.join-inner h2 span {
+    color: var(--copper);
+}
+
+.join-inner p {
+    max-width: 640px;
+
+    margin: 20px auto 28px;
+
+    color: var(--gray);
+
+    font-size: 16px;
+}
+
+
+/* This button currently points to # because
+   your actual Discord invite URL has not been added yet. */
+
+.discord-button {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    background: var(--copper);
+    color: #090909;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+
+    transition: .2s ease;
+}
+
+.discord-button:hover {
+    background: var(--copper-light);
+
+    transform: translateY(-2px);
+}
+
+.join-note {
+    margin-top: 14px !important;
+
+    color: #686868 !important;
+
+    font-size: 11px !important;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 55px 20px;
+
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: var(--copper);
+}
+
+footer p {
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .nav {
+        position: relative;
     }
 
-    .community-btn {
-      background: var(--copper);
-      color: #090909 !important;
-      padding: 9px 14px;
-      border-radius: 4px;
-      transition: .2s ease;
+    .menu-toggle {
+        display: block;
     }
 
-    .community-btn:hover {
-      background: var(--copper-light);
-      transform: translateY(-1px);
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 18px;
+        right: 18px;
+
+        flex-direction: column;
+        gap: 0;
+
+        background: #111111;
+
+        border: 1px solid var(--border);
+        border-radius: 6px;
+
+        padding: 10px;
+
+        box-shadow:
+            0 18px 40px
+            rgba(0,0,0,.5);
     }
 
-    .page-hero {
-      padding: 110px 22px 85px;
-      background:
-        radial-gradient(circle at top left, rgba(215,120,44,.18), transparent 40%),
-        linear-gradient(to bottom, #0b0b0b, #090909);
-      border-bottom: 1px solid var(--border);
+    .nav-links.open {
+        display: flex;
     }
 
-    .page-hero-inner {
-      max-width: 1150px;
-      margin: auto;
+    .nav-links a {
+        width: 100%;
+
+        padding: 14px 12px;
+
+        border-bottom: 1px solid var(--border);
     }
 
-    .eyebrow {
-      color: var(--copper);
-      font-weight: 800;
-      letter-spacing: 4px;
-      font-size: 13px;
-      margin-bottom: 15px;
+    .nav-links a:last-child {
+        border-bottom: 0;
     }
 
-    h1 {
-      font-size: clamp(58px, 10vw, 105px);
-      line-height: .9;
-      font-weight: 1000;
-      letter-spacing: -5px;
+    .nav-links .community-btn {
+        margin-top: 8px;
+        text-align: center;
     }
 
-    .page-hero p {
-      color: var(--gray);
-      font-size: 19px;
-      max-width: 720px;
-      margin-top: 25px;
-    }
-
-    .hero-join {
-      margin-top: 32px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--copper);
-      color: #090909;
-      padding: 14px 22px;
-      border-radius: 4px;
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: 1px;
-      transition: .2s ease;
-    }
-
-    .btn:hover {
-      background: var(--copper-light);
-      transform: translateY(-2px);
-    }
-
-    .section {
-      max-width: 1150px;
-      margin: auto;
-      padding: 80px 22px;
-    }
-
-    .section-heading small {
-      color: var(--copper);
-      font-weight: bold;
-      letter-spacing: 3px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(34px, 5vw, 50px);
-      line-height: 1;
-      margin-top: 10px;
-    }
-
-    .section-heading p {
-      color: var(--gray);
-      max-width: 720px;
-      margin-top: 15px;
+    .hero,
+    .hero-overlay {
+        min-height: 320px;
     }
 
     .community-grid {
-      margin-top: 38px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .community-card {
-      background:
-        linear-gradient(135deg, rgba(215,120,44,.07), transparent 45%),
-        var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 32px;
-      min-height: 235px;
-      transition: .25s ease;
+    .strip-inner {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .community-card:hover {
-      border-color: var(--copper);
-      transform: translateY(-4px);
+    .strip-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
     }
 
-    .community-label {
-      color: var(--copper);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 3px;
+    .strip-item:nth-last-child(-n+2) {
+        border-bottom: 0;
     }
 
-    .community-card h3 {
-      font-size: 28px;
-      margin: 12px 0;
+    .about-community {
+        grid-template-columns: 1fr;
     }
 
-    .community-card p {
-      color: var(--gray);
-      max-width: 470px;
+    .principle-content {
+        grid-template-columns: 1fr;
     }
 
-    .manifesto {
-      background: var(--panel);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .manifesto-inner {
-      max-width: 1000px;
-      margin: auto;
-      padding: 85px 22px;
-      text-align: center;
-    }
-
-    .manifesto h2 {
-      font-size: clamp(34px, 5vw, 56px);
-      line-height: 1.05;
-    }
-
-    .manifesto h2 span {
-      color: var(--copper);
-    }
-
-    .manifesto p {
-      color: var(--gray);
-      font-size: 18px;
-      max-width: 760px;
-      margin: 24px auto 0;
-    }
-
-    .join-section {
-      max-width: 950px;
-      margin: auto;
-      padding: 85px 22px;
-      text-align: center;
-    }
-
-    .join-box {
-      border: 1px solid var(--border);
-      background:
-        radial-gradient(circle at top, rgba(215,120,44,.14), transparent 55%),
-        var(--panel);
-      border-radius: 8px;
-      padding: 55px 30px;
-    }
-
-    .join-box small {
-      color: var(--copper);
-      font-weight: bold;
-      letter-spacing: 3px;
-    }
-
-    .join-box h2 {
-      font-size: clamp(34px, 5vw, 52px);
-      line-height: 1;
-      margin-top: 12px;
-    }
-
-    .join-box p {
-      color: var(--gray);
-      max-width: 650px;
-      margin: 18px auto 28px;
-    }
-
-    .fine-print {
-      color: #666;
-      font-size: 11px;
-      margin-top: 18px;
-      letter-spacing: .5px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 55px 20px;
-      text-align: center;
-    }
-
-    .footer-logo {
-      font-size: 28px;
-      font-weight: 1000;
-    }
-
-    .footer-logo span {
-      color: var(--copper);
-    }
-
-    footer p {
-      color: #666;
-      font-size: 12px;
-      margin-top: 12px;
-    }
-
- @media (max-width: 850px) {
-  .nav {
-    position: relative;
-    justify-content: space-between;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 18px;
-    right: 18px;
-    flex-direction: column;
-    gap: 0;
-    background: #111111;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 10px;
-    box-shadow: 0 18px 40px rgba(0,0,0,.5);
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 14px 12px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-links a:last-child {
-    border-bottom: 0;
-  }
-
-  .nav-links .community-btn {
-    margin: 8px 0 0;
-    text-align: center;
-  }
-
-  .community-grid {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    letter-spacing: -3px;
-  }
 }
-  </style>
+
+
+@media (max-width: 520px) {
+
+    .hero,
+    .hero-overlay {
+        min-height: 235px;
+    }
+
+    .community-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .strip-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .strip-item {
+        border-bottom: 1px solid var(--border) !important;
+    }
+
+    .strip-item:last-child {
+        border-bottom: 0 !important;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+HEADER
+========================= -->
+
 <header>
-  <div class="nav">
 
-    <a href="index.html" class="logo">
-      BUILT<span>50</span>
-    </a>
+<div class="nav">
 
-    <button class="menu-toggle" id="menuToggle"
-      aria-label="Open navigation"
-      aria-expanded="false"
-      aria-controls="navLinks">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<a href="index.html" class="logo">
+BUILT<span>50</span>
+</a>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="train.html">TRAIN</a>
-      <a href="lab.html">THE LAB</a>
-      <a href="blog.html">BLOG</a>
-      <a href="resources.html">RESOURCES</a>
-      <a href="community.html" class="community-btn active">JOIN COMMUNITY</a>
-    </nav>
 
-  </div>
+<button
+class="menu-toggle"
+id="menuToggle"
+aria-label="Open navigation"
+aria-expanded="false"
+aria-controls="navLinks">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+
+<nav class="nav-links" id="navLinks">
+
+<a href="train.html">
+TRAIN
+</a>
+
+<a href="lab.html">
+THE LAB
+</a>
+
+<a href="blog.html">
+BLOG
+</a>
+
+<a href="resources.html">
+RESOURCES
+</a>
+
+<a href="community.html" class="community-btn active">
+JOIN COMMUNITY
+</a>
+
+</nav>
+
+</div>
+
 </header>
-<main>
-
-  <section class="page-hero">
-
-    <div class="page-hero-inner">
-
-      <div class="eyebrow">
-        BUILT50 COMMUNITY
-      </div>
-
-      <h1>DON'T BUILD ALONE.</h1>
-
-      <p>
-        Training is individual. Progress doesn't have to be.
-        Join people who still care about getting stronger, learning,
-        improving and having a little fun along the way.
-      </p>
-
-      <div class="hero-join">
-        <a href="https://discord.gg/WXH8ufnE4" class="btn" target="_blank" rel="noopener noreferrer">
-          ENTER THE COMMUNITY
-        </a>
-      </div>
-
-    </div>
-
-  </section>
 
 
-  <section class="section">
 
-    <div class="section-heading">
+<!-- =========================
+HERO
+========================= -->
 
-      <small>INSIDE BUILT50</small>
+<section class="hero">
 
-      <h2>MORE THAN ANOTHER FITNESS FEED.</h2>
+<div class="hero-overlay"></div>
 
-      <p>
-        Social media is great for finding people. Community is where
-        the real conversations happen.
-      </p>
-
-    </div>
+</section>
 
 
-    <div class="community-grid">
 
-      <article class="community-card">
+<!-- =========================
+INTRO
+========================= -->
 
-        <div class="community-label">
-          TRAINING
-        </div>
+<section class="community-intro">
 
-        <h3>Talk Training</h3>
+<small>
+BUILT50 COMMUNITY
+</small>
 
-        <p>
-          Workouts, programming, exercise selection, strength,
-          bodybuilding and the everyday reality of trying to improve.
-        </p>
+<h1>
+DON'T BUILD<br>
+<span>ALONE.</span>
+</h1>
 
-      </article>
+<p>
+Training can be individual.
 
+Progress doesn't have to be.
 
-      <article class="community-card">
+BUILT50 is a place for people who still care about getting
+stronger, learning more, sharing what works and helping each
+other stay in the game.
+</p>
 
-        <div class="community-label">
-          PROGRESS
-        </div>
-
-        <h3>Share the Wins</h3>
-
-        <p>
-          PRs, progress photos, milestones, transformations and the
-          little victories that keep people moving forward.
-        </p>
-
-      </article>
+</section>
 
 
-      <article class="community-card">
 
-        <div class="community-label">
-          THE LAB
-        </div>
+<!-- =========================
+WHY JOIN
+========================= -->
 
-        <h3>Discuss the Research</h3>
+<section class="community-section">
 
-        <p>
-          Performance science, recovery, nutrition and research topics
-          without pretending every headline has the final answer.
-        </p>
-
-      </article>
+<div class="community-grid">
 
 
-      <article class="community-card">
+<article class="community-card">
 
-        <div class="community-label">
-          GYM LIFE
-        </div>
+<div class="card-number">
+01
+</div>
 
-        <h3>Keep It Human</h3>
+<h2>
+SHARE EXPERIENCE
+</h2>
 
-        <p>
-          Gym stories, questions, humor, rants and the conversations
-          that don't need a fifteen-minute educational video.
-        </p>
+<p>
+Talk about training, progress, lessons learned and what
+you're working toward next.
+</p>
 
-      </article>
-
-    </div>
-
-  </section>
+</article>
 
 
-  <section class="manifesto">
+<article class="community-card">
 
-    <div class="manifesto-inner">
+<div class="card-number">
+02
+</div>
 
-      <h2>
-        DIFFERENT AGES.<br>
-        <span>SAME MINDSET.</span>
-      </h2>
+<h2>
+ASK QUESTIONS
+</h2>
 
-      <p>
-        BUILT50 started with the idea that another birthday shouldn't
-        automatically mean weaker, slower or finished. You don't have to
-        be 50 to belong here. You just need to still have something
-        you're building.
-      </p>
+<p>
+Get another perspective from people who actually care
+about training, recovery and improving.
+</p>
 
-    </div>
-
-  </section>
+</article>
 
 
-  <section class="join-section">
+<article class="community-card">
 
-    <div class="join-box">
+<div class="card-number">
+03
+</div>
 
-      <small>
-        JOIN BUILT50
-      </small>
+<h2>
+STAY ACCOUNTABLE
+</h2>
 
-      <h2>
-        COME HANG OUT.
-      </h2>
+<p>
+Share wins, setbacks, PRs and progress without needing
+to turn everything into social-media theater.
+</p>
 
-      <p>
-        Join the BUILT50 Discord for training discussion, progress,
-        research, gym life and updates from the community.
-      </p>
+</article>
 
-      <a href="https://discord.gg/WXH8ufnE4" class="btn" target="_blank" rel="noopener noreferrer">
-        JOIN THE DISCORD
-      </a>
 
-      <div class="fine-print">
-        Free to join. Respect the community. Bring something to the conversation.
-      </div>
+<article class="community-card">
 
-    </div>
+<div class="card-number">
+04
+</div>
 
-  </section>
+<h2>
+KEEP LEARNING
+</h2>
 
-</main>
+<p>
+Training changes. Research changes. Life changes.
 
+Keep learning instead of pretending you already know everything.
+</p>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+COMMUNITY STRIP
+========================= -->
+
+<section class="community-strip">
+
+<div class="strip-inner">
+
+
+<div class="strip-item">
+
+<strong>
+TRAIN
+</strong>
+
+<span>
+Keep progressing.
+</span>
+
+</div>
+
+
+<div class="strip-item">
+
+<strong>
+LEARN
+</strong>
+
+<span>
+Ask better questions.
+</span>
+
+</div>
+
+
+<div class="strip-item">
+
+<strong>
+SHARE
+</strong>
+
+<span>
+Help someone else.
+</span>
+
+</div>
+
+
+<div class="strip-item">
+
+<strong>
+IMPROVE
+</strong>
+
+<span>
+Stay in the game.
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+WHAT THIS COMMUNITY IS
+========================= -->
+
+<section class="about-wrap">
+
+<div class="about-community">
+
+
+<div>
+
+<small>
+MORE THAN A COMMENT SECTION
+</small>
+
+<h2>
+REAL PEOPLE.<br>
+<span>REAL CONVERSATIONS.</span>
+</h2>
+
+</div>
+
+
+<div>
+
+<p>
+BUILT50 isn't about pretending everybody trains the same,
+eats the same or has the same goals.
+</p>
+
+<p>
+It's about bringing together people who care about strength,
+bodybuilding, recovery, nutrition, performance and continuing
+to improve as life moves forward.
+</p>
+
+<p>
+You don't need to be 50.
+
+You just need to understand the idea behind BUILT50:
+getting older is mandatory — getting weaker isn't.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+PRINCIPLE
+========================= -->
+
+<section class="principle-wrap">
+
+<div class="principle">
+
+<small>
+BUILT50 PRINCIPLE
+</small>
+
+<div class="principle-content">
+
+
+<h2>
+BETTER PEOPLE.<br>
+BETTER CONVERSATIONS.
+
+<br>
+
+<span>
+BETTER PROGRESS.
+</span>
+</h2>
+
+
+<p>
+The strongest communities aren't built around everyone
+agreeing with each other.
+
+They're built around people being willing to share,
+listen, learn and keep moving forward.
+</p>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+JOIN
+========================= -->
+
+<section class="join-section">
+
+<div class="join-inner">
+
+<small>
+READY TO JOIN?
+</small>
+
+<h2>
+BUILD SOMETHING<br>
+<span>STRONGER TOGETHER.</span>
+</h2>
+
+<p>
+Join the BUILT50 community for training conversation,
+progress, research discussion, gym life and people who
+still believe their best years aren't automatically behind them.
+</p>
+
+
+<!--
+Replace # below with your actual Discord invite URL
+when you are ready to connect it.
+-->
+
+<a
+href="#"
+class="discord-button">
+
+ENTER THE COMMUNITY →
+
+</a>
+
+
+<p class="join-note">
+BUILT50 COMMUNITY • TRAIN • LEARN • SHARE • IMPROVE
+</p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer>
 
-  <div class="footer-logo">
-    BUILT<span>50</span>
-  </div>
+<div class="footer-logo">
+BUILT<span>50</span>
+</div>
 
-  <p>
-    STRENGTH • SCIENCE • PERFORMANCE
-  </p>
+<p>
+STRENGTH • SCIENCE • PERFORMANCE
+</p>
 
-  <p>
-    © 2026 BUILT50. All rights reserved.
-  </p>
+<p>
+© 2026 BUILT50. ALL RIGHTS RESERVED.
+</p>
 
 </footer>
+
+
+
+<!-- =========================
+MOBILE MENU
+========================= -->
+
 <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
 
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen);
-  });
+const menuToggle =
+document.getElementById('menuToggle');
 
-  navLinks.querySelectorAll('a').forEach(link => {
+const navLinks =
+document.getElementById('navLinks');
+
+
+menuToggle.addEventListener('click', () => {
+
+    const isOpen =
+    navLinks.classList.toggle('open');
+
+    menuToggle.setAttribute(
+        'aria-expanded',
+        isOpen
+    );
+
+});
+
+
+navLinks
+.querySelectorAll('a')
+.forEach(link => {
+
     link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+
+        navLinks.classList.remove('open');
+
+        menuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+
     });
-  });
+
+});
+
 </script>
+
 </body>
+
 </html>
