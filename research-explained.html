@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Research Explained | BUILT50</title>
+
+  <meta name="description" content="BUILT50 Research Explained breaks down performance, training, recovery and nutrition research into practical language without the hype.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #090909;
+      --panel: #111111;
+      --panel-light: #181818;
+      --copper: #d7782c;
+      --copper-light: #f09a4b;
+      --white: #f4f4f4;
+      --gray: #a7a7a7;
+      --border: #292929;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9,9,9,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--copper);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      align-items: center;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--copper-light);
+    }
+
+    .community-btn {
+      background: var(--copper);
+      color: #090909 !important;
+      padding: 9px 14px;
+      border-radius: 4px;
+      transition: .2s ease;
+    }
+
+    .community-btn:hover {
+      background: var(--copper-light);
+      transform: translateY(-1px);
+    }
+
+    /* MOBILE MENU BUTTON */
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      margin: 5px 0;
+    }
+
+    /* HERO */
+
+    .page-hero {
+      padding: 110px 22px 90px;
+      background:
+        radial-gradient(circle at top left, rgba(215,120,44,.18), transparent 40%),
+        linear-gradient(to bottom, #0b0b0b, #090909);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero-inner {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--copper);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(55px, 9vw, 100px);
+      line-height: .92;
+      letter-spacing: -5px;
+      font-weight: 1000;
+      max-width: 950px;
+    }
+
+    h1 span {
+      color: var(--copper);
+    }
+
+    .hero-description {
+      max-width: 760px;
+      margin-top: 28px;
+      color: var(--gray);
+      font-size: 19px;
+    }
+
+    /* ARTICLE */
+
+    .article {
+      max-width: 850px;
+      margin: auto;
+      padding: 90px 22px;
+    }
+
+    .article-label {
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+
+    .article h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .lead {
+      color: var(--gray);
+      font-size: 20px;
+      line-height: 1.7;
+      margin-bottom: 45px;
+    }
+
+    .article h3 {
+      font-size: 27px;
+      margin: 42px 0 14px;
+      color: var(--white);
+    }
+
+    .article p {
+      color: #c0c0c0;
+      font-size: 17px;
+      margin-bottom: 22px;
+    }
+
+    .article strong {
+      color: var(--white);
+    }
+
+    /* CALLOUT */
+
+    .callout {
+      margin: 45px 0;
+      padding: 30px;
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.12), transparent 65%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--copper);
+      border-radius: 6px;
+    }
+
+    .callout small {
+      display: block;
+      color: var(--copper);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .callout p {
+      margin: 0;
+      color: var(--white);
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    /* TOPICS */
+
+    .topics {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topics-inner {
+      max-width: 1050px;
+      margin: auto;
+      padding: 75px 22px;
+    }
+
+    .topics small {
+      color: var(--copper);
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .topics h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin-top: 8px;
+      line-height: 1.05;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .topic-card {
+      padding: 27px;
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+    }
+
+    .topic-card h3 {
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .topic-card p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* COMMUNITY */
+
+    .community-callout {
+      max-width: 1050px;
+      margin: auto;
+      padding: 80px 22px;
+    }
+
+    .community-box {
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.18), transparent 60%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .community-box h2 {
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .community-box p {
+      color: var(--gray);
+      margin-top: 10px;
+      max-width: 600px;
+    }
+
+    .join-button {
+      display: inline-block;
+      background: var(--copper);
+      color: #090909;
+      padding: 14px 22px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transition: .2s ease;
+    }
+
+    .join-button:hover {
+      background: var(--copper-light);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 20px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 1000;
+    }
+
+    .footer-logo span {
+      color: var(--copper);
+    }
+
+    footer p {
+      color: #666;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav {
+        position: relative;
+        justify-content: space-between;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 18px;
+        right: 18px;
+        flex-direction: column;
+        gap: 0;
+        background: #111111;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 10px;
+        box-shadow: 0 18px 40px rgba(0,0,0,.5);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: 0;
+      }
+
+      .nav-links .community-btn {
+        margin: 8px 0 0;
+        text-align: center;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .page-hero {
+        padding: 80px 20px 65px;
+      }
+
+      .article {
+        padding: 65px 20px;
+      }
+
+      .topic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .community-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a href="index.html" class="logo">
+      BUILT<span>50</span>
+    </a>
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="navLinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="train.html">TRAIN</a>
+      <a href="lab.html" class="active">THE LAB</a>
+      <a href="blog.html">BLOG</a>
+      <a href="resources.html">RESOURCES</a>
+      <a href="community.html" class="community-btn">JOIN COMMUNITY</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+
+      <div class="eyebrow">
+        THE LAB • RESEARCH
+      </div>
+
+      <h1>
+        RESEARCH<br>
+        <span>EXPLAINED.</span>
+      </h1>
+
+      <p class="hero-description">
+        Studies and headlines are easy to find. Understanding what they
+        actually mean is harder. This is where BUILT50 separates useful
+        information from noise.
+      </p>
+
+    </div>
+  </section>
+
+
+  <article class="article">
+
+    <div class="article-label">
+      BUILT50 PERFORMANCE LAB
+    </div>
+
+    <h2>
+      READ THE RESEARCH.<br>
+      THEN ASK BETTER QUESTIONS.
+    </h2>
+
+    <p class="lead">
+      Fitness and performance research can sound more complicated than it
+      needs to be. The goal here isn't to turn everyone into a scientist.
+      It's to understand enough to make better decisions.
+    </p>
+
+
+    <h3>A Study Isn't the Final Word</h3>
+
+    <p>
+      One study can be interesting. It doesn't automatically settle a
+      question. Research needs context: who was studied, how many people
+      participated, how long the study lasted, what was actually measured
+      and whether other research points in the same direction.
+    </p>
+
+    <p>
+      That's especially important in fitness, nutrition and performance,
+      where individual response can vary considerably.
+    </p>
+
+
+    <div class="callout">
+
+      <small>BUILT50 RULE</small>
+
+      <p>
+        Don't ask whether a headline sounds impressive. Ask whether the
+        evidence actually supports the headline.
+      </p>
+
+    </div>
+
+
+    <h3>Correlation Isn't Always Cause</h3>
+
+    <p>
+      Two things happening together doesn't automatically mean one caused
+      the other. This is one of the easiest ways research gets turned into
+      an exaggerated social-media headline.
+    </p>
+
+    <p>
+      Observational research can reveal patterns worth investigating, but
+      stronger conclusions usually require stronger evidence.
+    </p>
+
+
+    <h3>Look at Who Was Studied</h3>
+
+    <p>
+      Research performed on sedentary beginners may not translate perfectly
+      to someone who has trained seriously for decades. Results from younger
+      adults may not answer every question about older lifters either.
+    </p>
+
+    <p>
+      That doesn't make the research useless. It means the population being
+      studied matters when deciding how relevant the findings are to you.
+    </p>
+
+
+    <h3>Statistically Significant Isn't Always Practically Significant</h3>
+
+    <p>
+      A result can be statistically meaningful while producing a real-world
+      difference so small that it barely matters to your training or daily
+      life.
+    </p>
+
+    <p>
+      For lifters, the practical question is often simple:
+      <strong>Will this meaningfully improve performance, recovery, health
+      or consistency?</strong>
+    </p>
+
+
+    <h3>Evidence Changes</h3>
+
+    <p>
+      Good science isn't supposed to give us permanent answers to every
+      question. New studies add information, challenge older assumptions
+      and sometimes change what we thought we knew.
+    </p>
+
+    <p>
+      Changing your opinion when better evidence appears isn't weakness.
+      That's exactly how learning is supposed to work.
+    </p>
+
+
+    <div class="callout">
+
+      <small>THE POINT</small>
+
+      <p>
+        Research should make us more informed — not more certain about
+        things the evidence hasn't actually proven.
+      </p>
+
+    </div>
+
+
+    <h3>How BUILT50 Will Use Research</h3>
+
+    <p>
+      THE LAB will cover training science, recovery, nutrition, longevity
+      and emerging performance topics. When we discuss research, the goal
+      will be to explain what was studied, what was found, what the
+      limitations were and what may actually matter in the real world.
+    </p>
+
+    <p>
+      No miracle claims. No pretending one study answers everything.
+      Just useful information explained in normal language.
+    </p>
+
+  </article>
+
+
+  <section class="topics">
+
+    <div class="topics-inner">
+
+      <small>COMING TO THE LAB</small>
+
+      <h2>WHAT WE'LL BE DIGGING INTO.</h2>
+
+      <div class="topic-grid">
+
+        <div class="topic-card">
+          <h3>Training Science</h3>
+          <p>
+            Volume, intensity, frequency, exercise selection and what
+            actually drives progress.
+          </p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Recovery & Longevity</h3>
+          <p>
+            Sleep, fatigue, joint management, recovery and staying capable
+            for the long haul.
+          </p>
+        </div>
+
+        <div class="topic-card">
+          <h3>Nutrition & Performance</h3>
+          <p>
+            Protein, calories, supplementation and performance nutrition
+            without turning food into a religion.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="community-callout">
+
+    <div class="community-box">
+
+      <div>
+        <h2>QUESTION IT. DISCUSS IT. LEARN.</h2>
+
+        <p>
+          BUILT50 is building a community for people interested in training,
+          performance and learning without all the noise.
+        </p>
+      </div>
+
+      <a href="community.html" class="join-button">
+        JOIN COMMUNITY
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    BUILT<span>50</span>
+  </div>
+
+  <p>
+    STRENGTH • SCIENCE • PERFORMANCE
+  </p>
+
+  <p>
+    © 2026 BUILT50. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+
+    const isOpen = navLinks.classList.toggle('open');
+
+    menuToggle.setAttribute(
+      'aria-expanded',
+      isOpen
+    );
+
+  });
+
+
+  navLinks.querySelectorAll('a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+      navLinks.classList.remove('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
