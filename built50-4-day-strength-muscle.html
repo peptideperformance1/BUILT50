@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BUILT50 4-Day Strength & Muscle Program</title>
+
+  <meta name="description" content="The BUILT50 4-Day Strength & Muscle Program. A practical upper and lower body training plan built for strength, muscle and long-term progress.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #090909;
+      --panel: #111111;
+      --panel-light: #181818;
+      --copper: #d7782c;
+      --copper-light: #f09a4b;
+      --white: #f4f4f4;
+      --gray: #a7a7a7;
+      --border: #292929;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9,9,9,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--copper);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      align-items: center;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--copper-light);
+    }
+
+    .community-btn {
+      background: var(--copper);
+      color: #090909 !important;
+      padding: 9px 14px;
+      border-radius: 4px;
+      transition: .2s ease;
+    }
+
+    .community-btn:hover {
+      background: var(--copper-light);
+      transform: translateY(-1px);
+    }
+
+    /* HAMBURGER */
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      margin: 4px 0;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 105px 22px 85px;
+      background:
+        radial-gradient(circle at top left, rgba(215,120,44,.22), transparent 42%),
+        linear-gradient(to bottom, #0b0b0b, #090909);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: .98;
+      letter-spacing: -4px;
+      font-weight: 1000;
+      max-width: 950px;
+    }
+
+    h1 span {
+      color: var(--copper);
+    }
+
+    .hero-description {
+      max-width: 760px;
+      margin-top: 28px;
+      color: var(--gray);
+      font-size: 19px;
+    }
+
+    /* OVERVIEW */
+
+    .overview {
+      max-width: 1050px;
+      margin: auto;
+      padding: 75px 22px 30px;
+    }
+
+    .section-label {
+      color: var(--copper);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .overview h2,
+    .schedule h2,
+    .rules h2 {
+      font-size: clamp(34px, 5vw, 50px);
+      line-height: 1.05;
+      margin: 8px 0 22px;
+    }
+
+    .overview > p {
+      max-width: 800px;
+      color: var(--gray);
+      font-size: 17px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .overview-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 22px;
+    }
+
+    .overview-card strong {
+      display: block;
+      color: var(--copper-light);
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .overview-card span {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* WEEK */
+
+    .schedule {
+      max-width: 1050px;
+      margin: auto;
+      padding: 55px 22px 25px;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .day {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 17px 10px;
+      text-align: center;
+    }
+
+    .day strong {
+      display: block;
+      color: var(--copper-light);
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .day span {
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    .day.rest {
+      opacity: .55;
+    }
+
+    /* WORKOUTS */
+
+    .workouts {
+      max-width: 1050px;
+      margin: auto;
+      padding: 60px 22px;
+    }
+
+    .workout {
+      margin-bottom: 65px;
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.08), transparent 55%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .workout-header {
+      padding: 28px 30px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .workout-number {
+      color: var(--copper);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .workout-header h2 {
+      font-size: clamp(29px, 4vw, 40px);
+      margin-top: 5px;
+    }
+
+    .workout-header p {
+      color: var(--gray);
+      margin-top: 7px;
+    }
+
+    .exercise-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .exercise-table th {
+      text-align: left;
+      padding: 15px 20px;
+      background: #0d0d0d;
+      color: #777;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .exercise-table td {
+      padding: 17px 20px;
+      border-top: 1px solid var(--border);
+      color: #c3c3c3;
+      font-size: 14px;
+    }
+
+    .exercise-table td:first-child {
+      color: var(--white);
+      font-weight: bold;
+    }
+
+    .exercise-table td:nth-child(2),
+    .exercise-table td:nth-child(3) {
+      white-space: nowrap;
+    }
+
+    /* CALLOUT */
+
+    .callout {
+      max-width: 820px;
+      margin: 15px auto 75px;
+      padding: 30px;
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.14), transparent 65%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--copper);
+      border-radius: 6px;
+    }
+
+    .callout small {
+      display: block;
+      color: var(--copper);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .callout p {
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    /* RULES */
+
+    .rules-section {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .rules {
+      max-width: 1050px;
+      margin: auto;
+      padding: 75px 22px;
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .rule-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 28px;
+    }
+
+    .rule-card h3 {
+      color: var(--copper-light);
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .rule-card p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* COMMUNITY */
+
+    .community-callout {
+      max-width: 1050px;
+      margin: auto;
+      padding: 80px 22px;
+    }
+
+    .community-box {
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.18), transparent 60%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .community-box h2 {
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .community-box p {
+      color: var(--gray);
+      margin-top: 10px;
+      max-width: 600px;
+    }
+
+    .join-button {
+      display: inline-block;
+      background: var(--copper);
+      color: #090909;
+      padding: 14px 22px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transition: .2s ease;
+    }
+
+    .join-button:hover {
+      background: var(--copper-light);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 20px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 1000;
+    }
+
+    .footer-logo span {
+      color: var(--copper);
+    }
+
+    footer p {
+      color: #666;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav {
+        position: relative;
+        justify-content: space-between;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 18px;
+        right: 18px;
+        flex-direction: column;
+        gap: 0;
+        background: #111111;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 10px;
+        box-shadow: 0 18px 40px rgba(0,0,0,.5);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: 0;
+      }
+
+      .nav-links .community-btn {
+        margin: 8px 0 0;
+        text-align: center;
+      }
+
+      .hero {
+        padding: 75px 20px 60px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .week-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .exercise-table th:nth-child(4),
+      .exercise-table td:nth-child(4) {
+        display: none;
+      }
+
+      .exercise-table th,
+      .exercise-table td {
+        padding: 14px 10px;
+      }
+
+      .rules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .community-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .overview-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .exercise-table {
+        font-size: 12px;
+      }
+
+      .exercise-table th,
+      .exercise-table td {
+        padding: 12px 8px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <a href="index.html" class="logo">
+      BUILT<span>50</span>
+    </a>
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="navLinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="train.html" class="active">TRAIN</a>
+      <a href="lab.html">THE LAB</a>
+      <a href="blog.html">BLOG</a>
+      <a href="resources.html">RESOURCES</a>
+      <a href="community.html" class="community-btn">JOIN COMMUNITY</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+      <div class="eyebrow">
+        BUILT50 TRAINING • 4 DAYS
+      </div>
+
+      <h1>
+        STRENGTH.<br>
+        MUSCLE.<br>
+        <span>LONGEVITY.</span>
+      </h1>
+
+      <p class="hero-description">
+        Four focused training days. Enough volume to build muscle.
+        Enough heavy work to stay strong. Enough recovery to keep
+        doing it week after week.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- OVERVIEW -->
+
+  <section class="overview">
+
+    <div class="section-label">THE PROGRAM</div>
+
+    <h2>BUILT50 4-DAY<br>STRENGTH & MUSCLE.</h2>
+
+    <p>
+      This is a straightforward upper/lower program for lifters who want
+      strength and muscle without turning every week into a recovery contest.
+      The goal isn't to train less because you're getting older. The goal is
+      to make the work count.
+    </p>
+
+    <div class="overview-grid">
+
+      <div class="overview-card">
+        <strong>4 DAYS</strong>
+        <span>Per week</span>
+      </div>
+
+      <div class="overview-card">
+        <strong>UPPER / LOWER</strong>
+        <span>Training split</span>
+      </div>
+
+      <div class="overview-card">
+        <strong>60–75 MIN</strong>
+        <span>Typical session</span>
+      </div>
+
+      <div class="overview-card">
+        <strong>8 WEEKS</strong>
+        <span>Initial training block</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WEEK -->
+
+  <section class="schedule">
+
+    <div class="section-label">SAMPLE WEEK</div>
+
+    <h2>TRAIN. RECOVER. REPEAT.</h2>
+
+    <div class="week-grid">
+
+      <div class="day">
+        <strong>MON</strong>
+        <span>Upper A</span>
+      </div>
+
+      <div class="day">
+        <strong>TUE</strong>
+        <span>Lower A</span>
+      </div>
+
+      <div class="day rest">
+        <strong>WED</strong>
+        <span>Recovery</span>
+      </div>
+
+      <div class="day">
+        <strong>THU</strong>
+        <span>Upper B</span>
+      </div>
+
+      <div class="day">
+        <strong>FRI</strong>
+        <span>Lower B</span>
+      </div>
+
+      <div class="day rest">
+        <strong>SAT</strong>
+        <span>Recovery</span>
+      </div>
+
+      <div class="day rest">
+        <strong>SUN</strong>
+        <span>Recovery</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WORKOUTS -->
+
+  <section class="workouts">
+
+
+    <!-- UPPER A -->
+
+    <div class="workout">
+
+      <div class="workout-header">
+        <div class="workout-number">DAY 1 • UPPER A</div>
+        <h2>STRENGTH EMPHASIS</h2>
+        <p>
+          Start with the big movements while you're fresh, then build
+          additional chest, back, shoulder and arm volume.
+        </p>
+      </div>
+
+      <table class="exercise-table">
+
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Rest</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Bench Press or Machine Press</td>
+            <td>3</td>
+            <td>5–8</td>
+            <td>2–3 min</td>
+          </tr>
+
+          <tr>
+            <td>Chest-Supported Row</td>
+            <td>3</td>
+            <td>6–10</td>
+            <td>2 min</td>
+          </tr>
+
+          <tr>
+            <td>Incline Dumbbell Press</td>
+            <td>3</td>
+            <td>8–12</td>
+            <td>90 sec</td>
+          </tr>
+
+          <tr>
+            <td>Neutral-Grip Pulldown</td>
+            <td>3</td>
+            <td>8–12</td>
+            <td>90 sec</td>
+          </tr>
+
+          <tr>
+            <td>Cable or Dumbbell Lateral Raise</td>
+            <td>3</td>
+            <td>12–20</td>
+            <td>60 sec</td>
+          </tr>
+
+          <tr>
+            <td>Triceps Pressdown</td>
+            <td>2</td>
+            <td>10–15</td>
+            <td>60 sec</td>
+          </tr>
+
+          <tr>
+            <td>Dumbbell or Cable Curl</td>
+            <td>2</td>
+            <td>10–15</td>
+            <td>60 sec</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- LOWER A -->
+
+    <div class="workout">
+
+      <div class="workout-header">
+        <div class="workout-number">DAY 2 • LOWER A</div>
+        <h2>SQUAT EMPHASIS</h2>
+        <p>
+          Build the session around a squat pattern, then train the
+          hamstrings, quads and calves without unnecessary junk volume.
+        </p>
+      </div>
+
+      <table class="exercise-table">
+
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Rest</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Squat, Hack Squat or Leg Press</td>
+            <td>3</td>
+            <td>5–8</td>
+            <td>2–3 min</td>
+          </tr>
+
+          <tr>
+            <td>Romanian Deadlift</td>
+            <td>3</td>
+            <td>6–10</td>
+            <td>2 min</td>
+          </tr>
+
+          <tr>
+            <td>Leg Press or Split Squat</td>
+            <td>3</td>
+            <td>8–12</td>
+            <td>90 sec</td>
+          </tr>
+
+          <tr>
+            <td>Leg Curl</td>
+            <td>3</td>
+            <td>10–15</td>
+            <td>75 sec</td>
+          </tr>
+
+          <tr>
+            <td>Leg Extension</td>
+            <td>2</td>
+            <td>12–15</td>
+            <td>60 sec</td>
+          </tr>
+
+          <tr>
+            <td>Standing or Seated Calf Raise</td>
+            <td>3</td>
+            <td>10–15</td>
+            <td>60 sec</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- UPPER B -->
+
+    <div class="workout">
+
+      <div class="workout-header">
+        <div class="workout-number">DAY 3 • UPPER B</div>
+        <h2>MUSCLE EMPHASIS</h2>
+        <p>
+          Slightly higher reps and controlled volume with another full
+          upper-body stimulus.
+        </p>
+      </div>
+
+      <table class="exercise-table">
+
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Rest</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Incline Dumbbell or Machine Press</td>
+            <td>3</td>
+            <td>8–12</td>
+            <td>2 min</td>
+          </tr>
+
+          <tr>
+            <td>Lat Pulldown or Assisted Pull-Up</td>
+            <td>3</td>
+            <td>8–12</td>
+            <td>2 min</td>
+          </tr>
+
+          <tr>
+            <td>Seated Cable Row</td>
+            <td>3</td>
+            <td>10–12</td>
+            <td>90 sec</td>
+          </tr>
+
+          <tr>
+            <td>Cable or Pec-Deck Fly</td>
+            <td>2</td>
+            <td>12–15</td>
+            <td>75 sec</td>
+          </tr>
+
+          <tr>
+            <td>Lateral Raise</td>
+            <td>3</td>
+            <td>12–20</td>
+            <td>60 sec</td>
+          </tr>
+
+          <tr>
+            <td>Rear-Delt Fly</td>
+            <td>2</td>
+            <td>12–20</td>
+            <td>60 sec</td>
+          </tr>
+
+          <tr>
+            <td>Triceps Extension</td>
+            <td>2</td>
+            <td>10–15</td>
+            <td>60 sec</td>
+          </tr>
+
+          <tr>
+            <td>Hammer Curl</td>
+            <td>2</td>
+            <td>10–15</td>
+            <td>60 sec</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- LOWER B -->
+
+    <div class="workout">
+
+      <div class="workout-header">
+        <div class="workout-number">DAY 4 • LOWER B</div>
+        <h2>MUSCLE EMPHASIS</h2>
+        <p>
+          A second lower-body session with moderate loads and enough
+          volume to train the legs hard without simply repeating Day 2.
+        </p>
+      </div>
+
+      <table class="exercise-table">
+
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Rest</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Leg Press or Hack Squat</td>
+            <td>3</td>
+            <td>8–12</td>
+            <td>2 min</td>
+          </tr>
+
+          <tr>
+            <td>Romanian Deadlift or Hip Hinge</td>
+            <td>3</td>
+            <td>8–12</td>
+            <td>2 min</td>
+          </tr>
+
+          <tr>
+            <td>Bulgarian Split Squat</td>
+            <td>2</td>
+            <td>8–12 / leg</td>
+            <td>90 sec</td>
+          </tr>
+
+          <tr>
+            <td>Leg Curl</td>
+            <td>3</td>
+            <td>10–15</td>
+            <td>75 sec</td>
+          </tr>
+
+          <tr>
+            <td>Leg Extension</td>
+            <td>2</td>
+            <td>12–15</td>
+            <td>60 sec</td>
+          </tr>
+
+          <tr>
+            <td>Standing or Seated Calf Raise</td>
+            <td>3</td>
+            <td>12–20</td>
+            <td>60 sec</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+
+  <!-- CALLOUT -->
+
+  <div class="callout">
+
+    <small>BUILT50 RULE</small>
+
+    <p>
+      The goal is not to leave the gym destroyed. The goal is to give
+      your body a reason to adapt — then come back strong enough to do
+      it again.
+    </p>
+
+  </div>
+
+
+  <!-- RULES -->
+
+  <section class="rules-section">
+
+    <div class="rules">
+
+      <div class="section-label">HOW TO RUN IT</div>
+
+      <h2>MAKE THE PROGRAM WORK.</h2>
+
+      <div class="rules-grid">
+
+        <div class="rule-card">
+          <h3>1. WARM UP — DON'T WEAR YOURSELF OUT</h3>
+          <p>
+            Start with 5–10 minutes of easy movement if needed, then use
+            progressively heavier warm-up sets before the first major lift.
+            Warm-up sets prepare you for the working weight; they aren't
+            supposed to become another workout.
+          </p>
+        </div>
+
+        <div class="rule-card">
+          <h3>2. LEAVE A LITTLE IN THE TANK</h3>
+          <p>
+            Most working sets should finish with roughly 1–3 good reps
+            remaining. You can train hard without taking every compound
+            movement to absolute failure.
+          </p>
+        </div>
+
+        <div class="rule-card">
+          <h3>3. USE DOUBLE PROGRESSION</h3>
+          <p>
+            Start with a weight you can control near the bottom of the listed
+            rep range. Over time, add reps. Once you can reach the top of the
+            range with good form across your working sets, increase the load
+            slightly and build again.
+          </p>
+        </div>
+
+        <div class="rule-card">
+          <h3>4. DON'T FORCE PAINFUL EXERCISES</h3>
+          <p>
+            The exercise list is a framework, not a loyalty test. If a
+            movement consistently hurts a joint, use a similar movement
+            pattern that you can perform comfortably and progressively.
+          </p>
+        </div>
+
+        <div class="rule-card">
+          <h3>5. RUN IT FOR 8 WEEKS</h3>
+          <p>
+            Give the program enough time to work. Track your loads and reps
+            for eight weeks instead of changing exercises every time you see
+            a new workout online.
+          </p>
+        </div>
+
+        <div class="rule-card">
+          <h3>6. DELOAD WHEN YOU ACTUALLY NEED IT</h3>
+          <p>
+            If performance is falling, soreness is lingering, joints are
+            getting increasingly irritated and normal sessions suddenly feel
+            unusually difficult, consider an easier week. Reduce load,
+            sets or both, then build back up.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- COMMUNITY -->
+
+  <section class="community-callout">
+
+    <div class="community-box">
+
+      <div>
+
+        <h2>BUILD SOMETHING THAT LASTS.</h2>
+
+        <p>
+          Training doesn't stop because another birthday showed up.
+          Join the BUILT50 community for workouts, training discussion,
+          recovery, nutrition and the occasional questionable gym joke.
+        </p>
+
+      </div>
+
+      <a href="community.html" class="join-button">
+        JOIN COMMUNITY
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    BUILT<span>50</span>
+  </div>
+
+  <p>
+    STRENGTH • SCIENCE • PERFORMANCE
+  </p>
+
+  <p>
+    © 2026 BUILT50. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+
+    const isOpen = navLinks.classList.toggle('open');
+
+    menuToggle.setAttribute(
+      'aria-expanded',
+      isOpen
+    );
+
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+      navLinks.classList.remove('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
