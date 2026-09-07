@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Creatine After 45: What the Research Actually Says | BUILT50</title>
+
+  <meta name="description" content="Creatine after 45: what current research says about strength, muscle, aging and resistance training without the hype or miracle claims.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #090909;
+      --panel: #111111;
+      --panel-light: #181818;
+      --copper: #d7782c;
+      --copper-light: #f09a4b;
+      --white: #f4f4f4;
+      --gray: #a7a7a7;
+      --border: #292929;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9, 9, 9, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--copper);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      align-items: center;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--copper-light);
+    }
+
+    .community-btn {
+      background: var(--copper);
+      color: #090909 !important;
+      padding: 9px 14px;
+      border-radius: 4px;
+      transition: .2s ease;
+    }
+
+    .community-btn:hover {
+      background: var(--copper-light);
+      transform: translateY(-1px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 38px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 9px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      margin: 4px 0;
+      transition: .2s ease;
+    }
+
+    .article-hero {
+      padding: 105px 22px 70px;
+      background:
+        radial-gradient(circle at top left, rgba(215,120,44,.16), transparent 40%),
+        linear-gradient(to bottom, #0b0b0b, #090909);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-hero-inner {
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 88px);
+      line-height: .95;
+      letter-spacing: -4px;
+      max-width: 950px;
+    }
+
+    .dek {
+      color: var(--gray);
+      font-size: 20px;
+      max-width: 780px;
+      margin-top: 24px;
+    }
+
+    .article-meta {
+      margin-top: 24px;
+      color: #777;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .article-wrap {
+      max-width: 850px;
+      margin: auto;
+      padding: 75px 22px;
+    }
+
+    .article-wrap p {
+      color: #c3c3c3;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .article-wrap h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      line-height: 1.05;
+      margin: 55px 0 18px;
+    }
+
+    .article-wrap h2 span {
+      color: var(--copper);
+    }
+
+    .article-wrap strong {
+      color: var(--white);
+    }
+
+    .pull-quote {
+      margin: 45px 0;
+      padding: 30px;
+      border-left: 4px solid var(--copper);
+      background: var(--panel);
+      color: var(--white);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .research-box {
+      margin: 45px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.10), transparent 50%),
+        var(--panel);
+      padding: 32px;
+    }
+
+    .research-box small {
+      color: var(--copper);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .research-box h3 {
+      font-size: 27px;
+      margin: 10px 0 16px;
+    }
+
+    .research-box p {
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+
+    .research-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .takeaway-box {
+      margin: 45px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 32px;
+    }
+
+    .takeaway-box h3 {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    .takeaway-box ul {
+      padding-left: 20px;
+      color: #c3c3c3;
+    }
+
+    .takeaway-box li {
+      margin-bottom: 12px;
+    }
+
+    .source-box {
+      margin-top: 55px;
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+    }
+
+    .source-box h3 {
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    .source-item {
+      margin-bottom: 18px;
+    }
+
+    .source-item strong {
+      display: block;
+      font-size: 14px;
+      color: var(--white);
+    }
+
+    .source-item span {
+      color: #777;
+      font-size: 13px;
+    }
+
+    .medical-note {
+      margin-top: 35px;
+      color: #777 !important;
+      font-size: 13px !important;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    .article-cta {
+      max-width: 950px;
+      margin: 0 auto 80px;
+      padding: 0 22px;
+    }
+
+    .article-cta-box {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 40px;
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.12), transparent 45%),
+        var(--panel);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .article-cta-box h3 {
+      font-size: 30px;
+    }
+
+    .article-cta-box p {
+      color: var(--gray);
+      margin-top: 8px;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--copper);
+      color: #090909;
+      padding: 13px 20px;
+      border-radius: 4px;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: var(--copper-light);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 55px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 1000;
+    }
+
+    .footer-logo span {
+      color: var(--copper);
+    }
+
+    footer p {
+      color: #666;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 850px) {
+      .nav {
+        position: relative;
+        justify-content: space-between;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 18px;
+        right: 18px;
+        flex-direction: column;
+        gap: 0;
+        background: #111111;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 10px;
+        box-shadow: 0 18px 40px rgba(0,0,0,.5);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: 0;
+      }
+
+      .nav-links .community-btn {
+        margin: 8px 0 0;
+        text-align: center;
+      }
+
+      .article-cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a href="index.html" class="logo">
+      BUILT<span>50</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="navLinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="train.html">TRAIN</a>
+      <a href="lab.html" class="active">THE LAB</a>
+      <a href="blog.html">BLOG</a>
+      <a href="resources.html">RESOURCES</a>
+      <a href="community.html" class="community-btn">JOIN COMMUNITY</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="article-hero">
+
+    <div class="article-hero-inner">
+
+      <div class="eyebrow">
+        THE LAB • BUILT50
+      </div>
+
+      <h1>
+        CREATINE AFTER 45: WHAT THE RESEARCH ACTUALLY SAYS.
+      </h1>
+
+      <p class="dek">
+        Creatine may be one of the most studied supplements in sports nutrition.
+        That doesn't mean every claim about it deserves to survive contact
+        with the evidence.
+      </p>
+
+      <div class="article-meta">
+        BUILT50 • THE LAB • 2026
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <article class="article-wrap">
+
+    <p>
+      Creatine has been around long enough that it almost feels boring.
+    </p>
+
+    <p>
+      In fitness, that's practically a compliment.
+    </p>
+
+    <p>
+      While new supplements arrive every year with increasingly dramatic
+      promises, creatine monohydrate has accumulated decades of research
+      examining its effects on training performance, strength and body
+      composition.
+    </p>
+
+    <p>
+      More recently, researchers have paid increasing attention to what it
+      might mean for adults as they get older.
+    </p>
+
+
+    <div class="pull-quote">
+      The interesting part isn't that creatine is new. It's that we're still
+      learning where an old supplement may actually be useful.
+    </div>
+
+
+    <h2>
+      FIRST: CREATINE ISN'T A <span>SHORTCUT.</span>
+    </h2>
+
+    <p>
+      The first thing to get out of the way is the idea that adding creatine
+      somehow replaces good training.
+    </p>
+
+    <p>
+      It doesn't.
+    </p>
+
+    <p>
+      Resistance training remains the main event. Creatine is better thought
+      of as a possible <strong>adjunct</strong> — something that may improve
+      certain outcomes when combined with the work you're already doing.
+    </p>
+
+    <p>
+      That's especially important when talking about aging because the
+      conversation can quickly drift from reasonable evidence into
+      "anti-aging miracle" territory.
+    </p>
+
+    <p>
+      The current evidence doesn't justify that kind of claim.
+    </p>
+
+
+    <h2>
+      WHAT DOES THE NEWER RESEARCH <span>SHOW?</span>
+    </h2>
+
+    <p>
+      A 2026 systematic review and meta-analysis examined randomized
+      controlled trials in adults age 60 and older who combined resistance
+      training with creatine supplementation.
+    </p>
+
+    <p>
+      Across 11 trials, researchers found that adding creatine produced a
+      <strong>small additional improvement in muscular strength</strong>
+      compared with resistance training alone.
+    </p>
+
+    <p>
+      That's encouraging — but the same analysis did not find clear additional
+      benefits for muscle mass or physical function. The certainty of evidence
+      for those outcomes was also lower.
+    </p>
+
+
+    <div class="research-box">
+
+      <small>2026 META-ANALYSIS</small>
+
+      <h3>Strength improved. Everything else was less certain.</h3>
+
+      <p>
+        The analysis included 11 randomized controlled trials involving
+        adults age 60 and older.
+      </p>
+
+      <p>
+        Creatine plus resistance training produced a small but statistically
+        significant additional benefit for muscle strength compared with
+        resistance training alone.
+      </p>
+
+      <p>
+        Additional effects on muscle mass and physical function were not
+        statistically clear.
+      </p>
+
+    </div>
+
+
+    <h2>
+      THAT ISN'T THE ONLY <span>EVIDENCE.</span>
+    </h2>
+
+    <p>
+      Other reviews have reached somewhat more favorable conclusions,
+      particularly when looking at lean tissue and specific strength measures.
+    </p>
+
+    <p>
+      A 2025 systematic review and meta-analysis of eight randomized trials
+      reported improvements in lower-body strength and lean tissue mass when
+      creatine was combined with resistance training in older adults.
+    </p>
+
+    <p>
+      Earlier meta-analyses have also reported improvements in lean tissue
+      mass and upper- and lower-body strength.
+    </p>
+
+    <p>
+      Put together, the research is more interesting than either extreme
+      usually presented online:
+    </p>
+
+    <p>
+      <strong>Creatine isn't useless — and it isn't magic.</strong>
+    </p>
+
+
+    <div class="pull-quote">
+      Good science is usually less exciting than marketing and more useful
+      than hype.
+    </div>
+
+
+    <h2>
+      WHY MIGHT STRENGTH MATTER MORE AS WE <span>AGE?</span>
+    </h2>
+
+    <p>
+      Maintaining strength becomes increasingly important as adults get older,
+      not simply because of what happens in the gym, but because muscular
+      strength contributes to the ability to keep doing normal life.
+    </p>
+
+    <p>
+      That's one reason the newer evidence is worth paying attention to.
+    </p>
+
+    <p>
+      A small improvement is still an improvement — particularly when it is
+      layered on top of a well-designed resistance-training program.
+    </p>
+
+    <p>
+      But it's also why the size of the effect matters.
+    </p>
+
+    <p>
+      Saying something provides a measurable benefit is not the same as saying
+      it transforms human aging.
+    </p>
+
+
+    <h2>
+      WHAT ABOUT MUSCLE <span>SIZE?</span>
+    </h2>
+
+    <p>
+      This is where the research becomes less tidy.
+    </p>
+
+    <p>
+      Some earlier analyses reported increased lean tissue mass when creatine
+      was combined with resistance training, while the newer 2026 analysis
+      did not find a statistically clear additional benefit for muscle mass
+      across its included studies.
+    </p>
+
+    <p>
+      Differences between populations, training programs, study duration and
+      research methods can all influence results.
+    </p>
+
+    <p>
+      That's why one study or one meta-analysis shouldn't automatically become
+      a universal rule.
+    </p>
+
+
+    <h2>
+      AND WHAT ABOUT THE <span>BRAIN?</span>
+    </h2>
+
+    <p>
+      Creatine is also being studied outside traditional strength and muscle
+      outcomes, including possible effects involving cognition and brain
+      energy metabolism.
+    </p>
+
+    <p>
+      That research is interesting, but the evidence is not strong enough to
+      turn creatine into a blanket claim about preventing cognitive decline
+      or improving every aspect of brain function.
+    </p>
+
+    <p>
+      This is exactly where THE LAB philosophy matters:
+      promising research deserves attention without pretending the conclusion
+      has already been written.
+    </p>
+
+
+    <div class="takeaway-box">
+
+      <h3>The BUILT50 takeaway</h3>
+
+      <ul>
+        <li>Resistance training remains the foundation.</li>
+        <li>Creatine may provide an additional strength benefit in older adults.</li>
+        <li>Evidence for added muscle-mass benefits is less consistent.</li>
+        <li>Claims involving cognition and longevity should remain measured.</li>
+        <li>One supplement does not replace training, nutrition, sleep or recovery.</li>
+      </ul>
+
+    </div>
+
+
+    <h2>
+      SO... IS CREATINE WORTH TALKING <span>ABOUT?</span>
+    </h2>
+
+    <p>
+      Absolutely.
+    </p>
+
+    <p>
+      Not because it suddenly became a revolutionary anti-aging compound,
+      but because it has a substantial research history and continues to be
+      studied in populations that matter to BUILT50.
+    </p>
+
+    <p>
+      The evidence suggests there may be useful benefits — especially when
+      creatine is combined with resistance training — while also leaving
+      plenty of questions researchers are still working through.
+    </p>
+
+    <p>
+      That's a much better story than either:
+    </p>
+
+    <p>
+      <strong>"Creatine changes everything."</strong>
+    </p>
+
+    <p>
+      or
+    </p>
+
+    <p>
+      <strong>"Supplements don't matter."</strong>
+    </p>
+
+    <p>
+      The useful answer usually lives somewhere between the two.
+    </p>
+
+
+    <div class="source-box">
+
+      <h3>Research used for this article</h3>
+
+      <div class="source-item">
+        <strong>
+          Effects of resistance training combined with creatine supplementation
+          on muscle strength, physical function, and muscle mass in older adults
+        </strong>
+        <span>
+          Frontiers in Nutrition, 2026 • Systematic review and three-level
+          meta-analysis • 11 randomized controlled trials.
+        </span>
+      </div>
+
+      <div class="source-item">
+        <strong>
+          The impact of creatine supplementation associated with resistance
+          training on muscular strength and lean tissue mass in the aged
+        </strong>
+        <span>
+          European Review of Aging and Physical Activity, 2025 • Systematic
+          review and meta-analysis • 8 randomized controlled trials.
+        </span>
+      </div>
+
+      <div class="source-item">
+        <strong>
+          Effect of creatine supplementation during resistance training on
+          lean tissue mass and muscular strength in older adults
+        </strong>
+        <span>
+          Open Access Journal of Sports Medicine, 2017 • Meta-analysis of
+          22 studies and 721 participants.
+        </span>
+      </div>
+
+      <p class="medical-note">
+        BUILT50 provides general educational information, not individualized
+        medical advice. People with medical conditions or questions about
+        supplements and medications should discuss them with an appropriate
+        healthcare professional.
+      </p>
+
+    </div>
+
+  </article>
+
+
+  <section class="article-cta">
+
+    <div class="article-cta-box">
+
+      <div>
+
+        <h3>
+          Question everything.
+        </h3>
+
+        <p>
+          Join the BUILT50 community for training, research, recovery and
+          real-world performance discussion.
+        </p>
+
+      </div>
+
+      <a href="community.html" class="btn">
+        JOIN COMMUNITY
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    BUILT<span>50</span>
+  </div>
+
+  <p>
+    STRENGTH • SCIENCE • PERFORMANCE
+  </p>
+
+  <p>
+    © 2026 BUILT50. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
