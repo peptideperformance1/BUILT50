@@ -1,1036 +1,1459 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BUILT50 Exercise Library</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="The BUILT50 Exercise Library. Practical chest, back, shoulder, arm, leg and core exercises for strength, muscle and long-term training.">
+<title>Exercise Library | BUILT50</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta name="description"
+content="Explore the BUILT50 Exercise Library — practical movements for strength, muscle, technique and long-term performance.">
 
-    :root {
-      --black: #090909;
-      --panel: #111111;
-      --panel-light: #181818;
-      --copper: #d7782c;
-      --copper-light: #f09a4b;
-      --white: #f4f4f4;
-      --gray: #a7a7a7;
-      --border: #292929;
-    }
+<style>
 
-    html {
-      scroll-behavior: smooth;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.65;
-    }
+:root {
+    --black: #090909;
+    --panel: #111111;
+    --panel-light: #181818;
+    --copper: #d7782c;
+    --copper-light: #f09a4b;
+    --white: #f4f4f4;
+    --gray: #a7a7a7;
+    --border: #292929;
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    /* HEADER */
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(9,9,9,.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(9,9,9,.97);
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 22px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--copper);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    transition: .2s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--copper-light);
+}
+
+.community-btn {
+    background: var(--copper);
+    color: #090909 !important;
+
+    padding: 10px 16px;
+    border-radius: 4px;
+}
+
+.community-btn:hover {
+    background: var(--copper-light);
+}
+
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+    border: 0;
+
+    padding: 8px;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 23px;
+    height: 2px;
+
+    background: var(--white);
+
+    margin: 5px 0;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 520px;
+
+    display: flex;
+    align-items: stretch;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.05)
+        ),
+        url("exercise-library-hero.png");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-overlay {
+    width: 100%;
+    min-height: 520px;
+}
+
+
+/* =========================
+   CATEGORY NAV
+========================= */
+
+.category-nav {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 36px 22px 18px;
+}
+
+.jump-label {
+
+    color: var(--copper);
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 14px;
+}
+
+.category-buttons {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.category-buttons a {
+
+    border: 1px solid #4a4a4a;
+
+    padding: 10px 20px;
+
+    border-radius: 4px;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: var(--white);
+
+    transition: .2s;
+}
+
+.category-buttons a:hover {
+
+    border-color: var(--copper);
+
+    color: var(--copper-light);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.library-intro {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 40px 22px 25px;
+}
+
+.library-intro small {
+
+    color: var(--copper);
+
+    font-weight: 900;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+.library-intro h1 {
+
+    font-size: clamp(38px, 6vw, 65px);
+
+    line-height: 1;
+
+    margin-top: 10px;
+
+    letter-spacing: -2px;
+}
+
+.library-intro h1 span {
+    color: var(--copper);
+}
+
+.library-intro p {
+
+    margin-top: 18px;
+
+    color: var(--gray);
+
+    max-width: 700px;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.exercise-section {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 35px 22px 70px;
+}
+
+.exercise-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.exercise-card {
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    transition: .25s;
+}
+
+.exercise-card:hover {
+
+    transform: translateY(-4px);
+
+    border-color: rgba(215,120,44,.8);
+}
+
+.exercise-image {
+
+    height: 290px;
+
+    overflow: hidden;
+
+    background: #181818;
+}
+
+.exercise-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .35s ease;
+}
+
+.exercise-card:hover
+.exercise-image img {
+
+    transform: scale(1.035);
+}
+
+.exercise-content {
+
+    padding: 23px;
+}
+
+.exercise-category {
+
+    color: var(--copper);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 8px;
+}
+
+.exercise-content h2 {
+
+    font-size: 24px;
+
+    line-height: 1.1;
+
+    margin-bottom: 10px;
+}
+
+.exercise-content p {
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    min-height: 44px;
+}
+
+.target {
+
+    margin-top: 17px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.target-label {
+
+    color: #777;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+.target-muscle {
+
+    color: var(--white);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.card-link {
+
+    display: block;
+
+    margin-top: 18px;
+
+    padding: 12px 15px;
+
+    border: 1px solid var(--copper);
+
+    border-radius: 3px;
+
+    color: var(--copper-light);
+
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    transition: .2s;
+}
+
+.card-link:hover {
+
+    background: var(--copper);
+
+    color: #090909;
+}
+
+
+/* =========================
+   PRINCIPLE
+========================= */
+
+.principle-wrap {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 0 22px 80px;
+}
+
+.principle {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 40px;
+
+    border: 1px solid var(--border);
+
+    background:
+
+        radial-gradient(
+            circle at left,
+            rgba(215,120,44,.2),
+            transparent 50%
+        ),
+
+        var(--panel);
+}
+
+.principle small {
+
+    display: block;
+
+    color: var(--copper);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.principle-content {
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr 1fr;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+.principle h2 {
+
+    font-size: clamp(
+        30px,
+        5vw,
+        48px
+    );
+
+    line-height: .95;
+
+    letter-spacing: -2px;
+}
+
+.principle h2 span {
+
+    color: var(--copper);
+}
+
+.principle p {
+
+    color: var(--gray);
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   COMMUNITY
+========================= */
+
+.community-callout {
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(215,120,44,.13),
+            transparent 55%
+        );
+}
+
+.community-inner {
+
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 70px 22px;
+
+    text-align: center;
+}
+
+.community-inner small {
+
+    color: var(--copper);
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+.community-inner h2 {
+
+    margin-top: 10px;
+
+    font-size: clamp(
+        35px,
+        5vw,
+        55px
+    );
+
+    line-height: 1;
+}
+
+.community-inner p {
+
+    max-width: 600px;
+
+    margin: 18px auto 25px;
+
+    color: var(--gray);
+}
+
+.join-button {
+
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    background: var(--copper);
+
+    color: #090909;
+
+    border-radius: 4px;
+
+    font-weight: 900;
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+}
+
+.join-button:hover {
+
+    background: var(--copper-light);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 55px 20px;
+
+    text-align: center;
+}
+
+.footer-logo {
+
+    font-size: 28px;
+
+    font-weight: 1000;
+}
+
+.footer-logo span {
+
+    color: var(--copper);
+}
+
+footer p {
+
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
 
     .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
+        position: relative;
     }
 
-    .logo {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .logo span {
-      color: var(--copper);
+    .menu-toggle {
+        display: block;
     }
 
     .nav-links {
-      display: flex;
-      gap: 25px;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      align-items: center;
-    }
 
-    .nav-links a:hover,
-    .nav-links .active {
-      color: var(--copper-light);
-    }
-
-    .community-btn {
-      background: var(--copper);
-      color: #090909 !important;
-      padding: 9px 14px;
-      border-radius: 4px;
-      transition: .2s ease;
-    }
-
-    .community-btn:hover {
-      background: var(--copper-light);
-      transform: translateY(-1px);
-    }
-
-    /* HAMBURGER */
-
-    .menu-toggle {
-      display: none;
-      background: transparent;
-      border: 0;
-      padding: 8px;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--white);
-      margin: 4px 0;
-      transition: .2s ease;
-    }
-
-    /* HERO */
-
-    .hero {
-      padding: 105px 22px 85px;
-      background:
-        radial-gradient(circle at top left, rgba(215,120,44,.22), transparent 42%),
-        linear-gradient(to bottom, #0b0b0b, #090909);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-inner {
-      max-width: 1050px;
-      margin: auto;
-    }
-
-    .eyebrow {
-      color: var(--copper);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: clamp(48px, 7vw, 82px);
-      line-height: .98;
-      letter-spacing: -4px;
-      font-weight: 1000;
-      max-width: 950px;
-    }
-
-    h1 span {
-      color: var(--copper);
-    }
-
-    .hero-description {
-      max-width: 780px;
-      margin-top: 28px;
-      color: var(--gray);
-      font-size: 19px;
-    }
-
-    /* JUMP NAV */
-
-    .jump-wrap {
-      max-width: 1050px;
-      margin: auto;
-      padding: 45px 22px 20px;
-    }
-
-    .jump-label {
-      color: var(--copper);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 3px;
-      margin-bottom: 15px;
-    }
-
-    .jump-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .jump-nav a {
-      border: 1px solid var(--border);
-      background: var(--panel);
-      padding: 10px 14px;
-      border-radius: 4px;
-      color: var(--gray);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      transition: .2s ease;
-    }
-
-    .jump-nav a:hover {
-      border-color: var(--copper);
-      color: var(--copper-light);
-    }
-
-    /* LIBRARY */
-
-    .library {
-      max-width: 1050px;
-      margin: auto;
-      padding: 35px 22px 80px;
-    }
-
-    .muscle-section {
-      margin-top: 70px;
-      scroll-margin-top: 100px;
-    }
-
-    .section-label {
-      color: var(--copper);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .muscle-section h2 {
-      font-size: clamp(34px, 5vw, 50px);
-      line-height: 1.05;
-      margin: 8px 0 12px;
-    }
-
-    .section-intro {
-      color: var(--gray);
-      max-width: 750px;
-      margin-bottom: 30px;
-      font-size: 16px;
-    }
-
-    .exercise-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .exercise-card {
-      background:
-        linear-gradient(135deg, rgba(215,120,44,.08), transparent 65%),
-        var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      padding: 27px;
-      transition: .2s ease;
-    }
-
-    .exercise-card:hover {
-      border-color: rgba(215,120,44,.65);
-      transform: translateY(-2px);
-    }
-
-    .exercise-type {
-      color: var(--copper);
-      font-size: 10px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .exercise-card h3 {
-      font-size: 21px;
-      margin-bottom: 9px;
-    }
-
-    .exercise-card p {
-      color: var(--gray);
-      font-size: 14px;
-    }
-
-    .target {
-      display: inline-block;
-      margin-top: 15px;
-      color: #777;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    /* PRINCIPLE */
-
-    .principle {
-      max-width: 820px;
-      margin: 20px auto 80px;
-      padding: 32px;
-      background:
-        linear-gradient(135deg, rgba(215,120,44,.14), transparent 65%),
-        var(--panel);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--copper);
-      border-radius: 6px;
-    }
-
-    .principle small {
-      display: block;
-      color: var(--copper);
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      margin-bottom: 10px;
-    }
-
-    .principle p {
-      color: var(--white);
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    /* COMMUNITY */
-
-    .community-callout {
-      max-width: 1050px;
-      margin: auto;
-      padding: 10px 22px 90px;
-    }
-
-    .community-box {
-      background:
-        linear-gradient(135deg, rgba(215,120,44,.18), transparent 60%),
-        var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 38px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .community-box h2 {
-      font-size: 30px;
-      line-height: 1.1;
-    }
-
-    .community-box p {
-      color: var(--gray);
-      margin-top: 10px;
-      max-width: 600px;
-    }
-
-    .join-button {
-      display: inline-block;
-      background: var(--copper);
-      color: #090909;
-      padding: 14px 22px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      white-space: nowrap;
-      transition: .2s ease;
-    }
-
-    .join-button:hover {
-      background: var(--copper-light);
-      transform: translateY(-2px);
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 55px 20px;
-      text-align: center;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-logo {
-      font-size: 28px;
-      font-weight: 1000;
-    }
-
-    .footer-logo span {
-      color: var(--copper);
-    }
-
-    footer p {
-      color: #666;
-      font-size: 12px;
-      margin-top: 12px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-
-      .nav {
-        position: relative;
-        justify-content: space-between;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
         display: none;
+
         position: absolute;
+
         top: 100%;
+
         left: 18px;
         right: 18px;
+
         flex-direction: column;
+
         gap: 0;
+
         background: #111111;
+
         border: 1px solid var(--border);
+
         border-radius: 6px;
+
         padding: 10px;
-        box-shadow: 0 18px 40px rgba(0,0,0,.5);
-      }
 
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        width: 100%;
-        padding: 14px 12px;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav-links a:last-child {
-        border-bottom: 0;
-      }
-
-      .nav-links .community-btn {
-        margin: 8px 0 0;
-        text-align: center;
-      }
-
-      .hero {
-        padding: 75px 20px 60px;
-      }
-
-      h1 {
-        letter-spacing: -2px;
-      }
-
-      .exercise-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .community-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+        box-shadow:
+            0 18px 40px
+            rgba(0,0,0,.5);
     }
 
-  </style>
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+
+        width: 100%;
+
+        padding: 14px 12px;
+
+        border-bottom:
+            1px solid var(--border);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: 0;
+    }
+
+    .nav-links .community-btn {
+
+        margin-top: 8px;
+
+        text-align: center;
+    }
+
+
+    .hero {
+
+        min-height: 310px;
+
+        background-size: cover;
+
+        background-position: center;
+    }
+
+    .hero-overlay {
+
+        min-height: 310px;
+    }
+
+
+    .exercise-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .exercise-image {
+
+        height: 360px;
+    }
+
+    .principle-content {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* Smaller phones */
+
+@media (max-width: 520px) {
+
+    .hero {
+
+        min-height: 235px;
+    }
+
+    .hero-overlay {
+
+        min-height: 235px;
+    }
+
+    .exercise-image {
+
+        height: 300px;
+    }
+
+    .category-buttons a {
+
+        flex: 1 1 30%;
+
+        text-align: center;
+
+        padding: 10px 8px;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
 
+
+<!-- =========================
+HEADER
+========================= -->
+
 <header>
 
-  <div class="nav">
+<div class="nav">
 
-    <a href="index.html" class="logo">
-      BUILT<span>50</span>
-    </a>
+<a href="index.html"
+   class="logo">
 
-    <button class="menu-toggle"
-            id="menuToggle"
-            aria-label="Open navigation"
-            aria-expanded="false"
-            aria-controls="navLinks">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+BUILT<span>50</span>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="train.html" class="active">TRAIN</a>
-      <a href="lab.html">THE LAB</a>
-      <a href="blog.html">BLOG</a>
-      <a href="resources.html">RESOURCES</a>
-      <a href="community.html" class="community-btn">JOIN COMMUNITY</a>
-    </nav>
+</a>
 
-  </div>
+
+<button
+class="menu-toggle"
+id="menuToggle"
+aria-label="Open navigation"
+aria-expanded="false"
+aria-controls="navLinks">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+
+<nav
+class="nav-links"
+id="navLinks">
+
+<a
+href="train.html"
+class="active">
+TRAIN
+</a>
+
+<a href="lab.html">
+THE LAB
+</a>
+
+<a href="blog.html">
+BLOG
+</a>
+
+<a href="resources.html">
+RESOURCES
+</a>
+
+<a
+href="community.html"
+class="community-btn">
+JOIN COMMUNITY
+</a>
+
+</nav>
+
+</div>
 
 </header>
 
 
-<main>
 
-  <!-- HERO -->
+<!-- =========================
+HERO
+========================= -->
 
-  <section class="hero">
-
-    <div class="hero-inner">
-
-      <div class="eyebrow">
-        BUILT50 TRAINING
-      </div>
-
-      <h1>
-        EXERCISE<br>
-        <span>LIBRARY.</span>
-      </h1>
+<section class="hero">
 
-      <p class="hero-description">
-        No magic exercises. No unnecessary circus tricks.
-        Just useful movements for building strength, muscle and a body
-        that keeps performing.
-      </p>
+<div class="hero-overlay"></div>
 
-    </div>
+</section>
 
-  </section>
 
 
-  <!-- JUMP NAV -->
+<!-- =========================
+CATEGORY NAVIGATION
+========================= -->
 
-  <section class="jump-wrap">
+<section class="category-nav">
 
-    <div class="jump-label">
-      JUMP TO
-    </div>
+<div class="jump-label">
+EXPLORE
+</div>
 
-    <div class="jump-nav">
-      <a href="#chest">CHEST</a>
-      <a href="#back">BACK</a>
-      <a href="#shoulders">SHOULDERS</a>
-      <a href="#arms">ARMS</a>
-      <a href="#legs">LEGS</a>
-      <a href="#core">CORE</a>
-    </div>
+<div class="category-buttons">
 
-  </section>
+<a href="#chest">
+CHEST
+</a>
 
+<a href="#back">
+BACK
+</a>
 
-  <section class="library">
-
-    <!-- CHEST -->
+<a href="#shoulders">
+SHOULDERS
+</a>
 
-    <section class="muscle-section" id="chest">
-
-      <div class="section-label">CHEST</div>
-
-      <h2>PRESS. STRETCH. CONTROL.</h2>
-
-      <p class="section-intro">
-        Chest training doesn't require ten versions of the same press.
-        Use stable pressing movements, add a good lengthened position and
-        progress what you can perform comfortably.
-      </p>
-
-      <div class="exercise-grid">
-
-        <article class="exercise-card">
-          <div class="exercise-type">Compound Press</div>
-          <h3>Bench Press</h3>
-          <p>
-            A basic horizontal press for chest, triceps and anterior delts.
-            Use a grip and range of motion that allow controlled reps without
-            forcing irritated shoulders.
-          </p>
-          <span class="target">Primary: Chest</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Compound Press</div>
-          <h3>Incline Dumbbell Press</h3>
-          <p>
-            Useful for emphasizing the upper chest while allowing each arm
-            to move independently. Keep the incline moderate rather than
-            turning it into a shoulder press.
-          </p>
-          <span class="target">Primary: Upper Chest</span>
-        </article>
+<a href="#arms">
+ARMS
+</a>
 
-        <article class="exercise-card">
-          <div class="exercise-type">Stable Press</div>
-          <h3>Machine Chest Press</h3>
-          <p>
-            A strong option when you want to push hard without spending
-            energy stabilizing a bar or dumbbells. Particularly useful for
-            higher-rep hypertrophy work.
-          </p>
-          <span class="target">Primary: Chest</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Isolation</div>
-          <h3>Cable Fly</h3>
-          <p>
-            Keeps tension on the chest through a large range of motion.
-            Control the stretch and bring the arms together without turning
-            the movement into a press.
-          </p>
-          <span class="target">Primary: Chest</span>
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- BACK -->
-
-    <section class="muscle-section" id="back">
-
-      <div class="section-label">BACK</div>
-
-      <h2>WIDTH. THICKNESS. CONTROL.</h2>
-
-      <p class="section-intro">
-        A complete back routine usually includes both vertical pulling
-        and rowing. Don't turn every back exercise into a competition
-        to see how far you can move the weight stack.
-      </p>
-
-      <div class="exercise-grid">
-
-        <article class="exercise-card">
-          <div class="exercise-type">Vertical Pull</div>
-          <h3>Neutral-Grip Lat Pulldown</h3>
-          <p>
-            A shoulder-friendly vertical pulling option that trains the
-            lats while also involving the upper back and biceps.
-          </p>
-          <span class="target">Primary: Lats</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Row</div>
-          <h3>Chest-Supported Row</h3>
-          <p>
-            Removes much of the lower-back demand and lets you concentrate
-            on pulling through the elbows and training the upper back hard.
-          </p>
-          <span class="target">Primary: Upper Back</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Row</div>
-          <h3>Seated Cable Row</h3>
-          <p>
-            A versatile horizontal pull. Keep the torso controlled and
-            finish by driving the elbows back rather than leaning away
-            from the stack.
-          </p>
-          <span class="target">Primary: Mid Back</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Lat Isolation</div>
-          <h3>Straight-Arm Pulldown</h3>
-          <p>
-            Trains shoulder extension without much elbow flexion, making it
-            a useful way to work the lats without the biceps taking over.
-          </p>
-          <span class="target">Primary: Lats</span>
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- SHOULDERS -->
-
-    <section class="muscle-section" id="shoulders">
-
-      <div class="section-label">SHOULDERS</div>
-
-      <h2>BUILD THE FRAME.</h2>
-
-      <p class="section-intro">
-        Side and rear delts do a lot for the look of a developed upper body.
-        They also respond well to controlled repetitions rather than
-        throwing the heaviest dumbbells in the rack around.
-      </p>
-
-      <div class="exercise-grid">
-
-        <article class="exercise-card">
-          <div class="exercise-type">Isolation</div>
-          <h3>Cable Lateral Raise</h3>
-          <p>
-            Provides consistent resistance through the movement and makes it
-            easy to train one side at a time with controlled technique.
-          </p>
-          <span class="target">Primary: Side Delts</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Isolation</div>
-          <h3>Dumbbell Lateral Raise</h3>
-          <p>
-            Simple and effective. Lead with the elbows, avoid excessive
-            momentum and don't confuse lifting higher with lifting better.
-          </p>
-          <span class="target">Primary: Side Delts</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Rear Delt</div>
-          <h3>Reverse Pec Deck</h3>
-          <p>
-            A stable way to train the rear delts and upper back. Keep the
-            arms moving through a controlled arc instead of jerking the
-            handles backward.
-          </p>
-          <span class="target">Primary: Rear Delts</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Rear Delt</div>
-          <h3>Cable Rear-Delt Fly</h3>
-          <p>
-            Allows steady tension and easy adjustment of the line of pull.
-            Use lighter loads and keep the movement at the shoulder.
-          </p>
-          <span class="target">Primary: Rear Delts</span>
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- ARMS -->
-
-    <section class="muscle-section" id="arms">
-
-      <div class="section-label">ARMS</div>
-
-      <h2>CURL. EXTEND. DON'T OVERCOMPLICATE IT.</h2>
-
-      <p class="section-intro">
-        Arms already work during presses, rows and pulldowns.
-        Direct work fills the gaps. A couple good curl and extension
-        variations performed consistently will go a long way.
-      </p>
-
-      <div class="exercise-grid">
-
-        <article class="exercise-card">
-          <div class="exercise-type">Biceps</div>
-          <h3>Incline Dumbbell Curl</h3>
-          <p>
-            Places the biceps in a lengthened position and makes it difficult
-            to cheat if the upper arm stays behind the torso.
-          </p>
-          <span class="target">Primary: Biceps</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Biceps / Forearms</div>
-          <h3>Hammer Curl</h3>
-          <p>
-            Uses a neutral grip and heavily involves the brachialis and
-            brachioradialis alongside the biceps.
-          </p>
-          <span class="target">Primary: Biceps & Brachialis</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Triceps</div>
-          <h3>Rope Pressdown</h3>
-          <p>
-            A reliable triceps movement that's easy to load and control.
-            Keep the elbows relatively fixed and extend fully without
-            turning it into a full-body exercise.
-          </p>
-          <span class="target">Primary: Triceps</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Triceps</div>
-          <h3>Overhead Cable Extension</h3>
-          <p>
-            Trains the triceps with the arm overhead and places the long head
-            in a more lengthened position. Use a comfortable cable path.
-          </p>
-          <span class="target">Primary: Triceps</span>
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- LEGS -->
-
-    <section class="muscle-section" id="legs">
-
-      <div class="section-label">LEGS</div>
-
-      <h2>BUILD THE BASE.</h2>
-
-      <p class="section-intro">
-        Strong legs matter for more than filling out a pair of shorts.
-        Train the quads, hamstrings, glutes and calves through movement
-        patterns you can progressively load.
-      </p>
-
-      <div class="exercise-grid">
-
-        <article class="exercise-card">
-          <div class="exercise-type">Squat Pattern</div>
-          <h3>Squat</h3>
-          <p>
-            One of many useful ways to train the quads and glutes.
-            Choose a stance and depth you can control while maintaining
-            a strong, repeatable position.
-          </p>
-          <span class="target">Primary: Quads & Glutes</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Machine Compound</div>
-          <h3>Leg Press</h3>
-          <p>
-            Provides a stable way to train the legs hard with less demand
-            on balance and torso stabilization. Control the bottom position.
-          </p>
-          <span class="target">Primary: Quads & Glutes</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Hip Hinge</div>
-          <h3>Romanian Deadlift</h3>
-          <p>
-            Trains the hamstrings and glutes through a loaded hip hinge.
-            Push the hips back and stop when your available hamstring range
-            ends rather than chasing the floor.
-          </p>
-          <span class="target">Primary: Hamstrings & Glutes</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Hamstrings</div>
-          <h3>Leg Curl</h3>
-          <p>
-            Direct knee-flexion work for the hamstrings. Control both the
-            shortening and lowering portions instead of letting the stack
-            slam between reps.
-          </p>
-          <span class="target">Primary: Hamstrings</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Quads</div>
-          <h3>Leg Extension</h3>
-          <p>
-            Direct quadriceps training that works well for moderate and
-            higher repetitions. Use a controlled range that feels good
-            on your knees.
-          </p>
-          <span class="target">Primary: Quadriceps</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Calves</div>
-          <h3>Calf Raise</h3>
-          <p>
-            Whether seated or standing, use a controlled stretch at the
-            bottom and finish each repetition through the ankle rather
-            than bouncing.
-          </p>
-          <span class="target">Primary: Calves</span>
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- CORE -->
-
-    <section class="muscle-section" id="core">
-
-      <div class="section-label">CORE</div>
-
-      <h2>STRONG THROUGH THE MIDDLE.</h2>
-
-      <p class="section-intro">
-        Core training isn't just endless crunches. Use movements that train
-        trunk flexion, stability and resistance to unwanted movement.
-      </p>
-
-      <div class="exercise-grid">
-
-        <article class="exercise-card">
-          <div class="exercise-type">Flexion</div>
-          <h3>Cable Crunch</h3>
-          <p>
-            Allows progressive resistance for the abdominal muscles.
-            Think about bringing the ribs toward the pelvis instead of
-            simply pulling the rope downward.
-          </p>
-          <span class="target">Primary: Abdominals</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Stability</div>
-          <h3>Plank</h3>
-          <p>
-            A basic anti-extension exercise. Maintain a strong position
-            from shoulders through hips instead of chasing the longest
-            possible hold with poor posture.
-          </p>
-          <span class="target">Primary: Trunk Stability</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Anti-Rotation</div>
-          <h3>Pallof Press</h3>
-          <p>
-            Trains the trunk to resist rotation while the cable tries to
-            pull you sideways. Keep the hips and shoulders square.
-          </p>
-          <span class="target">Primary: Core Stability</span>
-        </article>
-
-        <article class="exercise-card">
-          <div class="exercise-type">Loaded Carry</div>
-          <h3>Farmer Carry</h3>
-          <p>
-            Trains grip, trunk stability and total-body bracing while walking
-            under load. Stay tall and control each step.
-          </p>
-          <span class="target">Primary: Core & Grip</span>
-        </article>
-
-      </div>
-
-    </section>
-
-  </section>
-
-
-  <!-- PRINCIPLE -->
-
-  <div class="principle">
-
-    <small>BUILT50 PRINCIPLE</small>
-
-    <p>
-      The best exercise isn't the one that looks impressive online.
-      It's the one you can perform well, progressively load and keep
-      using long enough to produce a result.
-    </p>
-
-  </div>
-
-
-  <!-- COMMUNITY -->
-
-  <section class="community-callout">
-
-    <div class="community-box">
-
-      <div>
-
-        <h2>KEEP BUILDING THE LIBRARY.</h2>
-
-        <p>
-          We'll continue adding exercise breakdowns, substitutions and
-          training guides as BUILT50 grows. Join the community and tell
-          us what movements you want covered next.
-        </p>
-
-      </div>
-
-      <a href="community.html" class="join-button">
-        JOIN COMMUNITY
-      </a>
-
-    </div>
-
-  </section>
-
-</main>
+<a href="#legs">
+LEGS
+</a>
 
+<a href="#core">
+CORE
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+INTRO
+========================= -->
+
+<section class="library-intro">
+
+<small>
+BUILT50 TRAINING
+</small>
+
+<h1>
+
+MOVEMENTS THAT
+<span>MATTER.</span>
+
+</h1>
+
+<p>
+
+You don't need hundreds of exercises.
+
+You need movements you can perform well,
+progress consistently and keep using long
+enough to produce results.
+
+</p>
+
+</section>
+
+
+
+<!-- =========================
+EXERCISE CARDS
+========================= -->
+
+<section class="exercise-section">
+
+<div class="exercise-grid">
+
+
+<!-- CHEST -->
+
+<article
+class="exercise-card"
+id="chest">
+
+<div class="exercise-image">
+
+<img
+src="exercise-bench-press.jpg"
+alt="Bench press exercise">
+
+</div>
+
+<div class="exercise-content">
+
+<div class="exercise-category">
+CHEST
+</div>
+
+<h2>
+Bench Press
+</h2>
+
+<p>
+Press with control.
+Keep a repeatable range of motion.
+</p>
+
+<div class="target">
+
+<span class="target-label">
+PRIMARY
+</span>
+
+<span class="target-muscle">
+CHEST
+</span>
+
+</div>
+
+<a
+href="#"
+class="card-link">
+VIEW EXERCISE →
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- BACK -->
+
+<article
+class="exercise-card"
+id="back">
+
+<div class="exercise-image">
+
+<img
+src="exercise-chest-supported-row.jpg"
+alt="Chest supported row">
+
+</div>
+
+<div class="exercise-content">
+
+<div class="exercise-category">
+BACK
+</div>
+
+<h2>
+Chest-Supported Row
+</h2>
+
+<p>
+Keep the chest planted.
+Drive the elbows back.
+</p>
+
+<div class="target">
+
+<span class="target-label">
+PRIMARY
+</span>
+
+<span class="target-muscle">
+UPPER BACK
+</span>
+
+</div>
+
+<a
+href="#"
+class="card-link">
+VIEW EXERCISE →
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- SHOULDERS -->
+
+<article
+class="exercise-card"
+id="shoulders">
+
+<div class="exercise-image">
+
+<img
+src="exercise-lateral-raise.jpg"
+alt="Dumbbell lateral raise">
+
+</div>
+
+<div class="exercise-content">
+
+<div class="exercise-category">
+SHOULDERS
+</div>
+
+<h2>
+Dumbbell Lateral Raise
+</h2>
+
+<p>
+Lead with the elbows.
+Keep the movement controlled.
+</p>
+
+<div class="target">
+
+<span class="target-label">
+PRIMARY
+</span>
+
+<span class="target-muscle">
+SIDE DELTS
+</span>
+
+</div>
+
+<a
+href="#"
+class="card-link">
+VIEW EXERCISE →
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- ARMS -->
+
+<article
+class="exercise-card"
+id="arms">
+
+<div class="exercise-image">
+
+<img
+src="exercise-dumbbell-curl.jpg"
+alt="Dumbbell curl">
+
+</div>
+
+<div class="exercise-content">
+
+<div class="exercise-category">
+ARMS
+</div>
+
+<h2>
+Dumbbell Curl
+</h2>
+
+<p>
+Use the full range.
+Don't turn it into a swinging contest.
+</p>
+
+<div class="target">
+
+<span class="target-label">
+PRIMARY
+</span>
+
+<span class="target-muscle">
+BICEPS
+</span>
+
+</div>
+
+<a
+href="#"
+class="card-link">
+VIEW EXERCISE →
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- LEGS -->
+
+<article
+class="exercise-card"
+id="legs">
+
+<div class="exercise-image">
+
+<img
+src="exercise-squat.jpg"
+alt="Squat exercise">
+
+</div>
+
+<div class="exercise-content">
+
+<div class="exercise-category">
+LEGS
+</div>
+
+<h2>
+Squat
+</h2>
+
+<p>
+Stay controlled.
+Use the range your body handles well.
+</p>
+
+<div class="target">
+
+<span class="target-label">
+PRIMARY
+</span>
+
+<span class="target-muscle">
+QUADS & GLUTES
+</span>
+
+</div>
+
+<a
+href="#"
+class="card-link">
+VIEW EXERCISE →
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- CORE -->
+
+<article
+class="exercise-card"
+id="core">
+
+<div class="exercise-image">
+
+<img
+src="exercise-plank.jpg"
+alt="Plank exercise">
+
+</div>
+
+<div class="exercise-content">
+
+<div class="exercise-category">
+CORE
+</div>
+
+<h2>
+Plank
+</h2>
+
+<p>
+Stay tight.
+Maintain a strong neutral position.
+</p>
+
+<div class="target">
+
+<span class="target-label">
+PRIMARY
+</span>
+
+<span class="target-muscle">
+CORE
+</span>
+
+</div>
+
+<a
+href="#"
+class="card-link">
+VIEW EXERCISE →
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+BUILT50 PRINCIPLE
+========================= -->
+
+<section class="principle-wrap">
+
+<div class="principle">
+
+<small>
+BUILT50 PRINCIPLE
+</small>
+
+<div class="principle-content">
+
+<h2>
+
+SIMPLE MOVEMENTS.<br>
+
+<span>
+SERIOUS RESULTS.
+</span>
+
+</h2>
+
+<p>
+
+You don't need a hundred exercises.
+
+You need the right movements,
+performed well and progressed
+consistently over time.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+COMMUNITY
+========================= -->
+
+<section class="community-callout">
+
+<div class="community-inner">
+
+<small>
+BUILT50 COMMUNITY
+</small>
+
+<h2>
+TRAIN. LEARN. IMPROVE.
+</h2>
+
+<p>
+
+BUILT50 is about continuing to get stronger,
+smarter and better for the long haul.
+
+Join the community and build with us.
+
+</p>
+
+<a
+href="community.html"
+class="join-button">
+
+JOIN THE COMMUNITY
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer>
 
-  <div class="footer-logo">
-    BUILT<span>50</span>
-  </div>
+<div class="footer-logo">
+BUILT<span>50</span>
+</div>
 
-  <p>
-    STRENGTH • SCIENCE • PERFORMANCE
-  </p>
+<p>
+STRENGTH • SCIENCE • PERFORMANCE
+</p>
 
-  <p>
-    © 2026 BUILT50. All rights reserved.
-  </p>
+<p>
+© 2026 BUILT50. ALL RIGHTS RESERVED.
+</p>
 
 </footer>
 
 
+
+<!-- =========================
+MOBILE MENU
+========================= -->
+
 <script>
 
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
+const menuToggle =
+document.getElementById(
+'menuToggle'
+);
 
-  menuToggle.addEventListener('click', () => {
+const navLinks =
+document.getElementById(
+'navLinks'
+);
 
-    const isOpen = navLinks.classList.toggle('open');
 
-    menuToggle.setAttribute(
-      'aria-expanded',
-      isOpen
-    );
+menuToggle.addEventListener(
+'click',
+() => {
 
-  });
+const isOpen =
+navLinks.classList.toggle(
+'open'
+);
 
-  navLinks.querySelectorAll('a').forEach(link => {
+menuToggle.setAttribute(
+'aria-expanded',
+isOpen
+);
 
-    link.addEventListener('click', () => {
+});
 
-      navLinks.classList.remove('open');
 
-      menuToggle.setAttribute(
-        'aria-expanded',
-        'false'
-      );
+navLinks
+.querySelectorAll('a')
+.forEach(link => {
 
-    });
+link.addEventListener(
+'click',
+() => {
 
-  });
+navLinks.classList.remove(
+'open'
+);
+
+menuToggle.setAttribute(
+'aria-expanded',
+'false'
+);
+
+});
+
+});
 
 </script>
 
 </body>
+
 </html>
