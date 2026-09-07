@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Recovery After 50: Train Hard, Recover Smart | BUILT50</title>
+
+  <meta name="description" content="Recovery after 50 doesn't mean training soft. Learn how smarter volume, sleep, nutrition and fatigue management can help you keep training hard for the long haul.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #090909;
+      --panel: #111111;
+      --panel-light: #181818;
+      --copper: #d7782c;
+      --copper-light: #f09a4b;
+      --white: #f4f4f4;
+      --gray: #a7a7a7;
+      --border: #292929;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(9,9,9,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--copper);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      align-items: center;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: var(--copper-light);
+    }
+
+    .community-btn {
+      background: var(--copper);
+      color: #090909 !important;
+      padding: 9px 14px;
+      border-radius: 4px;
+      transition: .2s ease;
+    }
+
+    .community-btn:hover {
+      background: var(--copper-light);
+      transform: translateY(-1px);
+    }
+
+    /* HAMBURGER */
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      margin: 4px 0;
+      transition: .2s ease;
+    }
+
+    /* HERO */
+
+    .article-hero {
+      padding: 105px 22px 85px;
+      background:
+        radial-gradient(circle at top left, rgba(215,120,44,.20), transparent 42%),
+        linear-gradient(to bottom, #0b0b0b, #090909);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: .98;
+      letter-spacing: -4px;
+      font-weight: 1000;
+      max-width: 950px;
+    }
+
+    h1 span {
+      color: var(--copper);
+    }
+
+    .hero-description {
+      max-width: 760px;
+      margin-top: 28px;
+      color: var(--gray);
+      font-size: 19px;
+    }
+
+    .article-meta {
+      margin-top: 28px;
+      color: #777;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ARTICLE */
+
+    .article {
+      max-width: 820px;
+      margin: auto;
+      padding: 85px 22px;
+    }
+
+    .article .lead {
+      font-size: 21px;
+      color: #d0d0d0;
+      line-height: 1.75;
+      margin-bottom: 42px;
+    }
+
+    .article h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.1;
+      margin: 52px 0 18px;
+      letter-spacing: -1px;
+    }
+
+    .article p {
+      color: #bcbcbc;
+      font-size: 17px;
+      margin-bottom: 23px;
+    }
+
+    .article strong {
+      color: var(--white);
+    }
+
+    /* CALLOUT */
+
+    .callout {
+      margin: 45px 0;
+      padding: 30px;
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.13), transparent 65%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--copper);
+      border-radius: 6px;
+    }
+
+    .callout small {
+      display: block;
+      color: var(--copper);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .callout p {
+      margin: 0;
+      color: var(--white);
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    /* RECOVERY RULES */
+
+    .recovery-section {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .recovery-inner {
+      max-width: 1050px;
+      margin: auto;
+      padding: 75px 22px;
+    }
+
+    .recovery-inner small {
+      color: var(--copper);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .recovery-inner h2 {
+      font-size: clamp(34px, 5vw, 50px);
+      line-height: 1.05;
+      margin-top: 8px;
+    }
+
+    .recovery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .recovery-card {
+      background: var(--black);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 28px;
+    }
+
+    .recovery-number {
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .recovery-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .recovery-card p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* SOURCES */
+
+    .sources {
+      max-width: 820px;
+      margin: auto;
+      padding: 65px 22px;
+    }
+
+    .sources h2 {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .sources p {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 13px;
+    }
+
+    .sources a {
+      color: var(--copper-light);
+    }
+
+    .sources a:hover {
+      text-decoration: underline;
+    }
+
+    /* COMMUNITY */
+
+    .community-callout {
+      max-width: 1050px;
+      margin: auto;
+      padding: 70px 22px 90px;
+    }
+
+    .community-box {
+      background:
+        linear-gradient(135deg, rgba(215,120,44,.18), transparent 60%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 38px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .community-box h2 {
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .community-box p {
+      color: var(--gray);
+      margin-top: 10px;
+      max-width: 600px;
+    }
+
+    .join-button {
+      display: inline-block;
+      background: var(--copper);
+      color: #090909;
+      padding: 14px 22px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      transition: .2s ease;
+    }
+
+    .join-button:hover {
+      background: var(--copper-light);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 20px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 1000;
+    }
+
+    .footer-logo span {
+      color: var(--copper);
+    }
+
+    footer p {
+      color: #666;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav {
+        position: relative;
+        justify-content: space-between;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 18px;
+        right: 18px;
+        flex-direction: column;
+        gap: 0;
+        background: #111111;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 10px;
+        box-shadow: 0 18px 40px rgba(0,0,0,.5);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: 0;
+      }
+
+      .nav-links .community-btn {
+        margin: 8px 0 0;
+        text-align: center;
+      }
+
+      .article-hero {
+        padding: 75px 20px 60px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .article {
+        padding: 60px 20px;
+      }
+
+      .recovery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .community-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+
+    <a href="index.html" class="logo">
+      BUILT<span>50</span>
+    </a>
+
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="navLinks">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="train.html">TRAIN</a>
+      <a href="lab.html" class="active">THE LAB</a>
+      <a href="blog.html">BLOG</a>
+      <a href="resources.html">RESOURCES</a>
+      <a href="community.html" class="community-btn">JOIN COMMUNITY</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <section class="article-hero">
+
+    <div class="hero-inner">
+
+      <div class="eyebrow">
+        THE LAB • RECOVERY & LONGEVITY
+      </div>
+
+      <h1>
+        RECOVERY<br>
+        <span>AFTER 50.</span>
+      </h1>
+
+      <p class="hero-description">
+        You can still train hard. The trick is learning which parts of
+        training deserve your effort — and which parts are just stealing
+        recovery from the next workout.
+      </p>
+
+      <div class="article-meta">
+        BUILT50 • STRENGTH • SCIENCE • PERFORMANCE
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <article class="article">
+
+    <p class="lead">
+      Somewhere along the way, turning 50 apparently became the point where
+      we're supposed to trade heavy weights for tiny dumbbells and spend the
+      rest of our lives stretching.
+      <strong>We're not doing that.</strong>
+    </p>
+
+    <p>
+      Resistance training remains one of the most useful tools we have for
+      maintaining strength and muscle as we age. Research has shown meaningful
+      strength and muscle improvements even in adults well beyond 70.
+    </p>
+
+    <p>
+      But staying strong for decades requires something that becomes easier
+      to ignore when you're young: managing the cost of training.
+    </p>
+
+
+    <h2>DOES RECOVERY ACTUALLY GET WORSE WITH AGE?</h2>
+
+    <p>
+      The answer isn't as simple as social media makes it sound.
+    </p>
+
+    <p>
+      Research comparing recovery in younger and older adults has produced
+      mixed results. Some studies have found signs of slower recovery in older
+      participants, others have found little difference, and some measures
+      have actually favored older participants.
+    </p>
+
+    <p>
+      A large review of resistance-exercise recovery in older adults concluded
+      that the available evidence is too inconsistent to make sweeping claims
+      about exactly how age changes recovery.
+    </p>
+
+    <p>
+      That's important because <strong>being 50 doesn't automatically mean
+      you're fragile.</strong>
+    </p>
+
+
+    <div class="callout">
+
+      <small>BUILT50 RULE</small>
+
+      <p>
+        Don't use age as an excuse to stop training hard. Use experience as
+        a reason to stop training stupid.
+      </p>
+
+    </div>
+
+
+    <h2>RECOVERY IS MORE THAN MUSCLE SORENESS</h2>
+
+    <p>
+      Soreness is easy to notice, but it isn't a perfect recovery meter.
+      Research in older adults has even found cases where soreness was lower
+      than in younger adults despite other markers of recovery telling a more
+      complicated story.
+    </p>
+
+    <p>
+      Pay attention to the bigger picture: performance, motivation, joint
+      irritation, sleep, persistent fatigue and whether your numbers in the
+      gym are actually moving forward.
+    </p>
+
+    <p>
+      One rough workout doesn't mean anything. A month of declining
+      performance while everything hurts probably does.
+    </p>
+
+
+    <h2>MORE WORK ISN'T ALWAYS MORE PROGRESS</h2>
+
+    <p>
+      The goal of training is not to see how much punishment you can survive.
+      The goal is to create enough stimulus to improve and then recover well
+      enough to do it again.
+    </p>
+
+    <p>
+      That makes unnecessary volume expensive. Every extra set has a recovery
+      cost, but not every extra set provides an equally valuable training
+      benefit.
+    </p>
+
+    <p>
+      This doesn't mean low-volume training is automatically superior.
+      It means your volume should have a reason for being there.
+    </p>
+
+
+    <h2>YOU DON'T HAVE TO DESTROY A MUSCLE TO TRAIN IT</h2>
+
+    <p>
+      Training hard and training recklessly aren't the same thing.
+    </p>
+
+    <p>
+      Taking every exercise to absolute failure, constantly changing movements
+      and adding brutal techniques simply because they feel difficult can make
+      a workout memorable without necessarily making it better.
+    </p>
+
+    <p>
+      Consistent hard training that you can recover from usually beats
+      occasionally burying yourself and then spending the next week trying
+      to feel normal again.
+    </p>
+
+
+    <div class="callout">
+
+      <small>LONGEVITY MINDSET</small>
+
+      <p>
+        The best program isn't the one that destroys you today. It's the one
+        that still lets you progress six months from now.
+      </p>
+
+    </div>
+
+
+    <h2>SLEEP STILL MATTERS</h2>
+
+    <p>
+      There isn't a recovery supplement that makes chronic poor sleep
+      irrelevant.
+    </p>
+
+    <p>
+      Sleep supports physical and cognitive recovery, and poor sleep can make
+      training feel harder while reducing your ability to perform consistently.
+      If you're serious about training, sleep belongs in the program just like
+      sets and reps do.
+    </p>
+
+    <p>
+      You don't need a perfect sleep score from a wearable every night.
+      You need enough consistent sleep that your training isn't constantly
+      fighting the rest of your life.
+    </p>
+
+
+    <h2>EAT LIKE SOMEONE WHO EXPECTS TO RECOVER</h2>
+
+    <p>
+      Resistance training creates the demand. Nutrition helps provide the
+      material.
+    </p>
+
+    <p>
+      Adequate protein, sufficient calories for your current goal, hydration
+      and an overall diet capable of supporting training matter more than
+      chasing increasingly complicated recovery hacks.
+    </p>
+
+    <p>
+      Cutting calories aggressively while trying to train like you're in a
+      mass-gaining phase is a good example of asking your body to solve two
+      competing problems at once.
+    </p>
+
+
+    <h2>JOINTS GET A VOTE</h2>
+
+    <p>
+      An exercise isn't mandatory just because you've performed it for
+      twenty years.
+    </p>
+
+    <p>
+      If a movement consistently aggravates a joint, changing the exercise,
+      grip, range of motion or equipment isn't quitting. It's programming.
+    </p>
+
+    <p>
+      The target muscle doesn't know whether you used the exercise you did
+      when you were 25. It knows tension.
+    </p>
+
+
+    <h2>YOUR TRAINING HISTORY MATTERS</h2>
+
+    <p>
+      Two 50-year-olds can have completely different recovery capacities.
+      One may have trained consistently for thirty years. Another may have
+      started six months ago.
+    </p>
+
+    <p>
+      Training status, workload, sleep, nutrition, stress and individual
+      differences all matter. Age is one variable — not your entire training
+      identity.
+    </p>
+
+
+    <div class="callout">
+
+      <small>THE BOTTOM LINE</small>
+
+      <p>
+        Train hard enough to force adaptation. Recover well enough to come
+        back and do it again.
+      </p>
+
+    </div>
+
+
+    <h2>50 ISN'T THE FINISH LINE.</h2>
+
+    <p>
+      The research doesn't support treating resistance training as something
+      older adults should fear. Quite the opposite: strength training remains
+      effective well into older age.
+    </p>
+
+    <p>
+      What changes is the value of being deliberate.
+    </p>
+
+    <p>
+      Pick exercises you can progress. Use enough volume to grow without
+      collecting junk sets. Eat. Sleep. Pay attention to persistent pain and
+      fatigue. Adjust when the feedback tells you to adjust.
+    </p>
+
+    <p>
+      Then keep showing up.
+    </p>
+
+    <p>
+      <strong>Getting older is mandatory. Getting weaker isn't.</strong>
+    </p>
+
+  </article>
+
+
+  <section class="recovery-section">
+
+    <div class="recovery-inner">
+
+      <small>BUILT50 RECOVERY</small>
+
+      <h2>FOUR THINGS WORTH MANAGING.</h2>
+
+      <div class="recovery-grid">
+
+        <div class="recovery-card">
+          <div class="recovery-number">01 • TRAINING LOAD</div>
+          <h3>Make the Work Count</h3>
+          <p>
+            Enough hard work to create progress without adding volume simply
+            because more feels tougher.
+          </p>
+        </div>
+
+        <div class="recovery-card">
+          <div class="recovery-number">02 • SLEEP</div>
+          <h3>Protect the Basics</h3>
+          <p>
+            Recovery gets much harder when your training program consistently
+            competes with inadequate sleep.
+          </p>
+        </div>
+
+        <div class="recovery-card">
+          <div class="recovery-number">03 • NUTRITION</div>
+          <h3>Support the Goal</h3>
+          <p>
+            Protein, calories and hydration aren't exciting recovery hacks.
+            That's exactly why people underestimate them.
+          </p>
+        </div>
+
+        <div class="recovery-card">
+          <div class="recovery-number">04 • FEEDBACK</div>
+          <h3>Listen to Performance</h3>
+          <p>
+            Track strength, fatigue, joint irritation and consistency instead
+            of judging recovery by soreness alone.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="sources">
+
+    <h2>RESEARCH & SOURCES</h2>
+
+    <p>
+      Hayes EJ, Stevenson E, Sayer AA, Granic A, Hurst C.
+      Recovery from Resistance Exercise in Older Adults:
+      A Systematic Scoping Review. Sports Medicine - Open. 2023.
+    </p>
+
+    <p>
+      Fernandes JFT, et al.
+      Aging and Recovery After Resistance-Exercise-Induced Muscle Damage:
+      Current Evidence and Implications for Future Research.
+    </p>
+
+    <p>
+      Grgic J, Garofolini A, Orazem J, et al.
+      Effects of Resistance Training on Muscle Size and Strength in Very
+      Elderly Adults: A Systematic Review and Meta-Analysis of Randomized
+      Controlled Trials. Sports Medicine. 2020.
+    </p>
+
+    <p>
+      BUILT50 articles are educational and informational. They are not a
+      substitute for individualized medical advice or treatment.
+    </p>
+
+  </section>
+
+
+  <section class="community-callout">
+
+    <div class="community-box">
+
+      <div>
+
+        <h2>STILL TRAINING HARD?</h2>
+
+        <p>
+          Good. So are we. Join the BUILT50 community for training,
+          performance, recovery and the occasional questionable gym decision.
+        </p>
+
+      </div>
+
+      <a href="community.html" class="join-button">
+        JOIN COMMUNITY
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    BUILT<span>50</span>
+  </div>
+
+  <p>
+    STRENGTH • SCIENCE • PERFORMANCE
+  </p>
+
+  <p>
+    © 2026 BUILT50. All rights reserved.
+  </p>
+
+</footer>
+
+
+<script>
+
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+
+    const isOpen = navLinks.classList.toggle('open');
+
+    menuToggle.setAttribute(
+      'aria-expanded',
+      isOpen
+    );
+
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+      navLinks.classList.remove('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
