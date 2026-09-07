@@ -1,606 +1,1276 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>The Lab | BUILT50</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="The BUILT50 Lab breaks down performance science, recovery, nutrition and research into practical information you can actually use.">
+<title>The Lab | BUILT50</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta name="description"
+content="BUILT50 Performance Lab — recovery, nutrition, creatine, longevity and training science explained without the hype.">
 
-    :root {
-      --black: #090909;
-      --panel: #111111;
-      --panel-light: #181818;
-      --copper: #d7782c;
-      --copper-light: #f09a4b;
-      --white: #f4f4f4;
-      --gray: #a7a7a7;
-      --border: #292929;
-    }
+<style>
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(9, 9, 9, 0.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .logo span {
-      color: var(--copper);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      align-items: center;
-    }
-.menu-toggle {
-  display: none;
-  width: 42px;
-  height: 38px;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 9px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.menu-toggle span {
-  display: block;
-  height: 2px;
-  background: var(--white);
-  margin: 4px 0;
-  transition: .2s ease;
-}
-    .nav-links a:hover,
-    .nav-links .active {
-      color: var(--copper-light);
-    }
-
-    .community-btn {
-      background: var(--copper);
-      color: #090909 !important;
-      padding: 9px 14px;
-      border-radius: 4px;
-      transition: .2s ease;
-    }
-
-    .community-btn:hover {
-      background: var(--copper-light);
-      transform: translateY(-1px);
-    }
-
-    .page-hero {
-      padding: 110px 22px 75px;
-      background:
-        radial-gradient(circle at top left, rgba(215,120,44,.15), transparent 38%),
-        linear-gradient(to bottom, #0b0b0b, #090909);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .page-hero-inner {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .eyebrow {
-      color: var(--copper);
-      font-weight: 800;
-      letter-spacing: 4px;
-      font-size: 13px;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      font-size: clamp(58px, 10vw, 105px);
-      line-height: .9;
-      font-weight: 1000;
-      letter-spacing: -5px;
-    }
-
-    .page-hero p {
-      color: var(--gray);
-      font-size: 19px;
-      max-width: 720px;
-      margin-top: 25px;
-    }
-
-    .section {
-      max-width: 1150px;
-      margin: auto;
-      padding: 80px 22px;
-    }
-
-    .section-heading small {
-      color: var(--copper);
-      font-weight: bold;
-      letter-spacing: 3px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(34px, 5vw, 50px);
-      line-height: 1;
-      margin-top: 10px;
-    }
-
-    .section-heading p {
-      color: var(--gray);
-      max-width: 700px;
-      margin-top: 15px;
-    }
-
-    .cards {
-      margin-top: 38px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card {
-      background:
-        linear-gradient(135deg, rgba(215,120,44,.07), transparent 45%),
-        var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 30px;
-      min-height: 245px;
-      transition: .25s ease;
-    }
-
-    .card:hover {
-      border-color: var(--copper);
-      transform: translateY(-4px);
-    }
-
-    .card-label {
-      color: var(--copper);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 3px;
-    }
-
-    .card h3 {
-      font-size: 26px;
-      margin: 12px 0;
-    }
-
-    .card p {
-      color: var(--gray);
-    }
-
-    .coming-soon {
-      color: #777;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-top: 22px;
-      text-transform: uppercase;
-    }
-.card-link {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 10px 16px;
-  border: 1px solid var(--copper);
-  border-radius: 4px;
-  color: var(--copper-light);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: .2s ease;
+:root {
+    --black: #090909;
+    --panel: #111111;
+    --panel-light: #181818;
+    --copper: #d7782c;
+    --copper-light: #f09a4b;
+    --white: #f4f4f4;
+    --gray: #a7a7a7;
+    --border: #292929;
 }
 
-.card-link:hover {
-  background: var(--copper);
-  color: #090909;
-  transform: translateY(-1px);
-}
-    .principles {
-      background: var(--panel);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .principles-inner {
-      max-width: 1000px;
-      margin: auto;
-      padding: 80px 22px;
-    }
-
-    .principles h2 {
-      font-size: clamp(34px, 5vw, 52px);
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    .principles h2 span {
-      color: var(--copper);
-    }
-
-    .principles p {
-      color: var(--gray);
-      font-size: 18px;
-      max-width: 780px;
-    }
-
-    .community-callout {
-      max-width: 1150px;
-      margin: 80px auto;
-      padding: 0 22px;
-    }
-
-    .community-box {
-      border: 1px solid var(--border);
-      background:
-        linear-gradient(135deg, rgba(215,120,44,.12), transparent 45%),
-        var(--panel);
-      border-radius: 8px;
-      padding: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .community-box h3 {
-      font-size: 30px;
-    }
-
-    .community-box p {
-      color: var(--gray);
-      margin-top: 8px;
-      max-width: 600px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--copper);
-      color: #090909;
-      padding: 13px 20px;
-      border-radius: 4px;
-      font-weight: 900;
-      font-size: 13px;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      background: var(--copper-light);
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 55px 20px;
-      text-align: center;
-    }
-
-    .footer-logo {
-      font-size: 28px;
-      font-weight: 1000;
-    }
-
-    .footer-logo span {
-      color: var(--copper);
-    }
-
-    footer p {
-      color: #666;
-      font-size: 12px;
-      margin-top: 12px;
-    }
-
-    @media (max-width: 850px) {
-      
-
-   .nav {
-  position: relative;
-  justify-content: space-between;
+html {
+    scroll-behavior: smooth;
 }
 
-.menu-toggle {
-  display: block;
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(9,9,9,.97);
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 22px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--copper);
+}
+
 .nav-links {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 18px;
-  right: 18px;
-  flex-direction: column;
-  gap: 0;
-  background: #111111;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 10px;
-  box-shadow: 0 18px 40px rgba(0,0,0,.5);
-}
+    display: flex;
+    align-items: center;
+    gap: 25px;
 
-.nav-links.open {
-  display: flex;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 .nav-links a {
-  padding: 14px 12px;
-  border-bottom: 1px solid var(--border);
+    transition: .2s;
 }
 
-.nav-links a:last-child {
-  border-bottom: 0;
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--copper-light);
 }
 
-.nav-links .community-btn {
-  margin: 8px 0 0;
-  text-align: center;
+.community-btn {
+    background: var(--copper);
+    color: #090909 !important;
+
+    padding: 10px 16px;
+    border-radius: 4px;
 }
-      .cards {
-        grid-template-columns: 1fr;
-      }
 
-      .community-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+.community-btn:hover {
+    background: var(--copper-light);
+}
 
-      h1 {
-        letter-spacing: -3px;
-      }
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    background: var(--white);
+    margin: 5px 0;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 520px;
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.04)
+        ),
+        url("lab-hero.png");
+
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-overlay {
+    min-height: 520px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.lab-intro {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 58px 22px 30px;
+}
+
+.lab-intro small {
+    color: var(--copper);
+
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.lab-intro h1 {
+    margin-top: 10px;
+
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: .95;
+    letter-spacing: -2px;
+}
+
+.lab-intro h1 span {
+    color: var(--copper);
+}
+
+.lab-intro p {
+    max-width: 740px;
+
+    margin-top: 20px;
+
+    color: var(--gray);
+    font-size: 17px;
+}
+
+
+/* =========================
+   LAB CARDS
+========================= */
+
+.lab-section {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 25px 22px 80px;
+}
+
+.lab-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.lab-card {
+    overflow: hidden;
+
+    min-height: 470px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    transition: .25s ease;
+}
+
+.lab-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--copper);
+}
+
+.lab-card-image {
+    height: 245px;
+    overflow: hidden;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(215,120,44,.28),
+            transparent 55%
+        ),
+        #151515;
+}
+
+.lab-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    transition: transform .35s ease;
+}
+
+.lab-card:hover .lab-card-image img {
+    transform: scale(1.04);
+}
+
+.lab-card-content {
+    padding: 23px;
+}
+
+.card-category {
+    margin-bottom: 8px;
+
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+}
+
+.lab-card h2 {
+    font-size: 25px;
+    line-height: 1.08;
+
+    margin-bottom: 12px;
+}
+
+.lab-card p {
+    min-height: 65px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+}
+
+.card-link {
+    display: inline-block;
+
+    margin-top: 18px;
+    padding: 11px 16px;
+
+    border: 1px solid var(--copper);
+    border-radius: 4px;
+
+    color: var(--copper-light);
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transition: .2s ease;
+}
+
+.card-link:hover {
+    background: var(--copper);
+    color: #090909;
+}
+
+
+/* =========================
+   TOPICS STRIP
+========================= */
+
+.topic-strip {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(215,120,44,.12),
+            rgba(255,255,255,.02),
+            rgba(215,120,44,.08)
+        );
+}
+
+.topic-inner {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 28px 22px;
+}
+
+.topic-item {
+    text-align: center;
+    padding: 10px;
+
+    border-right: 1px solid var(--border);
+}
+
+.topic-item:last-child {
+    border-right: 0;
+}
+
+.topic-item strong {
+    display: block;
+
+    color: var(--white);
+
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.topic-item span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--gray);
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   RESEARCH BLOCK
+========================= */
+
+.research-wrap {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 80px 22px 30px;
+}
+
+.research-block {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+
+    gap: 40px;
+    align-items: center;
+
+    padding: 42px;
+
+    border: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at left,
+            rgba(215,120,44,.2),
+            transparent 50%
+        ),
+        var(--panel);
+}
+
+.research-block small {
+    display: block;
+
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.research-block h2 {
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: .95;
+
+    letter-spacing: -2px;
+}
+
+.research-block h2 span {
+    color: var(--copper);
+}
+
+.research-block p {
+    color: var(--gray);
+
+    font-size: 16px;
+}
+
+.research-link {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 12px 18px;
+
+    border: 1px solid var(--copper);
+    border-radius: 4px;
+
+    color: var(--copper-light);
+
+    font-size: 11px;
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    transition: .2s ease;
+}
+
+.research-link:hover {
+    background: var(--copper);
+    color: #090909;
+}
+
+
+/* =========================
+   PRINCIPLE
+========================= */
+
+.principle-wrap {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 50px 22px 80px;
+}
+
+.principle {
+    padding: 42px;
+
+    border: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at right,
+            rgba(215,120,44,.18),
+            transparent 48%
+        ),
+        var(--panel);
+}
+
+.principle small {
+    display: block;
+
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.principle-content {
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 40px;
+    align-items: center;
+}
+
+.principle h2 {
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: .95;
+
+    letter-spacing: -2px;
+}
+
+.principle h2 span {
+    color: var(--copper);
+}
+
+.principle p {
+    color: var(--gray);
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   COMMUNITY
+========================= */
+
+.community-callout {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(215,120,44,.13),
+            transparent 55%
+        );
+}
+
+.community-inner {
+    max-width: 900px;
+    margin: auto;
+
+    padding: 75px 22px;
+
+    text-align: center;
+}
+
+.community-inner small {
+    color: var(--copper);
+
+    font-size: 10px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+.community-inner h2 {
+    margin-top: 10px;
+
+    font-size: clamp(35px, 5vw, 56px);
+    line-height: 1;
+}
+
+.community-inner p {
+    max-width: 620px;
+
+    margin: 18px auto 25px;
+
+    color: var(--gray);
+}
+
+.join-button {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    background: var(--copper);
+    color: #090909;
+
+    border-radius: 4px;
+
+    font-weight: 900;
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+}
+
+.join-button:hover {
+    background: var(--copper-light);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 55px 20px;
+
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: var(--copper);
+}
+
+footer p {
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .nav {
+        position: relative;
     }
-  </style>
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 18px;
+        right: 18px;
+
+        flex-direction: column;
+        gap: 0;
+
+        background: #111111;
+
+        border: 1px solid var(--border);
+        border-radius: 6px;
+
+        padding: 10px;
+
+        box-shadow:
+            0 18px 40px
+            rgba(0,0,0,.5);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 14px 12px;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: 0;
+    }
+
+    .nav-links .community-btn {
+        margin-top: 8px;
+
+        text-align: center;
+    }
+
+
+    .hero,
+    .hero-overlay {
+        min-height: 320px;
+    }
+
+
+    .lab-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lab-card {
+        min-height: auto;
+    }
+
+    .lab-card-image {
+        height: 360px;
+    }
+
+
+    .topic-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .topic-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .topic-item:nth-last-child(-n+2) {
+        border-bottom: 0;
+    }
+
+
+    .research-block {
+        grid-template-columns: 1fr;
+    }
+
+    .principle-content {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .hero,
+    .hero-overlay {
+        min-height: 235px;
+    }
+
+    .lab-card-image {
+        height: 290px;
+    }
+
+    .topic-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .topic-item {
+        border-bottom:
+            1px solid var(--border) !important;
+    }
+
+    .topic-item:last-child {
+        border-bottom: 0 !important;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+HEADER
+========================= -->
+
 <header>
-  <div class="nav">
 
-    <a href="index.html" class="logo">
-      BUILT<span>50</span>
-    </a>
+<div class="nav">
 
-    <button class="menu-toggle" id="menuToggle"
-      aria-label="Open navigation"
-      aria-expanded="false"
-      aria-controls="navLinks">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<a href="index.html" class="logo">
+BUILT<span>50</span>
+</a>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="train.html">TRAIN</a>
-      <a href="lab.html" class="active">THE LAB</a>
-      <a href="blog.html">BLOG</a>
-      <a href="resources.html">RESOURCES</a>
-      <a href="community.html" class="community-btn">JOIN COMMUNITY</a>
-    </nav>
 
-  </div>
+<button
+class="menu-toggle"
+id="menuToggle"
+aria-label="Open navigation"
+aria-expanded="false"
+aria-controls="navLinks">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+
+<nav class="nav-links" id="navLinks">
+
+<a href="train.html">
+TRAIN
+</a>
+
+<a href="lab.html" class="active">
+THE LAB
+</a>
+
+<a href="blog.html">
+BLOG
+</a>
+
+<a href="resources.html">
+RESOURCES
+</a>
+
+<a href="community.html" class="community-btn">
+JOIN COMMUNITY
+</a>
+
+</nav>
+
+</div>
+
 </header>
 
-<main>
-
-  <section class="page-hero">
-
-    <div class="page-hero-inner">
-
-      <div class="eyebrow">
-        BUILT50 PERFORMANCE LAB
-      </div>
-
-      <h1>QUESTION EVERYTHING.</h1>
-
-      <p>
-        Performance science, recovery, nutrition and research explained
-        without the hype, jargon or miracle claims.
-      </p>
-
-    </div>
-
-  </section>
 
 
-  <section class="section">
+<!-- =========================
+HERO
+========================= -->
 
-    <div class="section-heading">
+<section class="hero">
 
-      <small>THE LAB</small>
+<div class="hero-overlay"></div>
 
-      <h2>LEARN WHAT ACTUALLY MATTERS.</h2>
-
-      <p>
-        Research changes. Trends come and go. The goal here is to break
-        complicated topics down into useful information you can understand,
-        question and apply.
-      </p>
-
-    </div>
+</section>
 
 
-    <div class="cards">
 
-      <article class="card">
+<!-- =========================
+INTRO
+========================= -->
 
-        <div class="card-label">RECOVERY</div>
+<section class="lab-intro">
 
-        <h3><a href="recovery-after-50.html">Recovery & Longevity</a></h3>
+<small>
+BUILT50 PERFORMANCE LAB
+</small>
 
-        <p>
-          Sleep, fatigue, joint health, recovery strategies and the things
-          that matter more as training years add up.
-        </p>
+<h1>
+LEARN WHAT<br>
+<span>ACTUALLY MATTERS.</span>
+</h1>
 
-      <a href="recovery-after-50.html" class="card-link">READ ARTICLE →</a>
+<p>
+Recovery, nutrition, performance and research explained without
+the hype, miracle claims or unnecessary jargon.
 
-      </article>
+The goal isn't to chase every new idea.
 
+It's to understand what has enough evidence and practical value
+to actually deserve your attention.
+</p>
 
-     <article class="card">
-  <div class="card-label">NUTRITION</div>
-
-  <h3>
-    <a href="protein-after-50.html">
-      Protein After 50: How Much Do You Actually Need?
-    </a>
-  </h3>
-
-  <p>
-    How much protein actually matters after 50? A practical look at intake,
-    training, muscle retention and what the research really says.
-  </p>
-
-  <a href="protein-after-50.html" class="card-link">
-    READ ARTICLE →
-  </a>
-</article>
+</section>
 
 
-    <article class="card">
 
-  <div class="card-label">RESEARCH</div>
+<!-- =========================
+LAB CARDS
+========================= -->
 
-  <h3>Creatine After 45: What Actually Changes?</h3>
+<section class="lab-section">
 
-  <p>
-    Creatine isn't just for twenty-year-old gym bros. Here's what the research
-    actually says about strength, muscle, recovery and aging.
-  </p>
+<div class="lab-grid">
 
-  <a href="creatine-after-45.html" class="card-link">
-    READ ARTICLE →
-  </a>
 
-  <br><br>
+<!-- RECOVERY -->
 
-  <a href="research-explained.html" class="card-link">
-    RESEARCH EXPLAINED →
-  </a>
+<article class="lab-card">
+
+<div class="lab-card-image">
+
+<img
+src="exercise-chest-supported-row.jpg"
+alt="Recovery and longevity after 50">
+
+</div>
+
+<div class="lab-card-content">
+
+<div class="card-category">
+RECOVERY
+</div>
+
+<h2>
+Recovery After 50
+</h2>
+
+<p>
+You can still train hard.
+
+The difference is learning how to balance hard training with
+sleep, nutrition, volume and the signals your body is giving you.
+</p>
+
+<a
+href="recovery-after-50.html"
+class="card-link">
+
+READ ARTICLE →
+
+</a>
+
+</div>
 
 </article>
 
-    </div>
-
-  </section>
 
 
-  <section class="principles">
+<!-- PROTEIN -->
 
-    <div class="principles-inner">
+<article class="lab-card">
 
-      <h2>
-        INFORMATION ISN'T MAGIC.<br>
-        <span>UNDERSTANDING IT MATTERS.</span>
-      </h2>
+<div class="lab-card-image">
 
-      <p>
-        BUILT50 isn't interested in selling every new trend as the answer.
-        The Lab exists to look at the evidence, separate useful information
-        from noise and help people make better-informed decisions.
-      </p>
+<img
+src="exercise-squat.jpg"
+alt="Protein and nutrition after 50">
 
-    </div>
+</div>
 
-  </section>
+<div class="lab-card-content">
+
+<div class="card-category">
+NUTRITION
+</div>
+
+<h2>
+Protein After 50
+</h2>
+
+<p>
+How much protein do you really need?
+
+A practical look at protein intake, muscle retention,
+training and what current research actually supports.
+</p>
+
+<a
+href="protein-after-50.html"
+class="card-link">
+
+READ ARTICLE →
+
+</a>
+
+</div>
+
+</article>
 
 
-  <section class="community-callout">
 
-    <div class="community-box">
+<!-- CREATINE -->
 
-      <div>
+<article class="lab-card">
 
-        <h3>Want to talk shop?</h3>
+<div class="lab-card-image">
 
-        <p>
-          Join the BUILT50 community to discuss training, recovery,
-          research, progress and everything that comes with the lifestyle.
-        </p>
+<img
+src="exercise-dumbbell-curl.jpg"
+alt="Creatine research after 45">
 
-      </div>
+</div>
 
-      <a href="community.html" class="btn">
-        JOIN COMMUNITY
-      </a>
+<div class="lab-card-content">
 
-    </div>
+<div class="card-category">
+RESEARCH
+</div>
 
-  </section>
+<h2>
+Creatine After 45
+</h2>
 
-</main>
+<p>
+One of the most studied performance supplements gets even more
+interesting as we get older.
 
+Here's what the evidence actually says.
+</p>
+
+<a
+href="creatine-after-45.html"
+class="card-link">
+
+READ ARTICLE →
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+TOPIC STRIP
+========================= -->
+
+<section class="topic-strip">
+
+<div class="topic-inner">
+
+<div class="topic-item">
+
+<strong>
+RECOVERY
+</strong>
+
+<span>
+Train hard. Recover smart.
+</span>
+
+</div>
+
+
+<div class="topic-item">
+
+<strong>
+NUTRITION
+</strong>
+
+<span>
+Fuel what you're building.
+</span>
+
+</div>
+
+
+<div class="topic-item">
+
+<strong>
+RESEARCH
+</strong>
+
+<span>
+Evidence over hype.
+</span>
+
+</div>
+
+
+<div class="topic-item">
+
+<strong>
+LONGEVITY
+</strong>
+
+<span>
+Perform for the long haul.
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+RESEARCH EXPLAINED
+========================= -->
+
+<section class="research-wrap">
+
+<div class="research-block">
+
+<div>
+
+<small>
+BUILT50 RESEARCH
+</small>
+
+<h2>
+ONE STUDY ISN'T<br>
+<span>THE FINAL WORD.</span>
+</h2>
+
+</div>
+
+
+<div>
+
+<p>
+Research headlines can make almost anything sound proven.
+
+Understanding study design, population, practical significance
+and the total body of evidence matters far more than repeating
+one dramatic conclusion.
+</p>
+
+<a
+href="research-explained.html"
+class="research-link">
+
+RESEARCH EXPLAINED →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+PRINCIPLE
+========================= -->
+
+<section class="principle-wrap">
+
+<div class="principle">
+
+<small>
+BUILT50 PRINCIPLE
+</small>
+
+<div class="principle-content">
+
+<h2>
+INFORMATION<br>
+ISN'T MAGIC.
+
+<br>
+
+<span>
+UNDERSTANDING IT MATTERS.
+</span>
+</h2>
+
+
+<p>
+You don't need to chase every trend, study or headline.
+
+Learn what the evidence actually says, understand where the
+uncertainty is and use the information that improves your
+training, recovery and long-term performance.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+COMMUNITY
+========================= -->
+
+<section class="community-callout">
+
+<div class="community-inner">
+
+<small>
+BUILT50 COMMUNITY
+</small>
+
+<h2>
+LEARN. QUESTION. IMPROVE.
+</h2>
+
+<p>
+Join people who care about training, performance,
+research and continuing to improve for the long haul.
+</p>
+
+<a
+href="community.html"
+class="join-button">
+
+JOIN THE COMMUNITY
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer>
 
-  <div class="footer-logo">
-    BUILT<span>50</span>
-  </div>
+<div class="footer-logo">
+BUILT<span>50</span>
+</div>
 
-  <p>
-    STRENGTH • SCIENCE • PERFORMANCE
-  </p>
+<p>
+STRENGTH • SCIENCE • PERFORMANCE
+</p>
 
-  <p>
-    © 2026 BUILT50. All rights reserved.
-  </p>
+<p>
+© 2026 BUILT50. ALL RIGHTS RESERVED.
+</p>
 
 </footer>
+
+
+
+<!-- =========================
+MOBILE MENU
+========================= -->
+
 <script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
 
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen);
-  });
+const menuToggle =
+document.getElementById('menuToggle');
 
-  navLinks.querySelectorAll('a').forEach(link => {
+const navLinks =
+document.getElementById('navLinks');
+
+
+menuToggle.addEventListener('click', () => {
+
+    const isOpen =
+    navLinks.classList.toggle('open');
+
+    menuToggle.setAttribute(
+        'aria-expanded',
+        isOpen
+    );
+
+});
+
+
+navLinks
+.querySelectorAll('a')
+.forEach(link => {
+
     link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+
+        navLinks.classList.remove('open');
+
+        menuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+
     });
-  });
+
+});
+
 </script>
+
 </body>
+
 </html>
