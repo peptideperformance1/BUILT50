@@ -7,7 +7,7 @@
   <title>Bench Press Guide | Form, Muscles Worked & Mistakes | BUILT50</title>
 
   <meta name="description"
-  content="Learn how to bench press with proper setup, bar path and technique. See muscles worked, common mistakes, sets and reps, and joint-friendly options from BUILT50.">
+  content="Learn proper bench press form, muscles worked, setup, common mistakes, sets and reps, and joint-friendly alternatives with the BUILT50 exercise guide.">
 
   <link rel="canonical" href="https://built50.net/bench-press.html">
   <link rel="icon" type="image/png" href="/built50-icon.png">
@@ -16,7 +16,6 @@
     :root {
       --black: #090909;
       --panel: #111111;
-      --panel-light: #181818;
       --copper: #d7782c;
       --copper-light: #f09a4b;
       --white: #f4f4f4;
@@ -34,10 +33,9 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
       background: var(--black);
       color: var(--white);
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     a {
@@ -45,16 +43,11 @@
       text-decoration: none;
     }
 
-    img {
-      width: 100%;
-      display: block;
-    }
-
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(9,9,9,.96);
+      background: rgba(9, 9, 9, .97);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(10px);
     }
@@ -64,8 +57,8 @@
       margin: auto;
       padding: 16px 22px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
@@ -96,7 +89,7 @@
 
     .community-btn {
       background: var(--copper);
-      color: #fff !important;
+      color: white !important;
       padding: 10px 15px;
       border-radius: 4px;
     }
@@ -117,417 +110,125 @@
       margin: 4px 0;
     }
 
-    .hero {
-      position: relative;
-      min-height: 520px;
-      display: flex;
-      align-items: flex-end;
-      background:
-        linear-gradient(to top, #090909 0%, rgba(9,9,9,.35) 55%, rgba(9,9,9,.1) 100%),
-        url('exercise-bench-press.jpg') center/cover no-repeat;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-content {
-      width: 100%;
+    .page {
       max-width: 1200px;
       margin: auto;
-      padding: 90px 24px 48px;
+      padding: 28px 20px 70px;
     }
 
-    .eyebrow {
+    .breadcrumb {
       color: var(--copper-light);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .guide-image {
+      width: 100%;
+      display: block;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,.55);
+    }
+
+    .mobile-note {
+      display: none;
+      margin-top: 15px;
+      color: var(--gray);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .quick-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 28px 0 0;
+    }
+
+    .quick-links a {
+      padding: 12px 16px;
+      border: 1px solid var(--copper);
+      border-radius: 4px;
       font-size: 13px;
       font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(48px, 8vw, 90px);
-      line-height: .95;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: -2px;
-    }
-
-    .muscle-line {
-      margin-top: 14px;
-      font-size: 22px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .muscle-line span {
-      color: var(--copper-light);
-      margin: 0 7px;
-    }
-
-    .hero-sub {
-      max-width: 720px;
-      margin-top: 16px;
-      color: #ddd;
-      font-size: 18px;
-    }
-
-    .quick-strip {
-      max-width: 1200px;
-      margin: -1px auto 0;
-      padding: 24px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .quick-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 17px;
-    }
-
-    .quick-label {
-      color: var(--copper-light);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 1.3px;
       text-transform: uppercase;
     }
 
-    .quick-value {
-      margin-top: 5px;
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .page-wrap {
-      max-width: 1200px;
-      margin: auto;
-      padding: 25px 24px 80px;
-    }
-
-    .section {
-      margin-top: 45px;
-      padding-top: 35px;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-title {
-      margin: 0 0 25px;
-      font-size: 31px;
-      text-transform: uppercase;
-      line-height: 1.1;
-      font-weight: 900;
-    }
-
-    .section-title span {
-      color: var(--copper-light);
-    }
-
-    .three-col {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr 1fr;
-      gap: 25px;
-    }
-
-    .steps {
-      display: grid;
-      gap: 18px;
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: 46px 1fr;
-      gap: 14px;
-    }
-
-    .step-num {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+    .quick-links a:hover {
       background: var(--copper);
       color: #111;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 18px;
     }
 
-    .step h3 {
-      margin: 1px 0 4px;
-      text-transform: uppercase;
-      font-size: 17px;
-    }
-
-    .step p {
-      margin: 0;
-      color: var(--gray);
-      font-size: 15px;
-    }
-
-    .info-box {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      padding: 22px;
-      border-radius: 5px;
-      height: 100%;
-    }
-
-    .info-box h3 {
-      margin-top: 0;
-      text-transform: uppercase;
-      font-size: 20px;
-    }
-
-    .muscle-list,
-    .setup-list {
-      list-style: none;
-      padding: 0;
-      margin: 18px 0 0;
-    }
-
-    .muscle-list li,
-    .setup-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      color: #d7d7d7;
-    }
-
-    .muscle-list li:last-child,
-    .setup-list li:last-child {
-      border-bottom: 0;
-    }
-
-    .muscle-list strong,
-    .setup-list strong {
-      color: var(--white);
-    }
-
-    .tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 900;
-      color: var(--copper-light);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-
-    .mistake-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .mistake-card,
-    .option-card,
-    .rep-card,
-    .related-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .mistake-card {
-      padding: 22px;
-    }
-
-    .mistake-card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      text-transform: uppercase;
-    }
-
-    .mistake-card h3::before {
-      content: "✕ ";
-      color: #ef513b;
-    }
-
-    .mistake-card p {
-      margin: 0;
-      color: var(--gray);
-      font-size: 15px;
-    }
-
-    .rep-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .rep-card {
-      padding: 22px;
-    }
-
-    .rep-card .rep-goal {
-      color: var(--copper-light);
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .rep-card .rep-main {
-      font-size: 22px;
-      font-weight: 900;
-      margin: 7px 0;
-    }
-
-    .rep-card p {
-      margin: 0;
-      color: var(--gray);
-      font-size: 14px;
-    }
-
-    .options-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .option-card img {
-      height: 170px;
-      object-fit: cover;
-    }
-
-    .option-content {
-      padding: 18px;
-    }
-
-    .option-content h3 {
-      margin: 0 0 6px;
-      font-size: 17px;
-    }
-
-    .option-content p {
-      margin: 0;
-      color: var(--gray);
-      font-size: 14px;
-    }
-
-    .coach-box {
-      margin-top: 45px;
+    .seo-content {
+      max-width: 850px;
+      margin: 55px auto 0;
       padding: 32px;
-      background:
-        linear-gradient(135deg, rgba(215,120,44,.15), rgba(17,17,17,.98));
-      border: 1px solid #3a2a1f;
+      background: var(--panel);
+      border: 1px solid var(--border);
       border-left: 4px solid var(--copper);
     }
 
-    .coach-box .tag {
-      margin-bottom: 10px;
+    .seo-content h1 {
+      margin: 0 0 15px;
+      font-size: 30px;
+      text-transform: uppercase;
+      line-height: 1.1;
     }
 
-    .coach-box blockquote {
-      margin: 0;
-      font-size: 25px;
-      font-weight: 900;
-      line-height: 1.25;
+    .seo-content h2 {
+      margin: 28px 0 10px;
+      color: var(--copper-light);
+      font-size: 19px;
       text-transform: uppercase;
     }
 
-    .coach-box p {
-      margin: 14px 0 0;
-      color: #d7d7d7;
-      font-size: 17px;
+    .seo-content p {
+      margin: 0 0 15px;
+      color: #d0d0d0;
+      line-height: 1.7;
+      font-size: 16px;
     }
 
-    .related-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .related-card {
-      padding: 22px;
-      transition: .2s ease;
-    }
-
-    .related-card:hover {
-      border-color: var(--copper);
-      transform: translateY(-2px);
-    }
-
-    .related-card .tag {
-      margin-bottom: 7px;
-    }
-
-    .related-card h3 {
-      margin: 0 0 6px;
-      font-size: 18px;
-    }
-
-    .related-card p {
-      margin: 0;
-      color: var(--gray);
-      font-size: 14px;
+    .seo-content ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: #d0d0d0;
+      line-height: 1.7;
     }
 
     .back-row {
-      margin-top: 45px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
+      margin-top: 35px;
+      text-align: center;
     }
 
-    .button {
+    .back-button {
       display: inline-block;
-      padding: 13px 19px;
+      padding: 13px 20px;
       border: 1px solid var(--copper);
-      color: var(--white);
+      border-radius: 4px;
       font-weight: 900;
       text-transform: uppercase;
-      border-radius: 4px;
     }
 
-    .button:hover {
+    .back-button:hover {
       background: var(--copper);
       color: #111;
-    }
-
-    .principle {
-      color: var(--gray);
-      font-size: 14px;
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: 1px;
     }
 
     footer {
       border-top: 1px solid var(--border);
-      text-align: center;
+      margin-top: 65px;
       padding: 35px 20px;
+      text-align: center;
       color: var(--gray);
       font-size: 13px;
     }
 
     footer strong {
       color: var(--white);
-    }
-
-    @media (max-width: 900px) {
-      .three-col {
-        grid-template-columns: 1fr;
-      }
-
-      .quick-strip {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .mistake-grid,
-      .rep-grid,
-      .related-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .options-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
     }
 
     @media (max-width: 850px) {
@@ -573,36 +274,25 @@
         text-align: center;
       }
 
-      .hero {
-        min-height: 450px;
+      .page {
+        padding: 18px 10px 55px;
       }
 
-      .hero-content {
-        padding: 70px 20px 35px;
+      .guide-image {
+        border-radius: 3px;
       }
 
-      .muscle-line {
-        font-size: 17px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .quick-strip,
-      .options-grid {
-        grid-template-columns: 1fr;
+      .mobile-note {
+        display: block;
       }
 
-      .page-wrap {
-        padding-left: 18px;
-        padding-right: 18px;
+      .seo-content {
+        padding: 23px 20px;
+        margin-top: 40px;
       }
 
-      .hero-sub {
-        font-size: 16px;
-      }
-
-      .section-title {
-        font-size: 27px;
+      .seo-content h1 {
+        font-size: 25px;
       }
     }
   </style>
@@ -638,397 +328,100 @@
 </header>
 
 
-<section class="hero">
-  <div class="hero-content">
+<main class="page">
 
-    <div class="eyebrow">
-      EXERCISE LIBRARY • CHEST
-    </div>
-
-    <h1>
-      BENCH PRESS
-    </h1>
-
-    <div class="muscle-line">
-      CHEST <span>•</span> TRICEPS <span>•</span> FRONT DELTS
-    </div>
-
-    <p class="hero-sub">
-      A proven upper-body pressing movement for building strength,
-      muscle and pushing power. The goal is not just moving more weight —
-      it is moving it with control.
-    </p>
-
-  </div>
-</section>
-
-
-<section class="quick-strip">
-
-  <div class="quick-card">
-    <div class="quick-label">Goal</div>
-    <div class="quick-value">Strength + Muscle</div>
+  <div class="breadcrumb">
+    Exercise Library • Chest
   </div>
 
-  <div class="quick-card">
-    <div class="quick-label">Level</div>
-    <div class="quick-value">Beginner–Advanced</div>
+  <img
+    src="bench-press-guide.png"
+    alt="BUILT50 Bench Press exercise guide showing setup, muscles worked, proper form, common mistakes, sets and reps, and joint-friendly alternatives"
+    class="guide-image">
+
+  <div class="mobile-note">
+    Pinch to zoom if you'd like a closer look at the exercise guide.
   </div>
 
-  <div class="quick-card">
-    <div class="quick-label">Equipment</div>
-    <div class="quick-value">Barbell / Smith</div>
+
+  <div class="quick-links">
+
+    <a href="exercise-library.html">
+      ← Exercise Library
+    </a>
+
+    <a href="training-after-50.html">
+      Training After 50
+    </a>
+
+    <a href="lifting-heavy-after-50.html">
+      Lifting Heavy After 50
+    </a>
+
   </div>
 
-  <div class="quick-card">
-    <div class="quick-label">Primary Muscle</div>
-    <div class="quick-value">Chest</div>
-  </div>
 
-</section>
+  <section class="seo-content">
 
-
-<main class="page-wrap">
-
-  <section class="section">
-
-    <div class="three-col">
-
-      <div>
-        <h2 class="section-title">
-          HOW TO <span>DO IT</span>
-        </h2>
-
-        <div class="steps">
-
-          <div class="step">
-            <div class="step-num">1</div>
-            <div>
-              <h3>Set Up</h3>
-              <p>
-                Lie on the bench with your eyes roughly under the bar.
-                Plant your feet firmly and pull your shoulder blades
-                back and down.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">2</div>
-            <div>
-              <h3>Grip</h3>
-              <p>
-                Grip the bar slightly wider than shoulder width.
-                Keep your wrists stacked over your forearms.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">3</div>
-            <div>
-              <h3>Unrack</h3>
-              <p>
-                Brace your trunk and bring the bar out over your chest
-                without losing your upper-back position.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">4</div>
-            <div>
-              <h3>Lower</h3>
-              <p>
-                Lower the bar under control toward the mid-to-lower chest.
-                Keep your elbows from flaring straight out to the sides.
-              </p>
-            </div>
-          </div>
-
-          <div class="step">
-            <div class="step-num">5</div>
-            <div>
-              <h3>Press</h3>
-              <p>
-                Drive the bar upward while keeping your feet planted,
-                upper back tight and shoulders controlled.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div class="info-box">
-
-        <div class="tag">Muscles Worked</div>
-
-        <h3>Primary & Secondary</h3>
-
-        <ul class="muscle-list">
-          <li>
-            <strong>Chest</strong><br>
-            Primary pressing muscle
-          </li>
-
-          <li>
-            <strong>Triceps</strong><br>
-            Assists elbow extension
-          </li>
-
-          <li>
-            <strong>Front Delts</strong><br>
-            Assist shoulder flexion and pressing
-          </li>
-        </ul>
-
-      </div>
-
-
-      <div class="info-box">
-
-        <div class="tag">BUILT50 Setup</div>
-
-        <h3>Make Every Rep Cleaner</h3>
-
-        <ul class="setup-list">
-          <li>
-            <strong>Grip:</strong><br>
-            Slightly wider than shoulder width for most lifters.
-          </li>
-
-          <li>
-            <strong>Shoulders:</strong><br>
-            Pull the shoulder blades back and down against the bench.
-          </li>
-
-          <li>
-            <strong>Feet:</strong><br>
-            Keep them planted and stable throughout the set.
-          </li>
-
-          <li>
-            <strong>Bar Path:</strong><br>
-            Lower toward the mid-to-lower chest and press back toward the start.
-          </li>
-        </ul>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="section">
-
-    <h2 class="section-title">
-      COMMON <span>MISTAKES</span>
-    </h2>
-
-    <div class="mistake-grid">
-
-      <div class="mistake-card">
-        <h3>Excessive Arch</h3>
-        <p>
-          A normal arch is fine. Turning the movement into a full-body bridge
-          just to shorten the range is usually not the goal.
-        </p>
-      </div>
-
-      <div class="mistake-card">
-        <h3>Elbows Flaring Too Wide</h3>
-        <p>
-          Letting the elbows shoot straight out can put unnecessary stress
-          on the shoulders for some lifters.
-        </p>
-      </div>
-
-      <div class="mistake-card">
-        <h3>Bouncing the Bar</h3>
-        <p>
-          Lower under control. Do not use your chest as a trampoline to create
-          momentum.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="section">
-
-    <h2 class="section-title">
-      SETS & <span>REPS</span>
-    </h2>
-
-    <div class="rep-grid">
-
-      <div class="rep-card">
-        <div class="rep-goal">Strength</div>
-        <div class="rep-main">3–5 sets • 3–6 reps</div>
-        <p>
-          Heavier loads with longer rest periods. Technique still comes first.
-        </p>
-      </div>
-
-      <div class="rep-card">
-        <div class="rep-goal">Muscle Building</div>
-        <div class="rep-main">3–4 sets • 6–12 reps</div>
-        <p>
-          A practical range for accumulating quality pressing volume.
-        </p>
-      </div>
-
-      <div class="rep-card">
-        <div class="rep-goal">Higher Rep Work</div>
-        <div class="rep-main">2–4 sets • 12–20 reps</div>
-        <p>
-          Best suited to controlled technique and lighter loading.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="section">
-
-    <h2 class="section-title">
-      JOINT-FRIENDLY <span>OPTIONS</span>
-    </h2>
-
-    <div class="options-grid">
-
-      <div class="option-card">
-        <img
-          src="exercise-bench-press.jpg"
-          alt="Dumbbell bench press alternative">
-
-        <div class="option-content">
-          <h3>Dumbbell Bench Press</h3>
-          <p>
-            Allows each arm to move independently and may feel more natural
-            for some shoulders.
-          </p>
-        </div>
-      </div>
-
-      <div class="option-card">
-        <img
-          src="exercise-bench-press.jpg"
-          alt="Incline bench press alternative">
-
-        <div class="option-content">
-          <h3>Incline Press</h3>
-          <p>
-            Changes the pressing angle and shifts more work toward the upper chest.
-          </p>
-        </div>
-      </div>
-
-      <div class="option-card">
-        <img
-          src="exercise-bench-press.jpg"
-          alt="Smith machine bench press alternative">
-
-        <div class="option-content">
-          <h3>Smith Machine Press</h3>
-          <p>
-            Adds stability and can make loading and setup more predictable.
-          </p>
-        </div>
-      </div>
-
-      <div class="option-card">
-        <img
-          src="exercise-bench-press.jpg"
-          alt="Neutral grip dumbbell press alternative">
-
-        <div class="option-content">
-          <h3>Neutral-Grip Dumbbells</h3>
-          <p>
-            A palms-facing grip can feel more comfortable for lifters with
-            irritated shoulders.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <section class="coach-box">
-
-    <div class="tag">BUILT50 Coaching Notes</div>
-
-    <blockquote>
-      The bench press is a tool, not a religion.
-    </blockquote>
+    <h1>Bench Press Exercise Guide</h1>
 
     <p>
-      If your shoulders hate it, change the grip, range, angle or implement.
-      Your chest does not know whether the resistance came from a barbell,
-      dumbbells or a machine. The goal is to train the muscle effectively
-      and keep progressing.
+      The bench press is a classic upper-body strength and muscle-building
+      exercise that primarily trains the chest while also involving the
+      triceps and front deltoids.
+    </p>
+
+    <h2>Bench Press Setup</h2>
+
+    <p>
+      Set your upper back firmly against the bench, keep your feet planted,
+      use a stable grip and lower the bar under control toward the chest.
+      Press back to the starting position while maintaining a strong,
+      controlled position.
+    </p>
+
+    <h2>Muscles Worked</h2>
+
+    <ul>
+      <li>Chest — primary muscle</li>
+      <li>Triceps — secondary pressing muscle</li>
+      <li>Front deltoids — secondary shoulder involvement</li>
+    </ul>
+
+    <h2>Common Bench Press Mistakes</h2>
+
+    <p>
+      Common problems include excessive arching, uncontrolled bar movement,
+      elbows flaring too far outward and bouncing the bar off the chest.
+      Good technique should remain controlled even as the weight becomes
+      challenging.
+    </p>
+
+    <h2>Bench Press Sets and Reps</h2>
+
+    <p>
+      Lower-repetition sets can emphasize strength, moderate rep ranges are
+      commonly used for muscle building, and higher-repetition sets can be
+      useful when using lighter loads and controlled technique.
+    </p>
+
+    <h2>Joint-Friendly Alternatives</h2>
+
+    <p>
+      Lifters whose shoulders do not tolerate the traditional barbell bench
+      press well may prefer dumbbells, a neutral grip, incline pressing or a
+      Smith machine. The best exercise is one you can perform effectively and
+      consistently without aggravating pain.
     </p>
 
   </section>
 
 
-  <section class="section">
-
-    <h2 class="section-title">
-      TRY THESE <span>NEXT</span>
-    </h2>
-
-    <div class="related-grid">
-
-      <a href="#" class="related-card">
-        <div class="tag">Chest</div>
-        <h3>Incline Dumbbell Press</h3>
-        <p>
-          A strong upper-chest pressing option with independent arm movement.
-        </p>
-      </a>
-
-      <a href="#" class="related-card">
-        <div class="tag">Chest</div>
-        <h3>Cable Fly</h3>
-        <p>
-          A controlled chest isolation movement with constant cable tension.
-        </p>
-      </a>
-
-      <a href="#" class="related-card">
-        <div class="tag">Arms</div>
-        <h3>Triceps Pushdown</h3>
-        <p>
-          Direct triceps work that supports stronger pressing.
-        </p>
-      </a>
-
-    </div>
-
-
-    <div class="back-row">
-
-      <a href="exercise-library.html" class="button">
-        ← BACK TO EXERCISE LIBRARY
-      </a>
-
-      <div class="principle">
-        Train smarter. Keep building.
-      </div>
-
-    </div>
-
-  </section>
+  <div class="back-row">
+    <a href="exercise-library.html" class="back-button">
+      ← Back to Exercise Library
+    </a>
+  </div>
 
 </main>
 
