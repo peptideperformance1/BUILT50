@@ -65,5 +65,34 @@
     <loc>https://built50.net/research-explained.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://built50.net/bench-press.html</loc>
+    <priority>0.8</priority>
+  </url>
 
+  <url>
+    <loc>https://built50.net/chest-supported-row.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://built50.net/dumbbell-lateral-raise.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://built50.net/dumbbell-curl.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://built50.net/squat.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://built50.net/plank.html</loc>
+    <priority>0.8</priority>
+  </url>
+  
 </urlset>
